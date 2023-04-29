@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://brrfhflgd7hwx"]
+
+[ext_resource type="Theme" uid="uid://gnqiyi4hgg6q" path="res://Assets/MainTheme.tres" id="1_etnum"]
+[ext_resource type="Script" path="res://Scripts/RoutePanel.gd" id="1_vila8"]
+
+[node name="RoutePanel" type="Control"]
+layout_mode = 3
+anchor_right = 0.355
+anchor_bottom = 0.747
+offset_right = 0.039978
+offset_bottom = -0.0560303
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_vila8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_right = 409.0
+offset_bottom = 481.0
+theme = ExtResource("1_etnum")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 367.0
+offset_bottom = 436.0
+
+[node name="ItemList" type="ItemList" parent="Control/VBoxContainer"]
+layout_mode = 2
+auto_height = true
+item_count = 3
+item_0/text = "Planet 1 - Planet 2"
+item_1/text = "Planet 2 - Planet 3"
+item_2/text = "Planet 3 - Planet 1"
+
+[node name="AddRoute" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 430.0
+offset_right = 361.0
+offset_bottom = 461.0
+text = "Add Route
+"
+
+[node name="DeleteRoute" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 430.0
+offset_right = 249.0
+offset_bottom = 461.0
+text = "Delete Route
+"
+
+[node name="Close" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 430.0
+offset_right = 115.0
+offset_bottom = 461.0
+text = "Close
+"
+
+[connection signal="pressed" from="Control/AddRoute" to="." method="_on_add_route_pressed"]
+[connection signal="pressed" from="Control/Close" to="." method="_on_close_pressed"]

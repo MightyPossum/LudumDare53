@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://r7t3yyaj42va"]
+
+[ext_resource type="PackedScene" uid="uid://c1xre6phrmitu" path="res://Assets/Ships/MVPPlanet.blend" id="1_m38s2"]
+[ext_resource type="Script" path="res://Scripts/CollisionShape3D.gd" id="2_bfdyh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v2nbe"]
+radius = 0.914164
+
+[node name="Planet" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56327, 0.277159, -0.180138)
+
+[node name="MVPPlanet" parent="." instance=ExtResource("1_m38s2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(45, 0, 0, 0, 45, 0, 0, 0, 45, 0, 0, 0)
+shape = SubResource("SphereShape3D_v2nbe")
+script = ExtResource("2_bfdyh")
+
+[connection signal="input_event" from="." to="CollisionShape3D" method="_on_input_event"]

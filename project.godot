@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="The Final Delivery"
-run/main_scene="res://node_3d.tscn"
+run/main_scene="res://Scenes/node_3d.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Autoscript="*res://Scripts/Autoscript.gd"
 
 [rendering]
 

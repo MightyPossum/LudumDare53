@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvo84ahbi5qh2"]
+
+[ext_resource type="PackedScene" uid="uid://buyp327e0yrg2" path="res://Scenes/Ship.tscn" id="1_aaist"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_rshsg"]
+[ext_resource type="PackedScene" uid="uid://r7t3yyaj42va" path="res://Scenes/planet.tscn" id="2_xmdmm"]
+[ext_resource type="PackedScene" uid="uid://dudqaoe1t87fg" path="res://Assets/Ships/MVPAsteroid.blend" id="4_sxvrh"]
+[ext_resource type="PackedScene" uid="uid://b37rkflg54uor" path="res://Scenes/RouteCreator.tscn" id="5_iqc57"]
+[ext_resource type="PackedScene" uid="uid://brrfhflgd7hwx" path="res://Scenes/RoutePanel.tscn" id="5_pimsu"]
+[ext_resource type="PackedScene" uid="uid://ulwy4tsglpjy" path="res://Scenes/menu_button.tscn" id="7_uln5p"]
+
+[sub_resource type="Curve3D" id="Curve3D_o6r6p"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 43.8204, 24.4666, -2.34252, -9.36382, -4.85732, -1.35893, 9.36382, 4.85732, 1.35893, 76.601, 61.8686, -0.280939, -17.1333, 0.204315, -3.40802, 17.1333, -0.204315, 3.40802, 147.231, 62.8976, -13.6184, -12.8474, -5.823, -23.7256, 12.8474, 5.823, 23.7256, 228.166, 97.3371, -12.1434, -41.564, -0.848755, 7.20753, 41.564, 0.848755, -7.20753, 330.04, 80.1014, 24.8581, 10.124, -0.000793457, 1.694, -10.124, 0.000793457, -1.694, 360.99, 86.9444, -91.6262),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[node name="GameScene" type="Node3D"]
+script = ExtResource("1_rshsg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8113, 214.418, -139.025)
+light_energy = 14.866
+light_indirect_energy = 7.857
+light_volumetric_fog_energy = 8.01
+light_size = 0.619
+omni_range = 4096.0
+omni_attenuation = 0.594605
+
+[node name="Planets" type="Node3D" parent="."]
+
+[node name="p1" parent="Planets" instance=ExtResource("2_xmdmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.7, 52.9316, -106.534)
+
+[node name="p2" parent="Planets" instance=ExtResource("2_xmdmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.0747, -19.1613, -0.180138)
+
+[node name="p1-p2" type="Path3D" parent="Planets"]
+transform = Transform3D(0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -74.1691, -19.192, 0)
+curve = SubResource("Curve3D_o6r6p")
+
+[node name="Ship" parent="Planets/p1-p2" instance=ExtResource("1_aaist")]
+transform = Transform3D(0.0627662, -0.749911, 0.658551, 2.98023e-08, 0.659851, 0.751393, -0.998027, -0.0471621, 0.0414165, 43.8204, 24.4666, -2.34252)
+
+[node name="p1-p3" type="Path3D" parent="Planets"]
+transform = Transform3D(0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -74.1691, -19.192, 0)
+curve = SubResource("Curve3D_o6r6p")
+
+[node name="p1-p4" type="Path3D" parent="Planets"]
+transform = Transform3D(0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -74.1691, -19.192, 0)
+curve = SubResource("Curve3D_o6r6p")
+
+[node name="p2-p1" type="Path3D" parent="Planets"]
+transform = Transform3D(0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -74.1691, -19.192, 0)
+curve = SubResource("Curve3D_o6r6p")
+
+[node name="p2-p2" type="Path3D" parent="Planets"]
+transform = Transform3D(0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -74.1691, -19.192, 0)
+curve = SubResource("Curve3D_o6r6p")
+
+[node name="p2-p3" type="Path3D" parent="Planets"]
+transform = Transform3D(0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -74.1691, -19.192, 0)
+curve = SubResource("Curve3D_o6r6p")
+
+[node name="MVPAsteroid" parent="." instance=ExtResource("4_sxvrh")]
+transform = Transform3D(0.740019, 0, -0.672586, 0, 1, 0, 0.672586, 0, 0.740019, -43.4198, 72.6293, -55.3845)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RoutePlanner" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 402.0
+offset_top = 261.0
+offset_right = 442.0
+offset_bottom = 301.0
+metadata/_edit_group_ = true
+
+[node name="RoutePlanetPicker" parent="CanvasLayer/RoutePlanner" instance=ExtResource("5_iqc57")]
+
+[node name="RoutePanel" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 379.0
+offset_top = 91.0
+offset_right = 419.0
+offset_bottom = 131.0
+metadata/_edit_group_ = true
+
+[node name="RoutePanel" parent="CanvasLayer/RoutePanel" instance=ExtResource("5_pimsu")]
+layout_mode = 1
+
+[node name="MenuButton" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuButton" parent="CanvasLayer/MenuButton" instance=ExtResource("7_uln5p")]
+layout_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 46.4932, 0, -393.233)
