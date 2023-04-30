@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ulwy4tsglpjy"]
+[gd_scene load_steps=3 format=3 uid="uid://ulwy4tsglpjy"]
 
 [ext_resource type="Script" path="res://Scripts/menu_button.gd" id="1_1v23l"]
+[ext_resource type="Script" path="res://Scripts/ResourceTracker.gd" id="1_m3shm"]
 
 [node name="MenuButton" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m3shm")
 
 [node name="MenuButton" type="MenuButton" parent="."]
 layout_mode = 0
@@ -19,3 +21,28 @@ item_count = 1
 popup/item_0/text = "Routes"
 popup/item_0/id = 0
 script = ExtResource("1_1v23l")
+
+[node name="CashLabel" type="Label" parent="."]
+offset_left = 883.0
+offset_top = 1.0
+offset_right = 923.0
+offset_bottom = 27.0
+text = "Cash:"
+
+[node name="Cash" type="Label" parent="."]
+offset_left = 935.0
+offset_top = 2.0
+offset_right = 990.0
+offset_bottom = 28.0
+
+[node name="MaterialLabel" type="Label" parent="."]
+offset_left = 1016.0
+offset_right = 1056.0
+offset_bottom = 26.0
+text = "Mats:"
+
+[node name="Material" type="Label" parent="."]
+offset_left = 1066.0
+offset_top = 1.0
+offset_right = 1149.0
+offset_bottom = 27.0

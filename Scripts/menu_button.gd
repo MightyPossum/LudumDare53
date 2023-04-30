@@ -22,3 +22,4 @@ func _on_id_pressed(index):
 	routePanel.get_node("RoutePanel")._toggle_add_route_option()
 	routePanel.get_node("RoutePanel").get_node("RoutePanelRoot").get_node('DeleteRoute').disabled = true
 	routePanel.get_node("RoutePanel").get_node("RoutePanelRoot").get_node('VBoxContainer').get_node('ItemList').deselect_all()
+	routePanel.get_node('RoutePanel')._populate_list()

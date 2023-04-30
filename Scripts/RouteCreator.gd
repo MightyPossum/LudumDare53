@@ -52,6 +52,7 @@ func _on_apply_pressed():
 	var locationFrom = locationFromNodeName
 	var locationTo = locationToNodeName
 	var route : Route = Route.new()
+	get_tree().get_root().get_node('GameScene').get_node('Routes').add_child(route)
 	
 	route.locationFrom = locationFrom
 	route.locationTo = locationTo

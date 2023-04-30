@@ -1,16 +1,23 @@
-extends Object
-
-class_name Route
+class_name Route extends Node3D
 
 var routeId
 var locationFrom
 var locationTo
 var vesselName
 var path : Array
+var ship = load("res://Scenes/Ship.tscn")
+var cost = 0
 
 func _create_route():
 	
-	var queue = dijkstra(locationFrom, locationTo)
+	var dijkstra_result = dijkstra(locationFrom, locationTo)
+	var queue = dijkstra_result['path']
+	print(dijkstra_result['cost'])
+	print(dijkstra_result['path'])
+	for i in dijkstra_result['path']:
+		cost += dijkstra_result['cost'][i]
+	
+	Autoscript.Cash -= cost
 	
 	var current
 	var next
@@ -23,16 +30,26 @@ func _create_route():
 		
 		next = queue.pop_front()
 		
-		pathway = current + "-" + next 
+		pathway = current + "-" + next
 		
+		var path_existst = false
+		
+		for i in Autoscript.PathwayArray.size():
+			if Autoscript.PathwayArray[i].pathwayName == pathway:
+				path_existst = true
+		
+		if path_existst == false:
+			pathway = next + "-" + current
+			
 		current = next
 		path.append(pathway)
-		
-	_start_route()
 	
-func _start_route():
-	while path:
-		pass
+	ship = ship.instantiate()
+	
+	get_tree().get_root().get_node('GameScene').get_node('Pathways').get_node(path[0]).add_child(ship)
+	ship._initalize(locationFrom, locationTo, self, vesselName)
+	
+	
 
 # define a function that implements Dijkstra's algorithm
 func dijkstra(start, end):
@@ -90,4 +107,4 @@ func dijkstra(start, end):
 		current_node = previous[current_node]
 
 	# return the cost array
-	return path
+	return { "cost": cost, "path": path }

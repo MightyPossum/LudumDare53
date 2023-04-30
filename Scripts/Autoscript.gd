@@ -7,6 +7,12 @@ var LocationArray : Dictionary
 var LocationDistances : Dictionary
 var DistanceCosts : Dictionary
 
+var win : bool = false
+var lose : bool = false
+
+var Cash : int = 0
+var Materials : int = 0
+
 var LocationNames : Dictionary
 var LocationPrettyName : Dictionary
 
