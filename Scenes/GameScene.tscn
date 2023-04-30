@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dvo84ahbi5qh2"]
+[gd_scene load_steps=73 format=3 uid="uid://dvo84ahbi5qh2"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_qj5vb"]
 [ext_resource type="PackedScene" uid="uid://r7t3yyaj42va" path="res://Scenes/planet.tscn" id="2_dgd1k"]
@@ -309,6 +309,20 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 10
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_buq38"]
+emission_shape = 3
+emission_box_extents = Vector3(2000, 2000, 10)
+scale_min = 0.0
+scale_max = 34.71
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbq30"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 15.46
+
+[sub_resource type="SphereMesh" id="SphereMesh_wfsfn"]
+material = SubResource("StandardMaterial3D_vbq30")
 
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_qj5vb")
@@ -812,10 +826,10 @@ asteroid_model = ExtResource("21_akps7")
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 402.0
-offset_top = 261.0
-offset_right = 442.0
-offset_bottom = 301.0
+offset_left = 370.0
+offset_top = 54.0
+offset_right = 410.0
+offset_bottom = 94.0
 metadata/_edit_group_ = true
 
 [node name="RoutePlanetPicker" parent="CanvasLayer/RoutePlanner" instance=ExtResource("5_o2rfv")]
@@ -824,10 +838,10 @@ metadata/_edit_group_ = true
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 379.0
-offset_top = 91.0
-offset_right = 419.0
-offset_bottom = 131.0
+offset_left = 370.0
+offset_top = 54.0
+offset_right = 410.0
+offset_bottom = 94.0
 metadata/_edit_group_ = true
 
 [node name="RoutePanel" parent="CanvasLayer/RoutePanel" instance=ExtResource("6_rr046")]
@@ -845,3 +859,12 @@ layout_mode = 1
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 1.115, 0, -209.86)
 script = ExtResource("8_dmf3d")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.7677, 0, -1609.65)
+amount = 5000
+lifetime = 500.0
+preprocess = 200.0
+speed_scale = 0.01
+process_material = SubResource("ParticleProcessMaterial_buq38")
+draw_pass_1 = SubResource("SphereMesh_wfsfn")

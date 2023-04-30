@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsjbon6soj2gv"]
+[gd_scene load_steps=6 format=3 uid="uid://bsjbon6soj2gv"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_hp5c8"]
+[ext_resource type="Texture2D" uid="uid://344ldsayuuqb" path="res://Assets/MenuArt/Coin.png" id="2_ucr52"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v1oit"]
 font_size = 50
 font_color = Color(1, 0.305882, 0.729412, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1ne05"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vb8n5"]
+emission_shape = 3
+emission_box_extents = Vector3(600, 50, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 500, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -18,21 +27,19 @@ grow_vertical = 2
 script = ExtResource("1_hp5c8")
 
 [node name="Title" type="Label" parent="."]
-layout_mode = 0
 offset_left = 264.0
 offset_top = 84.0
-offset_right = 859.0
+offset_right = 970.0
 offset_bottom = 262.0
 text = "The Final Delivery"
 label_settings = SubResource("LabelSettings_v1oit")
 horizontal_alignment = 1
 
 [node name="SceneLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 340.0
-offset_top = 172.0
-offset_right = 789.0
-offset_bottom = 350.0
+offset_left = 347.0
+offset_top = 166.0
+offset_right = 796.0
+offset_bottom = 344.0
 text = "Welcome to THE FINAL DELIVERY
 Press START GAME to play"
 label_settings = SubResource("LabelSettings_1ne05")
@@ -40,18 +47,24 @@ horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 291.0
 offset_top = 42.0
 offset_right = 825.0
 offset_bottom = 553.0
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
 offset_left = 505.0
 offset_top = 426.0
-offset_right = 601.0
+offset_right = 641.0
 offset_bottom = 457.0
 text = "Start Game"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(581, -98)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_vb8n5")
+texture = ExtResource("2_ucr52")
+lifetime = 3.0
+preprocess = 4.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
