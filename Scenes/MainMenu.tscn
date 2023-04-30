@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsjbon6soj2gv"]
+[gd_scene load_steps=7 format=3 uid="uid://bsjbon6soj2gv"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_hp5c8"]
-[ext_resource type="Texture2D" uid="uid://344ldsayuuqb" path="res://Assets/MenuArt/Coin.png" id="2_ucr52"]
+[ext_resource type="Texture2D" uid="uid://ca8q0125xd8mi" path="res://Assets/MenuArt/StarParticle.png" id="2_qiytt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v1oit"]
 font_size = 50
 font_color = Color(1, 0.305882, 0.729412, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1ne05"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mucpc"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vb8n5"]
 emission_shape = 3
@@ -38,10 +40,10 @@ horizontal_alignment = 1
 
 [node name="SceneLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 347.0
-offset_top = 166.0
-offset_right = 796.0
-offset_bottom = 344.0
+offset_left = 362.0
+offset_top = 451.0
+offset_right = 811.0
+offset_bottom = 629.0
 text = "Welcome to THE FINAL DELIVERY
 Press START GAME to play"
 label_settings = SubResource("LabelSettings_1ne05")
@@ -57,18 +59,37 @@ offset_bottom = 553.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 505.0
-offset_top = 426.0
-offset_right = 641.0
-offset_bottom = 457.0
+offset_left = 513.0
+offset_top = 585.0
+offset_right = 649.0
+offset_bottom = 616.0
 text = "Start Game"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_mucpc")
 position = Vector2(581, -98)
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_vb8n5")
-texture = ExtResource("2_ucr52")
+texture = ExtResource("2_qiytt")
 lifetime = 3.0
 preprocess = 4.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 159.0
+offset_right = 893.0
+offset_bottom = 434.0
+text = "Use your fleet of newly invented cargo ships.
+Buy Materials on asteroids and sell to planets
+
+
+buy low sell high
+Build new stations to expand your market
+increase the size of your fleet
+
+you start with a station in orbit of serenity
+and a simple trade route to DR-14
+How fast can you expand your delivery service?"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
