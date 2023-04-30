@@ -25,7 +25,7 @@ func _process(delta):
 
 func _on_input_event(camera, event, position, normal, shape_idx):
 	if not paths_initialzed:
-		for i in get_parent().get_parent().get_children():
+		for i in get_parent().get_parent().get_parent().get_node('Pathways').get_children():
 			if i.name.contains(planet_designation) and i.name != planet_designation:
 				paths_array.append(i)
 		
@@ -33,9 +33,7 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 			var counter = 0
 			for j in i.name.split("-", false, 2):
 				if j == planet_designation:
-					#print(j)
 					paths_direction[i] = counter
-					#print(paths_direction)
 				counter += 1
 		
 	else:
@@ -46,9 +44,8 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 	paths_initialzed = true
 		
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed==true:
-		ship = get_parent().get_parent().get_node('p1-p2').get_node('Ship')
+		ship = get_parent().get_parent().get_node('Pathways').get_node('p1-p2').get_node('Ship')
 		if ship.current_location == planet_designation:
 			ship.speed = .2
 			ship.current_location = other_name
 			ship.destination = planet_designation
-

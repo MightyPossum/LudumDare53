@@ -1,42 +1,67 @@
 extends Control
 
-var SelectFrom
-var SelectTo
-var ApplyButton
-var RoutePlanner
-var RoutePanel
-var planetFrom
-var planetTo
+var selectFrom
+var selectTo
+var applyButton
+var routePlanner
+var routePanel
+var locationFrom
+var locationTo
+var routePanelItemList
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SelectFrom = get_node("Control/HBoxContainer/VBoxContainer/SelectFrom")
-	SelectTo = get_node("Control/HBoxContainer/VBoxContainer2/SelectTo")
-	ApplyButton = get_node("Control/HBoxContainer/VBoxContainer2/Apply")
-	RoutePlanner = get_parent().get_parent().get_node('RoutePlanner')
-	RoutePanel = get_parent().get_parent().get_node('RoutePanel')
-
+	selectFrom = get_node("Control/HBoxContainer/VBoxContainer/SelectFrom")
+	selectTo = get_node("Control/HBoxContainer/VBoxContainer2/SelectTo")
+	applyButton = get_node("Control/HBoxContainer/VBoxContainer2/Apply")
+	routePlanner = get_parent().get_parent().get_node('RoutePlanner')
+	routePanel = get_parent().get_parent().get_node('RoutePanel')
+	routePanelItemList = routePanel.get_node("RoutePanel").get_node("RoutePanelRoot").get_node('VBoxContainer').get_node('ItemList')
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if SelectFrom.selected == 0 or SelectTo.selected == 0:
-		ApplyButton.disabled = true
+	
+	if (selectFrom.selected == 0 or selectTo.selected == 0) or (selectFrom.selected == selectTo.selected):
+		applyButton.disabled = true
 	else:
-		ApplyButton.disabled = false
+		applyButton.disabled = false
 
 func _on_cancel_pressed():
-	# Menu Navigation
-	RoutePlanner.visible = false
-	RoutePanel.visible = true
+	## Menu Navigation
+	routePlanner.visible = false
+	routePanel.visible = true
+	routePanelItemList.deselect_all()
+	routePanel.get_node('RoutePanel')._toggle_delete_button(true)
 
 func _on_apply_pressed():
 	## Menu navigation
-	RoutePlanner.visible = false
-	RoutePanel.visible = true
+	routePlanner.visible = false
+	routePanel.visible = true
+	routePanelItemList.deselect_all()
+	var locationToNodeName
+	var locationFromNodeName
 	
-	# Logic
-	var PlanetFrom = SelectFrom.get_item_text(SelectFrom.selected)
-	var PlanetTo = SelectTo.get_item_text(SelectTo.selected)
+	## Logic
+	for i in Autoscript.LocationArray:
+		
+		if selectFrom.get_selected_id() == Autoscript.LocationArray[i].locationId:
+			locationFromNodeName = Autoscript.LocationArray[i].locationNodeName
+		elif selectTo.get_selected_id() == Autoscript.LocationArray[i].locationId:
+			locationToNodeName = Autoscript.LocationArray[i].locationNodeName
+		
+	var locationFrom = locationFromNodeName
+	var locationTo = locationToNodeName
+	var route : Route = Route.new()
 	
-	print(PlanetFrom + '  ' + PlanetTo)
-	Autoscript.PlayerRoutes[PlanetFrom] = PlanetTo
-	print(Autoscript.PlayerRoutes)
+	route.locationFrom = locationFrom
+	route.locationTo = locationTo
+	route.vesselName = Autoscript.AvailableFleet.pop_front()
+	route.routeId = Autoscript.routeIDTracker
+	Autoscript.routeIDTracker += 1
+	
+	Autoscript.PlayerRoutes.append(route)
+	
+	routePanel.get_node('RoutePanel')._populate_list()
+	route._create_route()
+	
+	
