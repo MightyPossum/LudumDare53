@@ -1,13 +1,24 @@
+@tool
 extends Area3D
 
-@export var PlanetModel : PackedScene
+@export var planet_model : PackedScene
+@onready var planet_label = $PlanetLabel
+
+@onready var planet_label3 = $PlanetLabel2
+
+@onready var planet_label2 = $PlanetLabel3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node('MVPPlanet').queue_free()
-	if PlanetModel != null:
-		add_child(PlanetModel.instantiate())
-
+	if planet_model != null:
+		get_node('MVPPlanet').queue_free()
+		add_child(planet_model.instantiate())
+	else:
+		print('Fix Planet ' + str(self.name))
+	
+	planet_label.text = name#get_node('LocationName').get_child(0).name
+	planet_label2.text = name
+	planet_label3.text = name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
