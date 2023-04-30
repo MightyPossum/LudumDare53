@@ -1,46 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvo84ahbi5qh2"]
+[gd_scene load_steps=5 format=3 uid="uid://dvo84ahbi5qh2"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_qj5vb"]
-[ext_resource type="PackedScene" uid="uid://r7t3yyaj42va" path="res://Scenes/planet.tscn" id="2_dgd1k"]
-[ext_resource type="PackedScene" uid="uid://dudqaoe1t87fg" path="res://Assets/Ships/MVPAsteroid.blend" id="3_hq66w"]
 [ext_resource type="PackedScene" uid="uid://b37rkflg54uor" path="res://Scenes/RouteCreator.tscn" id="5_o2rfv"]
 [ext_resource type="PackedScene" uid="uid://brrfhflgd7hwx" path="res://Scenes/RoutePanel.tscn" id="6_rr046"]
 [ext_resource type="PackedScene" uid="uid://ulwy4tsglpjy" path="res://Scenes/menu_button.tscn" id="7_ahyl4"]
-
-[sub_resource type="Curve3D" id="Curve3D_o6r6p"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 56.5099, 89.521, -58.3141, 4.25979, 25.3865, -21.4035, -4.25979, -25.3865, 21.4035, 88.6675, 13.8698, 8.19158, 0, 0, 0, 0, 0, 0, 35.8574, -24.388, 47.0014),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_8y8bu"]
-_data = {
-"points": PackedVector3Array(27.7291, -0.0256958, 33.3579, -27.7291, 0.0256958, -33.3579, 284.46, 53.516, -98.3363, 56.6237, -0.0246582, 31.0587, -56.6237, 0.0246582, -31.0587, 218.477, 0.174561, -170.773, 0, 0, 0, 0, 0, 0, 145.034, 0.0959473, -126.506, 25.7996, 0.0290833, -37.1361, -25.7996, -0.0290833, 37.1361, 109.569, 0.0203247, -24.6092, -1.52588e-05, -10.8863, -0.453598, 1.52588e-05, 10.8863, 0.453598, -28.8296, 68.0907, -69.1586),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
-}
-point_count = 5
-
-[sub_resource type="Curve3D" id="Curve3D_chdti"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 480.992, 77.0598, -256.525, 0, 0, 0, 0, 0, 0, 437.223, 146.644, -264.585, 0, 0, 0, 0, 0, 0, 409.982, 159.639, -220.621, 0, 0, 0, 0, 0, 0, 399.655, 137.115, -159.596, 0, 0, 0, 0, 0, 0, 405.776, 105.028, -144.792, 0, 0, 0, 0, 0, 0, 283.574, 52.1527, -93.2652),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
-}
-point_count = 6
-
-[sub_resource type="Curve3D" id="Curve3D_mbppp"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 481.195, 73.135, -254.782, 0, 0, 0, 0, 0, 0, 303.728, 115.728, -210.284, 0, 0, 0, 0, 0, 0, 109.048, 150.783, -185.81, 0, 0, 0, 0, 0, 0, 30.0637, 158.873, -117.95, 0, 0, 0, 0, 0, 0, -144.592, 202.017, -139.087, 0, 0, 0, 0, 0, 0, -279.199, 241.567, -112.388, 0, 0, 0, 0, 0, 0, -399.345, 241.567, -89.0263, 0, 0, 0, 0, 0, 0, -529.503, 241.567, -72.3394, 0, 0, 0, 0, 0, 0, -618.499, 241.567, 22.2194),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 9
-
-[sub_resource type="Curve3D" id="Curve3D_n6r02"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -620.527, 235.321, 24.4445, 0, 0, 0, 0, 0, 0, -576.905, 204.714, 100.528, 0, 0, 0, 0, 0, 0, -496.023, 163.367, 140.976, 0, 0, 0, 0, 0, 0, -386.059, 122.02, 155.358, 0, 0, 0, 0, 0, 0, -249.74, 58.202, 144.572, 0, 0, 0, 0, 0, 0, -160.678, 15.0574, 95.135, 0, 0, 0, 0, 0, 0, -52.5315, 6.06894, 64.5743, 0, 0, 0, 0, 0, 0, 14.0678, 0, -4.24998),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 8
 
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_qj5vb")
@@ -56,60 +19,9 @@ omni_attenuation = 0.594605
 
 [node name="Pathways" type="Node3D" parent="."]
 
-[node name="a1-p2" type="Path3D" parent="Pathways"]
-transform = Transform3D(0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -74.1691, -19.192, 0)
-curve = SubResource("Curve3D_o6r6p")
-
-[node name="p1-a1" type="Path3D" parent="Pathways"]
-curve = SubResource("Curve3D_8y8bu")
-
-[node name="a2-p1" type="Path3D" parent="Pathways"]
-curve = SubResource("Curve3D_chdti")
-
-[node name="a2-p3" type="Path3D" parent="Pathways"]
-curve = SubResource("Curve3D_mbppp")
-
-[node name="p3-p2" type="Path3D" parent="Pathways"]
-curve = SubResource("Curve3D_n6r02")
-
 [node name="Routes" type="Node3D" parent="."]
 
 [node name="Planets" type="Node3D" parent="."]
-
-[node name="p1" parent="Planets" instance=ExtResource("2_dgd1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.7, 52.9316, -106.534)
-
-[node name="LocationName" type="Node3D" parent="Planets/p1"]
-
-[node name="Vynthor" type="Node3D" parent="Planets/p1/LocationName"]
-
-[node name="p2" parent="Planets" instance=ExtResource("2_dgd1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.0747, -19.1613, -0.180138)
-
-[node name="LocationName" type="Node3D" parent="Planets/p2"]
-
-[node name="Evarus" type="Node3D" parent="Planets/p2/LocationName"]
-
-[node name="p3" parent="Planets" instance=ExtResource("2_dgd1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -539.741, 237.355, 26.3059)
-
-[node name="LocationName" type="Node3D" parent="Planets/p3"]
-
-[node name="Xalara" type="Node3D" parent="Planets/p3/LocationName"]
-
-[node name="a1" parent="Planets" instance=ExtResource("3_hq66w")]
-transform = Transform3D(0.740019, 0, -0.672586, 0, 1, 0, 0.672586, 0, 0.740019, -43.4198, 72.6293, -55.3845)
-
-[node name="LocationName" type="Node3D" parent="Planets/a1"]
-
-[node name="E-21" type="Node3D" parent="Planets/a1/LocationName"]
-
-[node name="a2" parent="Planets" instance=ExtResource("3_hq66w")]
-transform = Transform3D(0.740019, 0, -0.672586, 0, 1, 0, 0.672586, 0, 0.740019, 431.977, 72.6293, -266.719)
-
-[node name="LocationName" type="Node3D" parent="Planets/a2"]
-
-[node name="X-579" type="Node3D" parent="Planets/a2/LocationName"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -149,5 +61,3 @@ layout_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 46.4932, 0, -568.184)
-
-[editable path="Planets/p1"]
