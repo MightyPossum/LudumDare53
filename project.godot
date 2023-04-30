@@ -19,6 +19,14 @@ config/icon="res://icon.svg"
 
 Autoscript="*res://Scripts/Autoscript.gd"
 
+[display]
+
+window/size/resizable=false
+
+[gui]
+
+theme/custom_font="res://Assets/Font/retro_computer_personal_use.ttf"
+
 [input]
 
 WheelUp={

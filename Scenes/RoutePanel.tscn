@@ -1,7 +1,77 @@
-[gd_scene load_steps=3 format=3 uid="uid://brrfhflgd7hwx"]
+[gd_scene load_steps=31 format=3 uid="uid://brrfhflgd7hwx"]
 
 [ext_resource type="Theme" uid="uid://gnqiyi4hgg6q" path="res://Assets/MainTheme.tres" id="1_etnum"]
 [ext_resource type="Script" path="res://Scripts/RoutePanel.gd" id="1_vila8"]
+[ext_resource type="Texture2D" uid="uid://qnaw1lsogluc" path="res://Assets/MenuArt/ClipboardMenu1.png" id="3_472ue"]
+[ext_resource type="Texture2D" uid="uid://oqscp0o2n22j" path="res://Assets/MenuArt/ClipButtonDisabled.png" id="4_r01p7"]
+[ext_resource type="Theme" uid="uid://mc1lnrlxflv1" path="res://Assets/MenuArt/ClipButtonTheme.tres" id="4_u52xv"]
+[ext_resource type="Texture2D" uid="uid://ddpwm4u2by8wr" path="res://Assets/MenuArt/ClipButtonHoverl.png" id="5_1b55v"]
+[ext_resource type="Texture2D" uid="uid://bhuw26hpuxcbr" path="res://Assets/MenuArt/ClipButtonNormal.png" id="6_5btji"]
+[ext_resource type="Texture2D" uid="uid://cih0pgclnp6f1" path="res://Assets/MenuArt/ClipButtonClicked.png" id="7_e7prb"]
+[ext_resource type="Texture2D" uid="uid://bjk5ue1j1m4jf" path="res://Assets/MenuArt/RouteSymbol.png" id="9_q5657"]
+[ext_resource type="Texture2D" uid="uid://345q30f6qn6n" path="res://Assets/MenuArt/ClipBackButton.png" id="9_rl4f3"]
+[ext_resource type="Texture2D" uid="uid://dwkwfyjqiq6tj" path="res://Assets/MenuArt/DeleteSymbol.png" id="10_uoj6v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pebyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q166y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tjip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gr2m8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_coakg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2i37j"]
+
+[sub_resource type="Theme" id="Theme_ujr5n"]
+ItemList/colors/font_selected_color = Color(0.827451, 0.0941176, 0.0980392, 1)
+ItemList/styles/cursor = SubResource("StyleBoxEmpty_pebyj")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxEmpty_q166y")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_0tjip")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_gr2m8")
+ItemList/styles/selected = SubResource("StyleBoxEmpty_coakg")
+ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_2i37j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ei2n"]
+texture = ExtResource("4_r01p7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msq6x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r28nj"]
+texture = ExtResource("5_1b55v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inmgf"]
+texture = ExtResource("6_5btji")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jh38"]
+texture = ExtResource("7_e7prb")
+
+[sub_resource type="Theme" id="Theme_f6g2i"]
+Button/styles/disabled = SubResource("StyleBoxTexture_0ei2n")
+Button/styles/focus = SubResource("StyleBoxEmpty_msq6x")
+Button/styles/hover = SubResource("StyleBoxTexture_r28nj")
+Button/styles/normal = SubResource("StyleBoxTexture_inmgf")
+Button/styles/pressed = SubResource("StyleBoxTexture_6jh38")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0d4wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgfqc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i38h0"]
+texture = ExtResource("9_rl4f3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7xtj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5yye"]
+texture = ExtResource("9_rl4f3")
+
+[sub_resource type="Theme" id="Theme_002md"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_0d4wr")
+Button/styles/focus = SubResource("StyleBoxEmpty_bgfqc")
+Button/styles/hover = SubResource("StyleBoxTexture_i38h0")
+Button/styles/normal = SubResource("StyleBoxEmpty_w7xtj")
+Button/styles/pressed = SubResource("StyleBoxTexture_a5yye")
 
 [node name="RoutePanel" type="Control"]
 layout_mode = 3
@@ -14,57 +84,85 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_vila8")
+metadata/_edit_horizontal_guides_ = []
 
 [node name="RoutePanelRoot" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Panel" type="Panel" parent="RoutePanelRoot"]
+[node name="Panel" type="TextureRect" parent="RoutePanelRoot"]
 layout_mode = 0
 offset_right = 409.0
 offset_bottom = 481.0
 theme = ExtResource("1_etnum")
+texture = ExtResource("3_472ue")
+stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="RoutePanelRoot"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 8.0
-offset_right = 367.0
-offset_bottom = 436.0
+offset_left = 55.0
+offset_top = 69.0
+offset_right = 374.0
+offset_bottom = 497.0
 
 [node name="ItemList" type="ItemList" parent="RoutePanelRoot/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_ujr5n")
 auto_height = true
 item_count = 1
 item_0/text = ""
 
 [node name="AddRoute" type="Button" parent="RoutePanelRoot"]
-layout_mode = 0
-offset_left = 272.0
-offset_top = 430.0
-offset_right = 361.0
-offset_bottom = 461.0
-text = "Add Route
-"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 344.0
+offset_top = 450.0
+offset_right = 433.0
+offset_bottom = 481.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.36, 1)
+theme = ExtResource("4_u52xv")
+icon_alignment = 1
 
 [node name="DeleteRoute" type="Button" parent="RoutePanelRoot"]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 430.0
-offset_right = 249.0
-offset_bottom = 461.0
+offset_left = 302.0
+offset_top = 450.0
+offset_right = 334.0
+offset_bottom = 482.0
+scale = Vector2(1, 0.96001)
+theme = SubResource("Theme_f6g2i")
 disabled = true
-text = "Delete Route
-"
 
 [node name="Close" type="Button" parent="RoutePanelRoot"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 430.0
-offset_right = 115.0
-offset_bottom = 461.0
-text = "Close
-"
+offset_left = 22.0
+offset_top = 420.0
+offset_right = 107.1
+offset_bottom = 507.2
+theme = SubResource("Theme_002md")
+
+[node name="RouteSymbol" type="TextureRect" parent="RoutePanelRoot"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 417.0
+offset_right = 378.0
+offset_bottom = 449.0
+texture = ExtResource("9_q5657")
+stretch_mode = 2
+
+[node name="DeleteSymbol" type="TextureRect" parent="RoutePanelRoot"]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 419.0
+offset_right = 331.0
+offset_bottom = 447.0
+texture = ExtResource("10_uoj6v")
 
 [connection signal="item_selected" from="RoutePanelRoot/VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="pressed" from="RoutePanelRoot/AddRoute" to="." method="_on_add_route_pressed"]

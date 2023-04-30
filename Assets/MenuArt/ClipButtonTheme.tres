@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://mc1lnrlxflv1"]
+
+[ext_resource type="Texture2D" uid="uid://oqscp0o2n22j" path="res://Assets/MenuArt/ClipButtonDisabled.png" id="1_v5d1v"]
+[ext_resource type="Texture2D" uid="uid://ddpwm4u2by8wr" path="res://Assets/MenuArt/ClipButtonHoverl.png" id="2_ky3ug"]
+[ext_resource type="Texture2D" uid="uid://bhuw26hpuxcbr" path="res://Assets/MenuArt/ClipButtonNormal.png" id="3_0tedk"]
+[ext_resource type="Texture2D" uid="uid://cih0pgclnp6f1" path="res://Assets/MenuArt/ClipButtonClicked.png" id="4_k6els"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ei2n"]
+texture = ExtResource("1_v5d1v")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msq6x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r28nj"]
+texture = ExtResource("2_ky3ug")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inmgf"]
+texture = ExtResource("3_0tedk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jh38"]
+texture = ExtResource("4_k6els")
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_0ei2n")
+Button/styles/focus = SubResource("StyleBoxEmpty_msq6x")
+Button/styles/hover = SubResource("StyleBoxTexture_r28nj")
+Button/styles/normal = SubResource("StyleBoxTexture_inmgf")
+Button/styles/pressed = SubResource("StyleBoxTexture_6jh38")

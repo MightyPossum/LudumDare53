@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b37rkflg54uor"]
+[gd_scene load_steps=4 format=3 uid="uid://b37rkflg54uor"]
 
 [ext_resource type="Script" path="res://Scripts/RouteCreator.gd" id="1_opjec"]
 [ext_resource type="Theme" uid="uid://gnqiyi4hgg6q" path="res://Assets/MainTheme.tres" id="1_v5lgh"]
+[ext_resource type="Texture2D" uid="uid://qnaw1lsogluc" path="res://Assets/MenuArt/ClipboardMenu1.png" id="3_8mray"]
 
 [node name="RoutePlanetPicker" type="Control"]
 layout_mode = 3
@@ -12,18 +13,19 @@ script = ExtResource("1_opjec")
 layout_mode = 1
 anchors_preset = 0
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="TextureRect" parent="Control"]
 layout_mode = 0
 offset_right = 358.0
 offset_bottom = 109.0
 theme = ExtResource("1_v5lgh")
+texture = ExtResource("3_8mray")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 18.0
-offset_right = 335.0
-offset_bottom = 84.0
+offset_left = -49.0
+offset_top = 94.0
+offset_right = 469.0
+offset_bottom = 158.0
 metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]

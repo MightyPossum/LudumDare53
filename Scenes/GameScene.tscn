@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dvo84ahbi5qh2"]
+[gd_scene load_steps=73 format=3 uid="uid://dvo84ahbi5qh2"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_qj5vb"]
 [ext_resource type="PackedScene" uid="uid://r7t3yyaj42va" path="res://Scenes/planet.tscn" id="2_dgd1k"]
@@ -761,10 +761,10 @@ asteroid_model = ExtResource("21_akps7")
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 402.0
-offset_top = 261.0
-offset_right = 442.0
-offset_bottom = 301.0
+offset_left = 370.0
+offset_top = 54.0
+offset_right = 410.0
+offset_bottom = 94.0
 metadata/_edit_group_ = true
 
 [node name="RoutePlanetPicker" parent="CanvasLayer/RoutePlanner" instance=ExtResource("5_o2rfv")]
@@ -773,10 +773,10 @@ metadata/_edit_group_ = true
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 379.0
-offset_top = 91.0
-offset_right = 419.0
-offset_bottom = 131.0
+offset_left = 370.0
+offset_top = 54.0
+offset_right = 410.0
+offset_bottom = 94.0
 metadata/_edit_group_ = true
 
 [node name="RoutePanel" parent="CanvasLayer/RoutePanel" instance=ExtResource("6_rr046")]
@@ -798,3 +798,12 @@ script = ExtResource("8_dmf3d")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
 
 [editable path="Planets/p1"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.7677, 0, -1609.65)
+amount = 5000
+lifetime = 500.0
+preprocess = 200.0
+speed_scale = 0.01
+process_material = SubResource("ParticleProcessMaterial_buq38")
+draw_pass_1 = SubResource("SphereMesh_wfsfn")
