@@ -27,6 +27,7 @@ func _on_add_route_pressed():
 	## Menu navigation
 	routePanel.visible = false
 	routePlanner.visible = true
+	get_tree().get_root().get_node('GameScene')._generateSelectLists()
 	
 func _on_close_pressed():
 	## Menu navigation
@@ -40,7 +41,7 @@ func _populate_list():
 		var route = i
 		var locationFromPretty = Autoscript.LocationPrettyName[route.locationFrom]
 		var locationToPretty = Autoscript.LocationPrettyName[route.locationTo]
-		var itemIndex = itemList.add_item(locationFromPretty + " - " + locationToPretty + " (" + route.vesselName + ")")
+		var itemIndex = itemList.add_item(locationFromPretty + " - " + locationToPretty + " (" + Autoscript.VesselList[route.vessel_id].vessel_name + ")")
 		
 		itemList.set_item_metadata(itemIndex, route.routeId)
 		
@@ -58,7 +59,7 @@ func _on_delete_route_pressed():
 	for i in Autoscript.PlayerRoutes:
 		if i.routeId == routeId:
 			Autoscript.PlayerRoutes.erase(i)
-			Autoscript.AvailableFleet.append(i.vesselName)
+			Autoscript.AvailableFleet[i.vessel_id] = i.locationTo
 	_populate_list()
 	
 func _toggle_add_route_option():

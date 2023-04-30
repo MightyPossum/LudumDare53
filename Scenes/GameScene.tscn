@@ -313,60 +313,6 @@ point_count = 10
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_qj5vb")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79832, 214.418, 1.04285)
-light_energy = 14.866
-light_indirect_energy = 7.857
-light_volumetric_fog_energy = 8.01
-light_size = 0.619
-omni_range = 4096.0
-omni_attenuation = 0.594605
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79832, -322.112, -1120.56)
-light_energy = 14.866
-light_indirect_energy = 7.857
-light_volumetric_fog_energy = 8.01
-light_size = 0.619
-omni_range = 4096.0
-omni_attenuation = 0.594605
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 763.55, 43.5826, 1.04285)
-light_energy = 14.866
-light_indirect_energy = 7.857
-light_volumetric_fog_energy = 8.01
-light_size = 0.619
-omni_range = 4096.0
-omni_attenuation = 0.594605
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -803.331, 43.5826, 1.04285)
-light_energy = 14.866
-light_indirect_energy = 7.857
-light_volumetric_fog_energy = 8.01
-light_size = 0.619
-omni_range = 4096.0
-omni_attenuation = 0.594605
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -803.331, -0.63443, 488.857)
-light_energy = 14.866
-light_indirect_energy = 7.857
-light_volumetric_fog_energy = 8.01
-light_size = 0.619
-omni_range = 4096.0
-omni_attenuation = 0.594605
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -803.331, -0.63443, -579.484)
-light_energy = 14.866
-light_indirect_energy = 7.857
-light_volumetric_fog_energy = 8.01
-light_size = 0.619
-omni_range = 4096.0
-omni_attenuation = 0.594605
-
 [node name="Pathways" type="Node3D" parent="."]
 
 [node name="p1-a7" type="Path3D" parent="Pathways"]
@@ -498,6 +444,9 @@ curve = SubResource("Curve3D_o8k5q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 planet_model = ExtResource("3_ha4m2")
 
+[node name="PlanetLabel" parent="Planets/p1" index="1"]
+text = "Serenity"
+
 [node name="LocationName" type="Node3D" parent="Planets/p1"]
 
 [node name="Serenity" type="Node3D" parent="Planets/p1/LocationName"]
@@ -508,7 +457,7 @@ planet_model = ExtResource("4_2k01j")
 
 [node name="LocationName" type="Node3D" parent="Planets/p2"]
 
-[node name="Raxacoricovarillipatorius" type="Node3D" parent="Planets/p2/LocationName"]
+[node name="Rexa Core" type="Node3D" parent="Planets/p2/LocationName"]
 
 [node name="p3" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.02, 293.555, 288.54)
@@ -843,5 +792,9 @@ offset_bottom = 40.0
 layout_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 1.115, 0, -209.86)
+transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 1.115, 0, -211.714)
 script = ExtResource("8_dmf3d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+
+[editable path="Planets/p1"]

@@ -21,7 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if (selectFrom.selected == 0 or selectTo.selected == 0) or (selectFrom.selected == selectTo.selected):
+	if (selectFrom.selected == 0 or selectTo.selected == 0) or (selectFrom.get_selected_id() == selectTo.get_selected_id()):
 		applyButton.disabled = true
 	else:
 		applyButton.disabled = false
@@ -56,13 +56,19 @@ func _on_apply_pressed():
 	
 	route.locationFrom = locationFrom
 	route.locationTo = locationTo
-	route.vesselName = Autoscript.AvailableFleet.pop_front()
-	route.routeId = Autoscript.routeIDTracker
-	Autoscript.routeIDTracker += 1
 	
-	Autoscript.PlayerRoutes.append(route)
+	for i in Autoscript.AvailableFleet:
+		if Autoscript.AvailableFleet[i] == route.locationFrom:
+			route.vessel_id = i
+			Autoscript.AvailableFleet.erase(i)
+			break
 	
-	routePanel.get_node('RoutePanel')._populate_list()
-	route._create_route()
+	if route.vessel_id != null:
+		Autoscript.AvailableFleet.erase(route.locationFrom)
+		route.routeId = Autoscript.routeIDTracker
+		Autoscript.routeIDTracker += 1
+		Autoscript.PlayerRoutes.append(route)
+		routePanel.get_node('RoutePanel')._populate_list()
+		route._create_route()
 	
 	

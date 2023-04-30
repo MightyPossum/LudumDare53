@@ -16,6 +16,7 @@ var Materials : int = 0
 var LocationNames : Dictionary
 var LocationPrettyName : Dictionary
 
-var AvailableFleet : Array 
+var AvailableFleet : Dictionary
+var VesselList : Dictionary
 
 var routeIDTracker : int = 1

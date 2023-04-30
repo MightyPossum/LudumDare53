@@ -1,6 +1,6 @@
-extends Object
+class_name Pathways extends Node3D
 
-class_name Pathways
+
 
 var locationZero
 var locationOne

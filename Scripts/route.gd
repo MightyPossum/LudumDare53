@@ -3,10 +3,11 @@ class_name Route extends Node3D
 var routeId
 var locationFrom
 var locationTo
-var vesselName
+var vessel_id
 var path : Array
-var ship = load("res://Scenes/Ship.tscn")
+var shipManager = load("res://Scenes/Ship.tscn")
 var cost = 0
+var repeating : bool = true
 
 func _create_route():
 	
@@ -14,9 +15,9 @@ func _create_route():
 	var queue = dijkstra_result['path']
 	print(dijkstra_result['cost'])
 	print(dijkstra_result['path'])
-	for i in dijkstra_result['path']:
-		cost += dijkstra_result['cost'][i]
 	
+	cost += dijkstra_result['cost'][locationTo]
+	print('THIS IS THE COST' + str(cost))
 	Autoscript.Cash -= cost
 	
 	var current
@@ -44,10 +45,10 @@ func _create_route():
 		current = next
 		path.append(pathway)
 	
-	ship = ship.instantiate()
+	shipManager = shipManager.instantiate()
 	
-	get_tree().get_root().get_node('GameScene').get_node('Pathways').get_node(path[0]).add_child(ship)
-	ship._initalize(locationFrom, locationTo, self, vesselName)
+	get_tree().get_root().get_node('GameScene').get_node('Pathways').get_node(path[0]).add_child(shipManager)
+	shipManager._initalize(locationFrom, locationTo, self, vessel_id)
 	
 	
 

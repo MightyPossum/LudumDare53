@@ -9,9 +9,15 @@ func _ready():
 	Autoscript.Materials = 0
 	Autoscript.PlayerRoutes.clear()
 	
+	var ship : Ship = Ship.new()
+	ship._init_ship('TNNS Lucy',1)
+	Autoscript.VesselList[ship.vessel_id] = ship
+	Autoscript.AvailableFleet[ship.vessel_id] = 'p1'
 	
-	Autoscript.AvailableFleet.append('Vessel1')
-	Autoscript.AvailableFleet.append('Vessel2')
+	ship = Ship.new()
+	ship._init_ship('TNNS Diana',2)
+	Autoscript.VesselList[ship.vessel_id] = ship
+	Autoscript.AvailableFleet[ship.vessel_id] = 'p1'
 	
 	_generateLocations()
 	_generatePathways()
@@ -32,9 +38,22 @@ func _generateSelectLists():
 	lovFrom = get_node("CanvasLayer/RoutePlanner/RoutePlanetPicker/Control/HBoxContainer/VBoxContainer/SelectFrom")
 	lovTo = get_node("CanvasLayer/RoutePlanner/RoutePlanetPicker/Control/HBoxContainer/VBoxContainer2/SelectTo")
 	
+	lovFrom.clear()
+	lovTo.clear()
+	
+	lovFrom.add_separator('Select a Location')
+	lovTo.add_separator('Select a Location')
+		
+	print(Autoscript.LocationNames)
 	for i in Autoscript.LocationNames:
-		lovFrom.add_item(Autoscript.LocationNames[i], i)
-		lovTo.add_item(Autoscript.LocationNames[i], i)
+		var vessel_present = false
+		for j in Autoscript.AvailableFleet:
+			if Autoscript.AvailableFleet[j] == Autoscript.LocationNames[i][1]:
+				vessel_present = true
+				
+		if vessel_present:
+			lovFrom.add_item(Autoscript.LocationNames[i][0], i)
+		lovTo.add_item(Autoscript.LocationNames[i][0], i)
 		
 	lovFrom.selected = 0
 	lovTo.selected = 0
@@ -51,7 +70,7 @@ func _generateLocations():
 		location.locationNodeName = i.name
 		location.locationName = i.get_node('LocationName').get_child(0).name
 		location.locationId = (Autoscript.LocationArray.size() + 5)*2
-		Autoscript.LocationNames[location.locationId] = location.locationName
+		Autoscript.LocationNames[location.locationId] = [location.locationName,location.locationNodeName]
 		Autoscript.LocationPrettyName[location.locationNodeName] = location.locationName
 		Autoscript.LocationArray[location.locationNodeName] = location
 	

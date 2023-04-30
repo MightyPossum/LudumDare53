@@ -4,35 +4,25 @@
 [ext_resource type="Script" path="res://Scripts/CollisionShape3D.gd" id="3_2xy4w"]
 [ext_resource type="PackedScene" uid="uid://dudqaoe1t87fg" path="res://Assets/Ships/MVPAsteroid.blend" id="3_pyyx2"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bujke"]
-radius = 0.6
-height = 3.0
+[sub_resource type="SphereShape3D" id="SphereShape3D_c3tou"]
 
 [node name="Asteroid" type="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56327, 0.277159, -0.180138)
 script = ExtResource("1_l3b6f")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(50.6899, -0.905153, -3.95655e-08, 0, -2.21608e-06, 50.698, -0.905153, -50.6899, -2.21573e-06, 0, 0.744911, 1.09373)
+shape = SubResource("SphereShape3D_c3tou")
+script = ExtResource("3_2xy4w")
+
 [node name="MVPAsteroid" parent="." instance=ExtResource("3_pyyx2")]
 transform = Transform3D(0.989731, 0, -0.14294, 0, 1, 0, 0.14294, 0, 0.989731, 0, -14.1654, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(19.7758, -0.353129, 0.000443762, 0, 0.0248554, 19.779, -0.35313, -19.7758, 0.0248514, 0, 0.744911, 1.09373)
-shape = SubResource("CapsuleShape3D_bujke")
-script = ExtResource("3_2xy4w")
-
 [node name="AsteroidLabel" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -31.3544, 31.8149)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -4.74167, -21.7962)
 pixel_size = 1.0
 text = "645654654"
-
-[node name="AsteroidLabel2" type="Label3D" parent="."]
-transform = Transform3D(0.999994, -0.00354304, 8.74274e-08, -4.99269e-05, -0.0140668, 0.999901, -0.00354269, -0.999895, -0.0140669, 0, -24.5682, -40.7041)
-pixel_size = 1.0
-text = "645654654"
-
-[node name="AsteroidLabel3" type="Label3D" parent="."]
-transform = Transform3D(-1.76867e-05, 0, 1, 0, 1, 0, -1, 0, -1.76867e-05, 0, 31.4288, 0)
-pixel_size = 1.0
-text = "645654654"
+font_size = 20
+outline_size = 20
 
 [connection signal="input_event" from="." to="CollisionShape3D" method="_on_input_event"]

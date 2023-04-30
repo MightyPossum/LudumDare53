@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://buyp327e0yrg2"]
+[gd_scene load_steps=3 format=3 uid="uid://0mrtekm3sxm3"]
 
+[ext_resource type="Script" path="res://Scripts/ShipManager.gd" id="1_6u3bc"]
 [ext_resource type="PackedScene" uid="uid://bsajbr2o2srry" path="res://Assets/Ships/MVPShip.blend" id="1_iye0t"]
-[ext_resource type="Script" path="res://Scripts/Ship.gd" id="1_whpiq"]
 
 [node name="Ship" type="PathFollow3D"]
 transform = Transform3D(0.284517, 0.958671, 0, -0.958671, 0.284517, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("1_whpiq")
+script = ExtResource("1_6u3bc")
 
 [node name="MVPShip" parent="." instance=ExtResource("1_iye0t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.368708, 0.560435, 0.269594)
