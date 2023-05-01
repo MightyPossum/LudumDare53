@@ -1,7 +1,5 @@
 class_name Location_Object extends Object
 
-
-
 var locationNodeName
 var locationName
 var locationId
@@ -24,7 +22,12 @@ func _initialize(location_node_name, location_name, location_id, supply_and_dema
 
 func _tick_demand():
 	if not supplyAndDemand >= Autoscript.supplyAndDemandLimit and locationHasStation:
-		
+		var supplyTick
+		if locationNodeName.split('',false,2)[0] == 'p':
+			supplyTick = Autoscript.globalSupplyTick + 2
+		else:
+			supplyTick = Autoscript.globalSupplyTick
+			
 		supplyAndDemand += Autoscript.globalSupplyTick * supplyAndDemandRate
 		
 		if supplyAndDemand > Autoscript.supplyAndDemandLimit:

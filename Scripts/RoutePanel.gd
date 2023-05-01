@@ -24,7 +24,7 @@ func _process(delta):
 		get_parent().visible = false
 
 
-func _on_add_route_pressed():
+func _on_add_route_pressed(): 
 	## Menu navigation
 	routePanel.visible = false
 	routePlanner.visible = true

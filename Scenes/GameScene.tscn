@@ -942,7 +942,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_ihbv6")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a12-a23"]
-transform = Transform3D(-0.022989, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.9996, -0.0178016, -0.0145457, -602.666, 845.697, -203.527)
+transform = Transform3D(-0.0229891, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.9996, -0.0178016, -0.0145457, -602.666, 845.697, -203.527)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a12-a23/JumplaneParticles"]
@@ -1722,7 +1722,6 @@ metadata/_edit_group_ = true
 [node name="RoutePlanetPicker" parent="CanvasLayer/RoutePlanner" instance=ExtResource("5_o2rfv")]
 
 [node name="RoutePanel" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 370.0
