@@ -1,6 +1,6 @@
-extends Object
+class_name Location_Object extends Object
 
-class_name Location 
+
 
 var locationNodeName
 var locationName

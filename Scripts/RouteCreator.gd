@@ -13,7 +13,7 @@ var routePanelItemList
 func _ready():
 	selectFrom = get_node("Control/HBoxContainer/VBoxContainer/SelectFrom")
 	selectTo = get_node("Control/HBoxContainer/VBoxContainer2/SelectTo")
-	applyButton = get_node("Control/HBoxContainer/VBoxContainer2/Apply")
+	applyButton = get_node("Control/Apply")
 	routePlanner = get_parent().get_parent().get_node('RoutePlanner')
 	routePanel = get_parent().get_parent().get_node('RoutePanel')
 	routePanelItemList = routePanel.get_node("RoutePanel").get_node("RoutePanelRoot").get_node('VBoxContainer').get_node('ItemList')
@@ -49,13 +49,16 @@ func _on_apply_pressed():
 		elif selectTo.get_selected_id() == Autoscript.LocationArray[i].locationId:
 			locationToNodeName = Autoscript.LocationArray[i].locationNodeName
 		
-	var locationFrom = locationFromNodeName
-	var locationTo = locationToNodeName
+	_create_route(locationFromNodeName, locationToNodeName)
+	
+
+
+func _create_route(location_from, location_to):
 	var route : Route = Route.new()
 	get_tree().get_root().get_node('GameScene').get_node('Routes').add_child(route)
 	
-	route.locationFrom = locationFrom
-	route.locationTo = locationTo
+	route.locationFrom = location_from
+	route.locationTo = location_to
 	
 	for i in Autoscript.AvailableFleet:
 		if Autoscript.AvailableFleet[i] == route.locationFrom:
@@ -71,4 +74,46 @@ func _on_apply_pressed():
 		routePanel.get_node('RoutePanel')._populate_list()
 		route._create_route()
 	
+
+
+func _on_select_item_selected(index):
+	_update_route_information()
 	
+func _update_route_information():
+	var vessel
+	var location_from
+	var location_to
+	
+	var location_from_name
+	var location_to_name
+	
+	print(Autoscript.LocationArray)
+	for i in Autoscript.LocationArray:
+		if selectFrom.get_selected_id() == Autoscript.LocationArray[i].locationId:
+			location_from = Autoscript.LocationArray[i]
+		elif selectTo.get_selected_id() == Autoscript.LocationArray[i].locationId:
+			location_to = Autoscript.LocationArray[i]
+	
+	for i in Autoscript.AvailableFleet:
+		if Autoscript.AvailableFleet[i] == location_from.locationNodeName:
+			vessel = Autoscript.VesselList[i]
+	
+	if location_from == null:
+		location_from_name = 'NA'
+	else:
+		location_from_name = location_from.locationName
+	
+	if location_to == null:
+		location_to_name = 'NA'
+	else:
+		location_to_name = location_to.locationName
+	
+	get_node('Control/RouteText').clear()
+	get_node('Control/RouteText').add_text('Route From: %d \n Route To: %d \n Assigned Vessel: %d' % [location_from_name, location_to_name, vessel.vessel_name])
+
+
+
+
+
+
+

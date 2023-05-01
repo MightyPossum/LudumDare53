@@ -13,11 +13,8 @@ func _create_route():
 	
 	var dijkstra_result = dijkstra(locationFrom, locationTo)
 	var queue = dijkstra_result['path']
-	print(dijkstra_result['cost'])
-	print(dijkstra_result['path'])
 	
 	cost += dijkstra_result['cost'][locationTo]
-	print('THIS IS THE COST' + str(cost))
 	Autoscript.Cash -= cost
 	
 	var current

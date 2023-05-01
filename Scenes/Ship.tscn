@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://0mrtekm3sxm3"]
+[gd_scene load_steps=6 format=3 uid="uid://0mrtekm3sxm3"]
 
 [ext_resource type="Script" path="res://Scripts/ShipManager.gd" id="1_6u3bc"]
-[ext_resource type="PackedScene" uid="uid://bsajbr2o2srry" path="res://Assets/Ships/MVPShip.blend" id="1_iye0t"]
 [ext_resource type="PackedScene" uid="uid://di1lalsuoau7g" path="res://Assets/Ships/Cargo/Ship_Lv1.blend" id="3_hf5q2"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d38q5"]
@@ -20,21 +19,22 @@ blend_mode = 1
 material = SubResource("StandardMaterial3D_eckax")
 
 [node name="Ship" type="PathFollow3D"]
-transform = Transform3D(0.284517, 0.958671, 0, -0.958671, 0.284517, 0, 0, 0, 1, 0, 0, 0)
+rotation_mode = 4
+loop = false
+tilt_enabled = false
 script = ExtResource("1_6u3bc")
 
-[node name="MVPShip" parent="." instance=ExtResource("1_iye0t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.368708, 0.560435, 0.269594)
-visible = false
-
 [node name="Ship_Lv1" parent="." instance=ExtResource("3_hf5q2")]
-transform = Transform3D(0.905654, -0.31349, -0.285511, -0.251111, 0.146036, -0.956879, 0.341666, 0.938296, 0.0535376, 0, 0, 0)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Ship_Lv1/Cylinder001" index="0"]
-transform = Transform3D(0.999984, 0.00601894, -0.000525819, -0.00601807, 0.99998, 0.00219227, 0.000538969, -0.00218914, 0.999997, -0.133573, -8.30478, 0.00752077)
+transform = Transform3D(0.999984, 0.00601894, -0.000525819, -0.00601807, 0.99998, 0.00219227, 0.000538964, -0.00218915, 0.999997, -0.133573, -8.30478, 0.00752082)
 amount = 200
 visibility_aabb = AABB(-4, -4, -2.09042, 8, 8, 4.18084)
 process_material = SubResource("ParticleProcessMaterial_d38q5")
 draw_pass_1 = SubResource("SphereMesh_q5rhh")
+
+[node name="Node3D" type="Node3D" parent="Ship_Lv1"]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -3.72529e-09, -3.72529e-09, 1, 0, 0, 0)
 
 [editable path="Ship_Lv1"]

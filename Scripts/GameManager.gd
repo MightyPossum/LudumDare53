@@ -2,6 +2,7 @@ extends Node
 
 var lovFrom
 var lovTo
+@onready var route_planner = get_node("CanvasLayer/RoutePlanner/RoutePlanetPicker")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,9 +22,11 @@ func _ready():
 	
 	_generateLocations()
 	_generatePathways()
-	
+	print(Autoscript.LocationArray)
 	_generateLocationArray()
 	_generateSelectLists()
+	
+	route_planner._create_route('p1', 'a7')
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -43,8 +46,7 @@ func _generateSelectLists():
 	
 	lovFrom.add_separator('Select a Location')
 	lovTo.add_separator('Select a Location')
-		
-	print(Autoscript.LocationNames)
+	
 	for i in Autoscript.LocationNames:
 		var vessel_present = false
 		for j in Autoscript.AvailableFleet:
@@ -65,7 +67,7 @@ func _generateLocationArray():
 	
 func _generateLocations():
 	for i in get_node('Planets').get_children():
-		var  location : Location = Location.new()
+		var  location : Location_Object = Location_Object.new()
 		
 		location.locationNodeName = i.name
 		location.locationName = i.get_node('LocationName').get_child(0).name
@@ -84,13 +86,15 @@ func _generatePathways():
 		pathway.locationOne = i.name.split('-', false, 2)[1]
 		pathway.pathwayId = Autoscript.PathwayArray.size()
 		
-		var locationZero : Location = Autoscript.LocationArray[pathway.locationZero]
-		var locationOne : Location = Autoscript.LocationArray[pathway.locationOne]
+		var locationZero : Location_Object = Autoscript.LocationArray[pathway.locationZero]
+		var locationOne : Location_Object = Autoscript.LocationArray[pathway.locationOne]
 		
 		locationZero.locationNeighbours[locationOne.locationNodeName] = 150
 		locationOne.locationNeighbours[locationZero.locationNodeName] = 150
 		
 		Autoscript.PathwayArray.append(pathway)
 
+func _update_route_text():
+	pass
 	
 	

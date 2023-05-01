@@ -58,8 +58,10 @@ func _on_delete_route_pressed():
 	var routeId = itemList.get_item_metadata(selectedItemIndex)
 	for i in Autoscript.PlayerRoutes:
 		if i.routeId == routeId:
-			Autoscript.PlayerRoutes.erase(i)
-			Autoscript.AvailableFleet[i.vessel_id] = i.locationTo
+			i.repeating = false
+			## Add vessel to planet and remove route
+			#Autoscript.PlayerRoutes.erase(i)
+			#Autoscript.AvailableFleet[i.vessel_id] = i.locationTo
 	_populate_list()
 	
 func _toggle_add_route_option():

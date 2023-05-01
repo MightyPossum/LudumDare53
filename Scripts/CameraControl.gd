@@ -1,7 +1,7 @@
 extends Camera3D
 
-@export var speed = 500
-@export var zoom_speed = 20000
+@export var speed = 250
+@export var zoom_speed = 2000
 @export var zoom_margin = 0.1
 @export var zoom_min = 0.5
 @export var zoom_max = 3.0
