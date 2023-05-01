@@ -1,11 +1,154 @@
-[gd_scene load_steps=6 format=3 uid="uid://b37rkflg54uor"]
+[gd_scene load_steps=51 format=3 uid="uid://b37rkflg54uor"]
 
 [ext_resource type="Script" path="res://Scripts/RouteCreator.gd" id="1_opjec"]
 [ext_resource type="Theme" uid="uid://gnqiyi4hgg6q" path="res://Assets/MainTheme.tres" id="1_v5lgh"]
 [ext_resource type="Texture2D" uid="uid://qnaw1lsogluc" path="res://Assets/MenuArt/ClipboardMenu1.png" id="3_8mray"]
+[ext_resource type="Texture2D" uid="uid://oqscp0o2n22j" path="res://Assets/MenuArt/ClipButtonDisabled.png" id="4_e85rr"]
+[ext_resource type="Texture2D" uid="uid://bt45iax5tcom7" path="res://Assets/MenuArt/ClipSelectMenu.png" id="4_hsq20"]
+[ext_resource type="Texture2D" uid="uid://345q30f6qn6n" path="res://Assets/MenuArt/ClipBackButton.png" id="4_ouqhg"]
 [ext_resource type="Theme" uid="uid://mc1lnrlxflv1" path="res://Assets/MenuArt/ClipButtonTheme.tres" id="4_q7pil"]
+[ext_resource type="Texture2D" uid="uid://cih0pgclnp6f1" path="res://Assets/MenuArt/ClipButtonClicked.png" id="4_s57l2"]
+[ext_resource type="Texture2D" uid="uid://bhuw26hpuxcbr" path="res://Assets/MenuArt/ClipButtonNormal.png" id="5_gunp3"]
+[ext_resource type="Texture2D" uid="uid://ddpwm4u2by8wr" path="res://Assets/MenuArt/ClipButtonHoverl.png" id="6_qyutk"]
+[ext_resource type="Texture2D" uid="uid://djg3hxgvlm0q0" path="res://Assets/MenuArt/ClipOneWay.png" id="8_d4k1e"]
+[ext_resource type="Texture2D" uid="uid://dt8vej4t7mjk5" path="res://Assets/MenuArt/ClipTwoWay.png" id="9_g84q7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqu1c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yx3gv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmq7n"]
+texture = ExtResource("4_ouqhg")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ndtxn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o1omr"]
+texture = ExtResource("4_ouqhg")
+
+[sub_resource type="Theme" id="Theme_7mr6u"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_oqu1c")
+Button/styles/focus = SubResource("StyleBoxEmpty_yx3gv")
+Button/styles/hover = SubResource("StyleBoxTexture_pmq7n")
+Button/styles/normal = SubResource("StyleBoxEmpty_ndtxn")
+Button/styles/pressed = SubResource("StyleBoxTexture_o1omr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chlgg"]
+texture = ExtResource("4_e85rr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qmo2t"]
+texture = ExtResource("5_gunp3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tboy2"]
+texture = ExtResource("6_qyutk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6te2v"]
+texture = ExtResource("5_gunp3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnunn"]
+texture = ExtResource("4_s57l2")
+
+[sub_resource type="Theme" id="Theme_e0xsh"]
+Button/styles/disabled = SubResource("StyleBoxTexture_chlgg")
+Button/styles/focus = SubResource("StyleBoxTexture_qmo2t")
+Button/styles/hover = SubResource("StyleBoxTexture_tboy2")
+Button/styles/normal = SubResource("StyleBoxTexture_6te2v")
+Button/styles/pressed = SubResource("StyleBoxTexture_nnunn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5yqi"]
+texture = ExtResource("4_e85rr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgxxr"]
+texture = ExtResource("5_gunp3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vof3k"]
+texture = ExtResource("6_qyutk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uq811"]
+texture = ExtResource("5_gunp3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfh4s"]
+texture = ExtResource("4_s57l2")
+
+[sub_resource type="Theme" id="Theme_ec3gm"]
+Button/styles/disabled = SubResource("StyleBoxTexture_v5yqi")
+Button/styles/focus = SubResource("StyleBoxTexture_rgxxr")
+Button/styles/hover = SubResource("StyleBoxTexture_vof3k")
+Button/styles/normal = SubResource("StyleBoxTexture_uq811")
+Button/styles/pressed = SubResource("StyleBoxTexture_cfh4s")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ig1rl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iq22u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0062"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fix1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bewyy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y611f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjj5m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtchj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kkyw1"]
 
 [sub_resource type="Theme" id="Theme_41n0r"]
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_color = Color(0.94902, 0, 0, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(1, 0, 0, 1)
+OptionButton/icons/arrow = ExtResource("4_hsq20")
+OptionButton/styles/disabled = SubResource("StyleBoxEmpty_ig1rl")
+OptionButton/styles/disabled_mirrored = SubResource("StyleBoxEmpty_iq22u")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_q0062")
+OptionButton/styles/hover = SubResource("StyleBoxEmpty_fix1j")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxEmpty_bewyy")
+OptionButton/styles/normal = SubResource("StyleBoxEmpty_y611f")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxEmpty_xjj5m")
+OptionButton/styles/pressed = SubResource("StyleBoxEmpty_gtchj")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxEmpty_kkyw1")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7hov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlip5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qdvsj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ul42"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8m53y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sofma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ng2wi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gfos"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ixpb"]
+
+[sub_resource type="Theme" id="Theme_50b4t"]
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_color = Color(0.94902, 0, 0, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(1, 0, 0, 1)
+OptionButton/icons/arrow = ExtResource("4_hsq20")
+OptionButton/styles/disabled = SubResource("StyleBoxEmpty_q7hov")
+OptionButton/styles/disabled_mirrored = SubResource("StyleBoxEmpty_mlip5")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_qdvsj")
+OptionButton/styles/hover = SubResource("StyleBoxEmpty_2ul42")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxEmpty_8m53y")
+OptionButton/styles/normal = SubResource("StyleBoxEmpty_sofma")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxEmpty_ng2wi")
+OptionButton/styles/pressed = SubResource("StyleBoxEmpty_1gfos")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxEmpty_2ixpb")
 
 [node name="RoutePlanetPicker" type="Control"]
 layout_mode = 3
@@ -26,36 +169,51 @@ texture = ExtResource("3_8mray")
 [node name="Cancel" type="Button" parent="Control"]
 layout_mode = 2
 offset_left = 19.0
-offset_top = 446.0
-offset_right = 109.0
-offset_bottom = 495.0
+offset_top = 399.0
+offset_right = 148.0
+offset_bottom = 510.0
 tooltip_text = "Back"
-text = "Cancel"
+theme = SubResource("Theme_7mr6u")
 
 [node name="Apply" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 183.0
-offset_top = 406.0
-offset_right = 246.0
-offset_bottom = 436.0
+offset_left = 354.0
+offset_top = 447.0
+offset_right = 386.0
+offset_bottom = 475.0
 tooltip_text = "Set ship on a one way trip"
-text = "Send Vessel Once
-"
+theme = SubResource("Theme_e0xsh")
+
+[node name="OneWay" type="TextureRect" parent="Control/Apply"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -34.0
+offset_right = 35.0
+offset_bottom = 6.0
+texture = ExtResource("8_d4k1e")
 
 [node name="Route" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 182.0
-offset_top = 445.0
-offset_right = 258.0
+offset_left = 305.0
+offset_top = 447.0
+offset_right = 337.0
 offset_bottom = 475.0
 tooltip_text = "Create a 2-Way Trade Route"
-text = "Create Route"
+theme = SubResource("Theme_ec3gm")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Route"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -33.0
+offset_right = 36.0
+offset_bottom = 7.0
+texture = ExtResource("9_g84q7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = 53.0
+offset_left = 72.0
 offset_top = 107.0
-offset_right = 374.0
+offset_right = 393.0
 offset_bottom = 143.0
 metadata/_edit_group_ = true
 
@@ -79,6 +237,7 @@ layout_mode = 2
 [node name="SelectTo" type="OptionButton" parent="Control/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 tooltip_text = "Set Destination"
+theme = SubResource("Theme_50b4t")
 item_count = 1
 selected = 0
 popup/item_0/text = "Location"
