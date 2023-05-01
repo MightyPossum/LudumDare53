@@ -23,5 +23,33 @@ func _initialize(location_node_name, location_name, location_id, supply_and_dema
 		Autoscript.update_location_station(self)
 
 func _tick_demand():
-	if not supplyAndDemand >= Autoscript.supplyAdnDemandLimit and locationHasStation:
+	if not supplyAndDemand >= Autoscript.supplyAndDemandLimit and locationHasStation:
 		supplyAndDemand += Autoscript.globalSupplyTick * supplyAndDemandRate
+
+func _sell_materials(amount):
+	var left_over = 0
+	if supplyAndDemand >= amount:
+		Autoscript.Cash += Autoscript._convert_materials_to_cash(amount, supplyAndDemand)
+	else:
+		left_over = amount - supplyAndDemand
+		Autoscript.Cash += Autoscript._convert_materials_to_cash(amount-left_over, supplyAndDemand)
+		
+	supplyAndDemand -= (amount-left_over)
+	if supplyAndDemand < 0:
+		supplyAndDemand = 0
+	return left_over
+
+func _buy_materials(amount):
+	var amount_purchased = 0
+	if supplyAndDemand >= amount:
+		Autoscript.Cash -= Autoscript._convert_cash_to_materials(amount, supplyAndDemand)
+		amount_purchased = amount
+	else:
+		amount_purchased = supplyAndDemand
+		Autoscript.Cash += Autoscript._convert_materials_to_cash(amount_purchased, supplyAndDemand)
+
+	supplyAndDemand -= (amount_purchased)
+	if supplyAndDemand < 0:
+		supplyAndDemand = 0
+		
+	return amount_purchased

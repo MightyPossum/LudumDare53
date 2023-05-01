@@ -16,13 +16,16 @@ var VesselList : Dictionary
 var ShipCost : int = 500
 var StationCost : int = 5000
 var globalSupplyTick : int = 50
+var MaterialSellConversionRate = 2
+var MaterialBuyConversionRate = 1.25
+var DemandConversionRate = 600
 
 var win : bool = false
 var lose : bool = false
 
 var Cash : int = 0
 var Materials : int = 0
-var supplyAdnDemandLimit = 1000
+var supplyAndDemandLimit = 1000
 
 
 var routeIDTracker : int = 1
@@ -43,6 +46,12 @@ func update_location_station(location):
 	location.locationHasStation = true
 	if not (location.locationNodeName == 'a7' or location.locationNodeName == 'p1'):
 		Cash -= StationCost
+
+func _convert_materials_to_cash(amount, demand):
+	return amount * MaterialSellConversionRate * (demand/DemandConversionRate)
+	
+func _convert_cash_to_materials(amount, demand):
+	return amount * MaterialBuyConversionRate * (demand/DemandConversionRate)
 	
 # define a function that implements Dijkstra's algorithm
 func dijkstra(start, end):
