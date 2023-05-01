@@ -21,6 +21,7 @@ script = ExtResource("2_bfdyh")
 [node name="PlanetLabel" type="Label3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -20.8633, -57.1779)
 pixel_size = 1.0
+billboard = 1
 text = "645654654"
 font_size = 20
 outline_size = 20

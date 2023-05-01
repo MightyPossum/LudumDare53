@@ -96,7 +96,7 @@ fit_content = true
 
 [connection signal="pressed" from="Control/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="Control/Apply" to="." method="_on_apply_pressed"]
-[connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer/SelectFrom" to="." method="_on_select_item_selected"]
 [connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer/SelectFrom" to="." method="_on_select_from_item_selected"]
+[connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer/SelectFrom" to="." method="_on_select_item_selected"]
 [connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer2/SelectTo" to="." method="_on_select_to_item_selected"]
 [connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer2/SelectTo" to="." method="_on_select_item_selected"]
