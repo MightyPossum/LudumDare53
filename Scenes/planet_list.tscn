@@ -98,10 +98,10 @@ theme = SubResource("Theme_t1tsy")
 
 [node name="AddVessel" type="Button" parent="."]
 layout_mode = 0
-offset_left = 302.0
-offset_top = 450.0
-offset_right = 334.0
-offset_bottom = 482.0
+offset_left = 349.0
+offset_top = 448.0
+offset_right = 381.0
+offset_bottom = 480.0
 scale = Vector2(1, 0.96001)
 theme = SubResource("Theme_sh2gv")
 disabled = true

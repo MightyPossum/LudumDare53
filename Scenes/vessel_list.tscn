@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b57qop7uj5utp"]
+[gd_scene load_steps=29 format=3 uid="uid://b57qop7uj5utp"]
 
 [ext_resource type="Script" path="res://Scripts/vessel_list.gd" id="1_1gco3"]
 [ext_resource type="Theme" uid="uid://gnqiyi4hgg6q" path="res://Assets/MainTheme.tres" id="1_3v7qm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhuw26hpuxcbr" path="res://Assets/MenuArt/ClipButtonNormal.png" id="5_xl76y"]
 [ext_resource type="Texture2D" uid="uid://cih0pgclnp6f1" path="res://Assets/MenuArt/ClipButtonClicked.png" id="6_or0g4"]
 [ext_resource type="Texture2D" uid="uid://345q30f6qn6n" path="res://Assets/MenuArt/ClipBackButton.png" id="7_m7kff"]
+[ext_resource type="Texture2D" uid="uid://344ldsayuuqb" path="res://Assets/MenuArt/Coin.png" id="9_5qup2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pebyj"]
 
@@ -107,9 +108,9 @@ item_3/text = "TNNS Ranzor - Serenity <- DR-14"
 
 [node name="AddVessel" type="Button" parent="."]
 layout_mode = 0
-offset_left = 302.0
+offset_left = 347.0
 offset_top = 450.0
-offset_right = 334.0
+offset_right = 379.0
 offset_bottom = 482.0
 scale = Vector2(1, 0.96001)
 theme = SubResource("Theme_sh2gv")
@@ -132,6 +133,29 @@ offset_top = 420.0
 offset_right = 107.1
 offset_bottom = 507.2
 theme = SubResource("Theme_12k4q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 81.0
+offset_top = 453.0
+offset_right = 245.0
+offset_bottom = 478.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "New Ship Cost:"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 249.0
+offset_top = 449.0
+offset_right = 281.0
+offset_bottom = 481.0
+texture = ExtResource("9_5qup2")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 282.0
+offset_top = 452.0
+offset_right = 337.0
+offset_bottom = 477.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2000"
 
 [connection signal="pressed" from="AddVessel" to="." method="_on_add_vessel_pressed"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
