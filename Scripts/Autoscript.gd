@@ -13,7 +13,7 @@ var LocationPrettyName : Dictionary
 var AvailableFleet : Dictionary
 var VesselList : Dictionary
 
-var ShipCost : int = 500
+var ShipCost : int = 2000
 var StationCost : int = 5000
 var globalSupplyTick : int = 9
 var MaterialSellConversionRate = 2
