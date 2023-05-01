@@ -92,15 +92,19 @@ func _update_route_information():
 	var cost : int = 0
 	var repeating_cost : int = 0
 	
+	var vessel_name = ' '
+	
 	for i in Autoscript.LocationArray:
 		if selectFrom.get_selected_id() == Autoscript.LocationArray[i].locationId:
 			location_from = Autoscript.LocationArray[i]
 		elif selectTo.get_selected_id() == Autoscript.LocationArray[i].locationId:
 			location_to = Autoscript.LocationArray[i]
 	
-	for i in Autoscript.AvailableFleet:
-		if Autoscript.AvailableFleet[i] == location_from.locationNodeName:
-			vessel = Autoscript.VesselList[i]
+	if location_from:
+		for i in Autoscript.AvailableFleet:
+			if Autoscript.AvailableFleet[i] == location_from.locationNodeName:
+				vessel = Autoscript.VesselList[i]
+				vessel_name = vessel.vessel_name
 	
 	if location_from == null:
 		location_from_name = 'NA'
@@ -119,7 +123,7 @@ func _update_route_information():
 		repeating_cost = repeating_cost * vessel.travel_cost * 10
 	
 	get_node('Control/RouteText').clear()
-	get_node('Control/RouteText').append_text('[b]Route From[/b]\n' + location_from_name + '\n[b]Route To[/b]\n' + location_to_name + '\n[b]Assigned Vessel[/b]\n' + vessel.vessel_name + '\n[b]inital Cost[/b]\n' + str(cost) + '\n[b]Repeating Cost[/b]\n' + str(repeating_cost))
+	get_node('Control/RouteText').append_text('[b]Route From[/b]\n' + location_from_name + '\n[b]Route To[/b]\n' + location_to_name + '\n[b]Assigned Vessel[/b]\n' + vessel_name + '\n[b]inital Cost[/b]\n' + str(cost) + '\n[b]Repeating Cost[/b]\n' + str(repeating_cost))
 
 
 func _on_route_pressed():

@@ -75,15 +75,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -88.0
-offset_top = -9.0
-offset_right = -88.0
-offset_bottom = -9.0
+offset_left = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1gco3")
 
 [node name="Panel" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 409.0
 offset_bottom = 481.0
 theme = ExtResource("1_3v7qm")
@@ -91,6 +89,7 @@ texture = ExtResource("2_4xlpv")
 stretch_mode = 2
 
 [node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
 offset_left = 82.0
 offset_top = 78.0
 offset_right = 343.0
@@ -98,6 +97,7 @@ offset_bottom = 429.0
 theme = SubResource("Theme_t1tsy")
 
 [node name="AddVessel" type="Button" parent="."]
+layout_mode = 0
 offset_left = 302.0
 offset_top = 450.0
 offset_right = 334.0
@@ -108,6 +108,7 @@ disabled = true
 
 [node name="RemoveVessel" type="Button" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 346.0
 offset_top = 450.0
 offset_right = 378.0
@@ -117,6 +118,7 @@ theme = SubResource("Theme_sh2gv")
 disabled = true
 
 [node name="Close" type="Button" parent="."]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 420.0
 offset_right = 107.1
