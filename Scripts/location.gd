@@ -6,7 +6,7 @@ var locationNodeName
 var locationName
 var locationId
 var locationHasStation : bool = false
-var supply
-var demand
+var supplyAndDemand : int
+var supplyAndDemandRate : int
 
 var locationNeighbours : Dictionary

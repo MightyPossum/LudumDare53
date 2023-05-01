@@ -72,10 +72,12 @@ func _generateLocationArray():
 	
 func _generateLocations():
 	for i in get_node('Planets').get_children():
-		var  location : Location_Object = Location_Object.new()
+		var location : Location_Object = Location_Object.new()
 		
 		location.locationNodeName = i.name
 		location.locationName = i.get_node('LocationName').get_child(0).name
+		location.supplyAndDemand = i.demand
+		location.supplyAndDemandRate = i.demandRate
 		location.locationId = (Autoscript.LocationArray.size() + 5)*2
 		Autoscript.LocationNames[location.locationId] = [location.locationName,location.locationNodeName]
 		Autoscript.LocationPrettyName[location.locationNodeName] = location.locationName
