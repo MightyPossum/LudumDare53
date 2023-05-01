@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bxh8q7wmhlqtk"]
+[gd_scene load_steps=79 format=3 uid="uid://dvo84ahbi5qh2"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_qj5vb"]
 [ext_resource type="Script" path="res://Scripts/JumplaneParticles.gd" id="2_01lw1"]
@@ -331,6 +331,13 @@ _data = {
 }
 point_count = 10
 
+[sub_resource type="Curve3D" id="Curve3D_h45fv"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -633.442, 271.007, -49.9597, 0, 0, 0, 0, 0, 0, -508.884, 280.755, -49.9597, 0, 0, 0, 0, 0, 0, -378.91, 321.913, -49.9597, 0, 0, 0, 0, 0, 0, -285.762, 432.391, -131.813),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_buq38"]
 emission_shape = 3
 emission_box_extents = Vector3(2000, 2000, 10)
@@ -408,7 +415,7 @@ omni_attenuation = 0.594605
 curve = SubResource("Curve3D_7iwdx")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p1-a7"]
-transform = Transform3D(-0.212802, 0.00893486, 0.976912, -9.31193e-10, 0.99979, -0.00914464, -0.976953, -0.00194621, -0.212793, 5.55142, 0.442139, 72.9309)
+transform = Transform3D(-0.212802, 0.00893487, 0.976912, -9.31193e-10, 0.99979, -0.00914464, -0.976953, -0.00194622, -0.212793, 5.55142, 0.442139, 72.9309)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p1-a7/JumplaneParticles"]
@@ -498,7 +505,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_k0gsg")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p13-a16"]
-transform = Transform3D(-0.862972, -0.0721199, 0.4998, -3.72477e-09, 0.989582, 0.142802, -0.504977, 0.123248, -0.854125, -192.147, 505.551, 306.025)
+transform = Transform3D(-0.862972, -0.0721199, 0.499801, -3.72477e-09, 0.989582, 0.142802, -0.504977, 0.123248, -0.854125, -192.147, 505.551, 306.025)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p13-a16/JumplaneParticles"]
@@ -570,7 +577,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_uwkea")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p2-a7"]
-transform = Transform3D(0.972552, -0.0486096, -0.22694, -5.58716e-09, 0.977655, -0.209422, 0.232088, 0.203696, 0.95098, -439.111, 27.6733, -403.105)
+transform = Transform3D(0.972552, -0.0486097, -0.22694, -5.58716e-09, 0.977655, -0.209422, 0.232088, 0.203696, 0.95098, -439.111, 27.6733, -403.105)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p2-a7/JumplaneParticles"]
@@ -624,7 +631,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_gw7wh")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p5-p12"]
-transform = Transform3D(0.00512836, -0.752332, -0.658528, -2.97982e-08, 0.658517, -0.752364, 0.999848, 0.00385883, 0.00337766, 967.233, 757.01, -62.2241)
+transform = Transform3D(0.00512835, -0.752332, -0.658528, -2.97982e-08, 0.658517, -0.752364, 0.999848, 0.00385883, 0.00337766, 967.233, 757.01, -62.2241)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p5-p12/JumplaneParticles"]
@@ -660,7 +667,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_1vd8p")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p15-p9"]
-transform = Transform3D(-0.847817, -0.140311, -0.511117, 0, 0.96416, -0.264695, 0.530027, -0.224437, -0.817568, 1222.15, 111.463, -414.592)
+transform = Transform3D(-0.847817, -0.140311, -0.511117, 0, 0.96416, -0.264694, 0.530027, -0.224437, -0.817568, 1222.15, 111.463, -414.592)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p15-p9/JumplaneParticles"]
@@ -696,7 +703,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_wrspf")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p14-p8"]
-transform = Transform3D(0.846393, -0.0468588, -0.530232, 0, 0.99595, -0.0880215, 0.532299, 0.0745089, 0.843106, 899.65, 367.438, 754.694)
+transform = Transform3D(0.846393, -0.0468589, -0.530232, 0, 0.99595, -0.0880215, 0.532299, 0.0745089, 0.843106, 899.65, 367.438, 754.694)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p14-p8/JumplaneParticles"]
@@ -750,7 +757,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_4e1c0")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p14-p6"]
-transform = Transform3D(-0.140685, -0.927731, -0.345245, 5.95963e-08, 0.348704, -0.937081, 0.989914, -0.131847, -0.0490654, 902.64, 361.637, 754.739)
+transform = Transform3D(-0.140685, -0.927731, -0.345245, 5.95963e-08, 0.348703, -0.937081, 0.989914, -0.131847, -0.0490654, 902.64, 361.637, 754.739)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p14-p6/JumplaneParticles"]
@@ -786,7 +793,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_a4ibn")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p3-a2"]
-transform = Transform3D(-0.910121, -0.168271, -0.378266, -7.44955e-09, 0.913516, -0.406401, 0.414007, -0.369914, -0.83155, -1098.71, 300.089, 276.955)
+transform = Transform3D(-0.910121, -0.168271, -0.378266, -7.44954e-09, 0.913516, -0.406401, 0.414007, -0.369914, -0.83155, -1098.71, 300.089, 276.955)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p3-a2/JumplaneParticles"]
@@ -840,7 +847,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_k43an")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a9-a12"]
-transform = Transform3D(-0.664281, -0.0770639, -0.743313, -1.11743e-08, 0.994501, -0.103112, 0.747297, -0.0685029, -0.660739, -488.255, 756.186, 436.673)
+transform = Transform3D(-0.664281, -0.0770639, -0.743313, -1.11743e-08, 0.994501, -0.103112, 0.747298, -0.0685029, -0.660739, -488.255, 756.186, 436.673)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a9-a12/JumplaneParticles"]
@@ -876,7 +883,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_txlmd")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a11-a10"]
-transform = Transform3D(0.725659, -0.0870075, -0.682327, 7.44955e-09, 0.9918, -0.126478, 0.687853, 0.0917898, 0.71983, -772.759, 826.675, 97.825)
+transform = Transform3D(0.725659, -0.0870075, -0.682327, 7.44955e-09, 0.9918, -0.126478, 0.687853, 0.0917897, 0.71983, -772.759, 826.675, 97.825)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a11-a10/JumplaneParticles"]
@@ -931,7 +938,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_ihbv6")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a12-a23"]
-transform = Transform3D(-0.0229889, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999597, -0.0178015, -0.0145456, -602.666, 845.697, -203.527)
+transform = Transform3D(-0.022989, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999597, -0.0178016, -0.0145457, -602.666, 845.697, -203.527)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a12-a23/JumplaneParticles"]
@@ -949,7 +956,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_d8ce0")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p10-a20"]
-transform = Transform3D(0.0178787, -0.790626, -0.611781, 2.97982e-08, 0.611861, -0.790776, 0.999701, 0.0141396, 0.0109411, 383.38, 706.793, 0)
+transform = Transform3D(0.0178787, -0.790626, -0.611781, 2.97982e-08, 0.611861, -0.790776, 0.999701, 0.0141396, 0.0109412, 383.38, 706.793, 0)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p10-a20/JumplaneParticles"]
@@ -985,7 +992,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_cis7h")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a4-a19"]
-transform = Transform3D(-0.297354, -0.945513, -0.131361, -2.97981e-08, 0.137582, -0.990349, 0.954622, -0.294516, -0.0409176, 321.163, 469.418, 587.364)
+transform = Transform3D(-0.297354, -0.945513, -0.131361, -2.97981e-08, 0.137582, -0.990349, 0.954622, -0.294517, -0.0409176, 321.163, 469.418, 587.364)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a4-a19/JumplaneParticles"]
@@ -1003,7 +1010,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_xsuwg")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p9-a3"]
-transform = Transform3D(-0.914845, -0.301084, 0.26856, -1.48991e-08, 0.665528, 0.74617, -0.403462, 0.682704, -0.608957, 349.093, 266.922, -351.249)
+transform = Transform3D(-0.914845, -0.301084, 0.268561, -2.97982e-08, 0.665528, 0.74617, -0.403462, 0.682704, -0.608957, 349.093, 266.922, -351.249)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p9-a3/JumplaneParticles"]
@@ -1021,7 +1028,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_h1c26")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p5-a22"]
-transform = Transform3D(0.644883, 0.0458818, -0.76272, -3.72477e-09, 0.998027, 0.0600404, 0.764099, -0.0387233, 0.643719, 967.29, 758.109, -60.4258)
+transform = Transform3D(0.644883, 0.0458818, -0.76272, -3.72477e-09, 0.998027, 0.0600403, 0.764099, -0.0387232, 0.643719, 967.29, 758.109, -60.4258)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p5-a22/JumplaneParticles"]
@@ -1075,7 +1082,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_5rnux")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a1-a18"]
-transform = Transform3D(-0.0601429, -0.542008, 0.838042, 0, 0.839538, 0.543008, -0.998051, 0.0326616, -0.0505008, 1303.71, -32.7317, 102.967)
+transform = Transform3D(-0.060143, -0.542009, 0.838042, 0, 0.839538, 0.543008, -0.998051, 0.0326617, -0.0505008, 1303.71, -32.7317, 102.967)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a1-a18/JumplaneParticles"]
@@ -1115,6 +1122,24 @@ transform = Transform3D(0.0667396, -0.641744, 0.763812, 2.97982e-08, 0.765496, 0
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a18-a21/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, -1.49012e-08, 0, 1, 9.8953e-10, -4.47035e-08, -7.53789e-09, 1, 0.00727081, 0.00270465, -0.0162096)
+amount = 800
+lifetime = 5.0
+visibility_aabb = AABB(-5000, -5000, -5000, 10000, 10000, 10000)
+draw_order = 1
+transform_align = 3
+trail_lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
+[node name="p11-a6" type="Path3D" parent="Pathways"]
+curve = SubResource("Curve3D_h45fv")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p11-a6"]
+transform = Transform3D(7.51959e-08, -0.0780093, 0.996813, 3.72477e-09, 0.996783, 0.0780116, -0.999861, -2.15349e-09, 7.52573e-08, -633.442, 271.007, -49.9597)
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p11-a6/JumplaneParticles"]
 transform = Transform3D(1, -2.98023e-08, -1.49012e-08, 0, 1, 9.8953e-10, -4.47035e-08, -7.53789e-09, 1, 0.00727081, 0.00270465, -0.0162096)
 amount = 800
 lifetime = 5.0
