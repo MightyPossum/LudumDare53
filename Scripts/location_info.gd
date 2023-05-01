@@ -32,7 +32,6 @@ func _process(delta):
 				
 
 func _toggle_info_panel(location):
-		Autoscript._log_debug(location, selectedLocation)
 		
 		if selectedLocation == location:
 			visible = not visible
@@ -45,6 +44,11 @@ func _toggle_info_panel(location):
 		if selectedLocation:
 			get_node("Panel").get_node('LocationName').text = selectedLocation.locationName
 			get_node("Panel").get_node('DemandRate').get_node('DemandRateLabel').text = _convert_supply_rate(selectedLocation.supplyAndDemandRate)
+			
+			if selectedLocation.locationNodeName.split('',false,2)[0] == 'a':
+				get_node("Panel").get_node('SupplyOrDemand').text ='Supply'
+			else:
+				get_node("Panel").get_node('SupplyOrDemand').text ='Demand'
 		
 		
 func _convert_supply_rate(supplyAndDemandRate):

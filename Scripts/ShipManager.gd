@@ -1,7 +1,7 @@
 extends PathFollow3D
 
 var speed
-var init_speed = 0.1
+var init_speed = 0.02
 var current_position
 var direction
 var stop_timer

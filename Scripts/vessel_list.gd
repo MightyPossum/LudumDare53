@@ -12,6 +12,8 @@ func _process(delta):
 		$AddVessel.disabled = true
 	else:
 		$AddVessel.disabled = false
+		
+	_update_vessel_list()
 
 
 func _on_close_pressed():
@@ -35,7 +37,7 @@ func _update_vessel_list():
 				else:
 					location_text = Autoscript.LocationPrettyName[current_route.locationFrom] + ' -> ' + Autoscript.LocationPrettyName[current_route.locationTo]
 		
-		item_list.add_item(vessel.vessel_name + ' - ' + location_text)
+		item_list.add_item(vessel.vessel_name + '(' + str(vessel.materials_in_storage) + ')' + ' - ' + location_text)
 
 func _on_add_vessel_pressed():
 	Autoscript.Cash -= Autoscript.ShipCost

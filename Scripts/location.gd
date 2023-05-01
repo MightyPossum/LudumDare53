@@ -6,7 +6,7 @@ var locationNodeName
 var locationName
 var locationId
 var locationHasStation : bool = false
-var supplyAndDemand
+var supplyAndDemand : int
 var supplyAndDemandRate
 
 var locationNeighbours : Dictionary
@@ -24,9 +24,16 @@ func _initialize(location_node_name, location_name, location_id, supply_and_dema
 
 func _tick_demand():
 	if not supplyAndDemand >= Autoscript.supplyAndDemandLimit and locationHasStation:
+		
 		supplyAndDemand += Autoscript.globalSupplyTick * supplyAndDemandRate
+		
+		if supplyAndDemand > Autoscript.supplyAndDemandLimit:
+			supplyAndDemand = Autoscript.supplyAndDemandLimit
 
 func _sell_materials(amount):
+	if not locationHasStation:
+		return amount
+		
 	var left_over = 0
 	if supplyAndDemand >= amount:
 		Autoscript.Cash += Autoscript._convert_materials_to_cash(amount, supplyAndDemand)
@@ -40,6 +47,9 @@ func _sell_materials(amount):
 	return left_over
 
 func _buy_materials(amount):
+	if not locationHasStation:
+		return 0
+	
 	var amount_purchased = 0
 	if supplyAndDemand >= amount:
 		Autoscript.Cash -= Autoscript._convert_cash_to_materials(amount, supplyAndDemand)

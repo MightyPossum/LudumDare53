@@ -15,7 +15,7 @@ var VesselList : Dictionary
 
 var ShipCost : int = 500
 var StationCost : int = 5000
-var globalSupplyTick : int = 50
+var globalSupplyTick : int = 9
 var MaterialSellConversionRate = 2
 var MaterialBuyConversionRate = 1.25
 var DemandConversionRate = 600

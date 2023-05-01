@@ -76,7 +76,7 @@ func _generateLocations():
 		var location : Location_Object = Location_Object.new()
 		
 		var locationId =(Autoscript.LocationArray.size() + 5)*2
-		Autoscript.LocationNames[(Autoscript.LocationArray.size() + 5)*2] = [i.get_node('LocationName').get_child(0).name,i.name]
+		Autoscript.LocationNames[locationId] = [i.get_node('LocationName').get_child(0).name,i.name]
 		Autoscript.LocationPrettyName[i.name] = i.get_node('LocationName').get_child(0).name
 		Autoscript.LocationArray[i.name] = location
 		if i.name == 'p1' or i.name == 'a7':
@@ -85,7 +85,7 @@ func _generateLocations():
 		location._initialize(i.name,i.get_node('LocationName').get_child(0).name,locationId,i.demand,i.demand_rate,locationHasStation)
 		
 		
-		Autoscript.locationIdArray[(Autoscript.LocationArray.size() + 5)*2] = Autoscript.LocationArray[location.locationNodeName]
+		Autoscript.locationIdArray[locationId] = Autoscript.LocationArray[location.locationNodeName]
 		
 	
 func _generatePathways():
