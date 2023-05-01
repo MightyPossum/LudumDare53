@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://vmfqg76auwn3"]
+[gd_scene load_steps=4 format=3 uid="uid://vmfqg76auwn3"]
 
 [ext_resource type="Script" path="res://Scripts/location_info.gd" id="1_wiqw1"]
+[ext_resource type="Texture2D" uid="uid://cqxgqro1p5lac" path="res://Assets/MenuArt/InfoPanel.png" id="2_fxwbj"]
+[ext_resource type="Texture2D" uid="uid://btf7xyctt3dc6" path="res://Assets/MenuArt/InfoTape.png" id="3_0dl17"]
 
 [node name="LocationInfo" type="Control"]
 layout_mode = 3
@@ -11,19 +13,51 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wiqw1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 245.0
+texture = ExtResource("2_fxwbj")
 
-[node name="LocationName" type="Label" parent="Panel"]
+[node name="TapeName" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 26.0
-offset_right = 192.0
-offset_bottom = 51.0
-text = "Serenity
-"
+offset_left = 48.0
+offset_top = 9.0
+offset_right = 246.0
+offset_bottom = 66.0
+texture = ExtResource("3_0dl17")
+
+[node name="TapeDemand" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 75.0
+offset_right = 259.0
+offset_bottom = 99.0
+texture = ExtResource("3_0dl17")
+
+[node name="TapeRate" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 100.0
+offset_right = 263.0
+offset_bottom = 125.0
+texture = ExtResource("3_0dl17")
+
+[node name="TapeVessels" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 132.0
+offset_right = 241.0
+offset_bottom = 157.0
+texture = ExtResource("3_0dl17")
+
+[node name="TapeVessels2" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 170.0
+offset_right = 270.0
+offset_bottom = 201.0
+texture = ExtResource("3_0dl17")
 
 [node name="SupplyOrDemand" type="Label" parent="Panel"]
 layout_mode = 0
@@ -31,6 +65,7 @@ offset_left = 18.0
 offset_top = 73.0
 offset_right = 100.0
 offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Demand"
 
 [node name="SupplyOrDemandLabel" type="Label" parent="Panel/SupplyOrDemand"]
@@ -39,7 +74,9 @@ offset_left = 174.0
 offset_top = 2.0
 offset_right = 215.0
 offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "500"
+horizontal_alignment = 1
 
 [node name="DemandRate" type="Label" parent="Panel"]
 layout_mode = 0
@@ -47,15 +84,18 @@ offset_left = 19.0
 offset_top = 102.0
 offset_right = 101.0
 offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Rate"
 
 [node name="DemandRateLabel" type="Label" parent="Panel/DemandRate"]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 2.0
-offset_right = 215.0
-offset_bottom = 27.0
+offset_left = 158.0
+offset_top = -1.0
+offset_right = 240.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Normal"
+horizontal_alignment = 1
 
 [node name="ParkedVessels" type="Label" parent="Panel"]
 layout_mode = 0
@@ -63,15 +103,17 @@ offset_left = 17.0
 offset_top = 133.0
 offset_right = 112.0
 offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Vessels"
 
 [node name="ParkedVesselsLabel" type="Label" parent="Panel/ParkedVessels"]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 2.0
-offset_right = 215.0
-offset_bottom = 27.0
+offset_left = 179.0
+offset_right = 220.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "5"
+horizontal_alignment = 1
 
 [node name="StationButton" type="Button" parent="Panel"]
 layout_mode = 0
@@ -86,9 +128,23 @@ text = "Build Station
 [node name="StationStatusLabel" type="Label" parent="Panel/StationButton"]
 layout_mode = 0
 offset_left = -16.0
-offset_top = -22.0
+offset_top = -29.0
 offset_right = 204.0
-offset_bottom = 3.0
+offset_bottom = -4.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
 text = "No Vessel In Orbit"
+horizontal_alignment = 1
+
+[node name="LocationName" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 26.0
+offset_right = 192.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Serenity
+"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/StationButton" to="." method="_on_station_button_pressed"]
