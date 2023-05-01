@@ -101,7 +101,7 @@ stretch_mode = 2
 [node name="ItemList" type="ItemList" parent="RoutePanelRoot"]
 layout_mode = 2
 offset_left = 43.0
-offset_top = 69.0
+offset_top = 79.0
 offset_right = 388.0
 offset_bottom = 408.0
 theme = SubResource("Theme_ujr5n")

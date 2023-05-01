@@ -15,12 +15,14 @@ var VesselList : Dictionary
 
 var ShipCost : int = 500
 var StationCost : int = 5000
+var globalSupplyTick : int = 50
 
 var win : bool = false
 var lose : bool = false
 
 var Cash : int = 0
 var Materials : int = 0
+var supplyAdnDemandLimit = 1000
 
 
 var routeIDTracker : int = 1

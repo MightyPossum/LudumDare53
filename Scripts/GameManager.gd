@@ -72,22 +72,21 @@ func _generateLocationArray():
 	
 func _generateLocations():
 	for i in get_node('Planets').get_children():
+		var locationHasStation = false
 		var location : Location_Object = Location_Object.new()
 		
-		location.locationNodeName = i.name
-		location.locationName = i.get_node('LocationName').get_child(0).name
-		location.supplyAndDemand = i.demand
-		location.supplyAndDemandRate = i.demandRate
-		location.locationId = (Autoscript.LocationArray.size() + 5)*2
-		Autoscript.LocationNames[location.locationId] = [location.locationName,location.locationNodeName]
-		Autoscript.LocationPrettyName[location.locationNodeName] = location.locationName
-		Autoscript.LocationArray[location.locationNodeName] = location
-		if location.locationNodeName == 'p1' or location.locationNodeName == 'a7':
-			location.locationHasStation = true
-			Autoscript.update_location_station(location)
+
+		Autoscript.LocationNames[(Autoscript.LocationArray.size() + 5)*2] = [i.get_node('LocationName').get_child(0).name,i.name]
+		Autoscript.LocationPrettyName[i.name] = i.get_node('LocationName').get_child(0).name
+		Autoscript.LocationArray[i.name] = location
+		if i.name == 'p1' or i.name == 'a7':
+			locationHasStation = true
 		
-		Autoscript.locationIdArray[location.locationId] = Autoscript.LocationArray[location.locationNodeName]
-	
+		location._initialize(i.name,i.get_node('LocationName').get_child(0).name,(Autoscript.LocationArray.size() + 5)*2,i.demand,i.demand_rate,locationHasStation)
+		
+		
+		Autoscript.locationIdArray[(Autoscript.LocationArray.size() + 5)*2] = Autoscript.LocationArray[location.locationNodeName]
+		
 	
 func _generatePathways():
 	for i in get_node('Pathways').get_children():
@@ -105,8 +104,7 @@ func _generatePathways():
 		locationOne.locationNeighbours[locationZero.locationNodeName] = 150
 		
 		Autoscript.PathwayArray.append(pathway)
-
-func _update_route_text():
-	pass
 	
-	
+func _on_timer_timeout():	
+	for i in Autoscript.locationIdArray:
+		Autoscript.locationIdArray[i]._tick_demand()

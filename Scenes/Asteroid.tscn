@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1fvy1366qm0q"]
+[gd_scene load_steps=5 format=3 uid="uid://6g7lakluky5w"]
 
 [ext_resource type="Script" path="res://Scripts/Asteroid.gd" id="1_l3b6f"]
-[ext_resource type="Script" path="res://Scripts/CollisionShape3D.gd" id="3_2xy4w"]
+[ext_resource type="Script" path="res://Scripts/PlanetClicker.gd" id="2_wfn2p"]
 [ext_resource type="PackedScene" uid="uid://dudqaoe1t87fg" path="res://Assets/Ships/MVPAsteroid.blend" id="3_pyyx2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c3tou"]
@@ -13,7 +13,7 @@ script = ExtResource("1_l3b6f")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(50.6899, -0.905153, -3.95655e-08, 0, -2.21608e-06, 50.698, -0.905153, -50.6899, -2.21573e-06, 0, 0.744911, 1.09373)
 shape = SubResource("SphereShape3D_c3tou")
-script = ExtResource("3_2xy4w")
+script = ExtResource("2_wfn2p")
 
 [node name="MVPAsteroid" parent="." instance=ExtResource("3_pyyx2")]
 transform = Transform3D(0.989731, 0, -0.14294, 0, 1, 0, 0.14294, 0, 0.989731, 0, -14.1654, 0)

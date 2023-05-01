@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://vmfqg76auwn3"]
+
+[node name="LocationInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 279.0
+offset_bottom = 245.0
+
+[node name="LocationName" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 26.0
+offset_right = 192.0
+offset_bottom = 51.0
+text = "Serenity
+"
+
+[node name="SupplyOrDemand" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 73.0
+offset_right = 100.0
+offset_bottom = 98.0
+text = "Demand"
+
+[node name="SupplyOrDemandLabel" type="Label" parent="Panel/SupplyOrDemand"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 2.0
+offset_right = 215.0
+offset_bottom = 27.0
+text = "500"
+
+[node name="DemandRate" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 102.0
+offset_right = 101.0
+offset_bottom = 127.0
+text = "Rate"
+
+[node name="DemandRateLabel" type="Label" parent="Panel/DemandRate"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 2.0
+offset_right = 215.0
+offset_bottom = 27.0
+text = "Normal"
+
+[node name="ParkedVessels" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 133.0
+offset_right = 112.0
+offset_bottom = 158.0
+text = "Vessels"
+
+[node name="ParkedVesselsLabel" type="Label" parent="Panel/ParkedVessels"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 2.0
+offset_right = 215.0
+offset_bottom = 27.0
+text = "5"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 203.0
+offset_right = 230.0
+offset_bottom = 233.0
+disabled = true
+text = "Build Station
+"
+
+[node name="ParkedVesselsLabel2" type="Label" parent="Panel/Button"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -22.0
+offset_right = 204.0
+offset_bottom = 3.0
+text = "No Vessel In Orbit"

@@ -11,5 +11,6 @@ func _process(delta):
 
 
 func _on_input_event(camera, event, position, normal, shape_idx):
-	pass
-
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed==true:
+		var planetBox = get_tree().get_root().get_node('GameScene').get_node('CanvasLayer').get_node('LocationInfo')
+		planetBox.visible = not planetBox.visible

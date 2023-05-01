@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://r7t3yyaj42va"]
+[gd_scene load_steps=5 format=3 uid="uid://d3u1u84axkgqp"]
 
 [ext_resource type="Script" path="res://Scripts/planetHandler.gd" id="1_4wi73"]
 [ext_resource type="PackedScene" uid="uid://c1xre6phrmitu" path="res://Assets/Ships/MVPPlanet.blend" id="1_m38s2"]
-[ext_resource type="Script" path="res://Scripts/CollisionShape3D.gd" id="2_bfdyh"]
+[ext_resource type="Script" path="res://Scripts/PlanetClicker.gd" id="2_1dfvs"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_v2nbe"]
 radius = 0.914164
@@ -14,7 +14,7 @@ script = ExtResource("1_4wi73")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(45, 0, 0, 0, 45, 0, 0, 0, 45, 0, 0, 0)
 shape = SubResource("SphereShape3D_v2nbe")
-script = ExtResource("2_bfdyh")
+script = ExtResource("2_1dfvs")
 
 [node name="MVPPlanet" parent="." instance=ExtResource("1_m38s2")]
 
@@ -25,3 +25,5 @@ billboard = 1
 text = "645654654"
 font_size = 20
 outline_size = 20
+
+[connection signal="input_event" from="." to="CollisionShape3D" method="_on_input_event"]

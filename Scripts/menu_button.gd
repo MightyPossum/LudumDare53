@@ -19,6 +19,7 @@ func _on_menu_button_pressed():
 func _on_id_pressed(index):
 	if index == 0:
 		
+		vesselList.visible = false
 		routePanel.visible = true
 		
 		routePanel.get_node("RoutePanel")._toggle_add_route_option()
@@ -27,5 +28,7 @@ func _on_id_pressed(index):
 		routePanel.get_node('RoutePanel')._populate_list()
 	elif index == 1:
 		
+		routePanel.visible = false
 		vesselList.visible = true
+		
 		vesselList._update_vessel_list()
