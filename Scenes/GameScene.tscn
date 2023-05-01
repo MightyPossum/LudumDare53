@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dvo84ahbi5qh2"]
+[gd_scene load_steps=82 format=3 uid="uid://bxh8q7wmhlqtk"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_qj5vb"]
 [ext_resource type="Script" path="res://Scripts/JumplaneParticles.gd" id="2_01lw1"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bac4sy34bfy6v" path="res://Assets/Asteroids/AsteroidVar7.blend" id="25_qq6xu"]
 [ext_resource type="PackedScene" uid="uid://c4wq3dscds70p" path="res://Scenes/planet_list.tscn" id="31_7l3oh"]
 [ext_resource type="PackedScene" uid="uid://b57qop7uj5utp" path="res://Scenes/vessel_list.tscn" id="31_xnt3w"]
+[ext_resource type="AudioStream" uid="uid://cj72lkvjb6vq7" path="res://Assets/Audio/LD53BG.wav" id="34_o5s8f"]
 
 [sub_resource type="Curve3D" id="Curve3D_7iwdx"]
 _data = {
@@ -507,7 +508,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_k0gsg")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p13-a16"]
-transform = Transform3D(-0.862972, -0.0721199, 0.499801, -3.72477e-09, 0.989582, 0.142802, -0.504977, 0.123248, -0.854125, -192.147, 505.551, 306.025)
+transform = Transform3D(-0.862972, -0.0721199, 0.4998, -3.72477e-09, 0.989582, 0.142803, -0.504977, 0.123248, -0.854125, -192.147, 505.551, 306.025)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p13-a16/JumplaneParticles"]
@@ -849,7 +850,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_k43an")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a9-a12"]
-transform = Transform3D(-0.664281, -0.0770639, -0.743313, -1.11743e-08, 0.994501, -0.103112, 0.747298, -0.0685029, -0.660739, -488.255, 756.186, 436.673)
+transform = Transform3D(-0.664281, -0.0770639, -0.743313, -1.11743e-08, 0.994501, -0.103112, 0.747298, -0.068503, -0.660739, -488.255, 756.186, 436.673)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a9-a12/JumplaneParticles"]
@@ -940,7 +941,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_ihbv6")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a12-a23"]
-transform = Transform3D(-0.022989, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999598, -0.0178016, -0.0145457, -602.666, 845.697, -203.527)
+transform = Transform3D(-0.0229889, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999598, -0.0178015, -0.0145456, -602.666, 845.697, -203.527)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a12-a23/JumplaneParticles"]
@@ -1012,7 +1013,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_xsuwg")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p9-a3"]
-transform = Transform3D(-0.914845, -0.301084, 0.268561, -2.97982e-08, 0.665528, 0.74617, -0.403462, 0.682704, -0.608957, 349.093, 266.922, -351.249)
+transform = Transform3D(-0.914845, -0.301084, 0.268561, -1.48991e-08, 0.665528, 0.74617, -0.403462, 0.682704, -0.608957, 349.093, 266.922, -351.249)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p9-a3/JumplaneParticles"]
@@ -1138,7 +1139,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_b2ido")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p11-a6"]
-transform = Transform3D(-2.09069e-06, -0.570675, 0.820995, 2.97982e-08, 0.820971, 0.570692, -0.999861, 1.21774e-06, -1.69968e-06, -634.57, 266.003, -51.254)
+transform = Transform3D(-2.46899e-06, -0.570679, 0.820992, 5.95964e-08, 0.820968, 0.570696, -0.999861, 1.45813e-06, -1.99328e-06, -634.57, 266.003, -51.254)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p11-a6/JumplaneParticles"]
@@ -1687,3 +1688,7 @@ preprocess = 200.0
 speed_scale = 0.01
 process_material = SubResource("ParticleProcessMaterial_buq38")
 draw_pass_1 = SubResource("SphereMesh_wfsfn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera3D"]
+stream = ExtResource("34_o5s8f")
+autoplay = true
