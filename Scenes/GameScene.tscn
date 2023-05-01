@@ -1,6 +1,7 @@
-[gd_scene load_steps=73 format=3 uid="uid://dvo84ahbi5qh2"]
+[gd_scene load_steps=77 format=3 uid="uid://bxh8q7wmhlqtk"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_qj5vb"]
+[ext_resource type="Script" path="res://Scripts/JumplaneParticles.gd" id="2_01lw1"]
 [ext_resource type="PackedScene" uid="uid://r7t3yyaj42va" path="res://Scenes/planet.tscn" id="2_dgd1k"]
 [ext_resource type="PackedScene" uid="uid://bih8onh0qhyp1" path="res://Assets/Planets/EarthPlanet.blend" id="3_ha4m2"]
 [ext_resource type="PackedScene" uid="uid://d1fvy1366qm0q" path="res://Scenes/Asteroid.tscn" id="4_0idxf"]
@@ -36,6 +37,23 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a1k8a"]
+spread = 85.88
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+turbulence_noise_strength = 7.74
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gss26"]
+transparency = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_gdnkx"]
+material = SubResource("StandardMaterial3D_gss26")
+radius = 0.2
+height = 0.4
 
 [sub_resource type="Curve3D" id="Curve3D_07xw0"]
 _data = {
@@ -386,123 +404,723 @@ omni_attenuation = 0.594605
 [node name="p1-a7" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_7iwdx")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p1-a7"]
+transform = Transform3D(-0.394515, -0.132026, 0.909201, -0.202601, 0.977596, 0.0540546, -0.89612, -0.162898, -0.412495, 35.7565, -28.7666, 91.1023)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p1-a7/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p1-p12" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_07xw0")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p1-p12"]
+transform = Transform3D(-0.993503, -0.00080387, -0.112566, -0.000785669, 0.99983, -0.000206253, 0.112566, -0.000116486, -0.993504, -81.2012, -0.00107455, -84.7543)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p1-p12/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p1-p7" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_nnqjh")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p1-p7"]
+transform = Transform3D(-0.791292, -0.538427, -0.289234, 0.0453541, 0.420106, -0.906181, 0.609525, -0.730251, -0.308059, -92.6965, 0.612683, -63.2634)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p1-p7/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p7-p13" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_ycyuo")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p7-p13"]
+transform = Transform3D(-0.58243, 0.777041, -0.238047, 0.179631, 0.408695, 0.894657, 0.792609, 0.478367, -0.377681, -367.172, -162.188, 704.938)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p7-p13/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p7-a9" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_mfumv")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p7-a9"]
+transform = Transform3D(-0.254902, 0.728277, -0.635866, -5.26831e-05, 0.657565, 0.753195, 0.966822, 0.192045, -0.167605, -363.171, -157.765, 720.32)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p7-a9/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p13-a16" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_k0gsg")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p13-a16"]
+transform = Transform3D(-0.862962, -0.0722252, 0.4998, -0.000120992, 0.98958, 0.142802, -0.504992, 0.123186, -0.854124, -129.005, 523.592, 198.119)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p13-a16/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p13-a6" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_5lque")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p13-a6"]
+transform = Transform3D(-0.96782, -0.237277, -0.0821058, -0.228898, 0.968141, -0.099859, 0.103202, -0.0778601, -0.991467, -214.144, 448.571, 204.813)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p13-a6/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="a16-a17" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_tvgev")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a16-a17"]
+transform = Transform3D(0.737015, 0.368984, 0.566014, -5.73614e-06, 0.83757, -0.546036, -0.675669, 0.402477, 0.617409, 132.813, 536.215, -38.794)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a16-a17/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="a16-p2" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_h66yb")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a16-p2"]
+transform = Transform3D(0.422468, -0.712782, -0.5596, -0.252689, 0.500261, -0.828005, 0.870281, 0.491264, 0.0312376, 29.2771, 489.429, -103.414)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a16-p2/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p2-a7" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_uwkea")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p2-a7"]
+transform = Transform3D(0.776296, -0.0518609, 0.628009, 0.108454, 0.992565, -0.0520918, -0.620744, 0.108561, 0.776281, -455.612, 5.84054, -297.08)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p2-a7/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p2-p4" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_l7hns")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p2-p4"]
+transform = Transform3D(0.638964, 0.294892, 0.710267, 0.180005, 0.840404, -0.510879, -0.747692, 0.454335, 0.483988, -380.071, -54.7651, -333.082)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p2-p4/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p4-p5" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_wedxc")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p4-p5"]
+transform = Transform3D(-0.205444, -0.919437, 0.334809, -5.12528e-06, 0.342099, 0.939511, -0.978526, 0.193037, -0.070299, 601.181, -174.484, 363.371)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p4-p5/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p5-p12" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_gw7wh")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p5-p12"]
+transform = Transform3D(0.00514605, -0.752331, -0.658527, -1.53163e-05, 0.658516, -0.752364, 0.999847, 0.00388221, 0.00337781, 884.038, 661.961, -61.7974)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p5-p12/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p12-p15" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_nhe73")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p12-p15"]
+transform = Transform3D(-0.994482, -0.0294653, -0.099289, -0.0483506, 0.979733, 0.193516, 0.0915902, 0.19727, -0.975917, 1108.18, -105.069, -118.009)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p12-p15/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p15-p9" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_1vd8p")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p15-p9"]
+transform = Transform3D(-0.583132, 0.290913, -0.758316, -0.0579429, 0.916212, 0.396065, 0.810136, 0.274927, -0.517504, 1147.45, 107.133, -505.731)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p15-p9/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p9-p14" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_pfwlx")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p9-p14"]
+transform = Transform3D(0.78556, -5.17318e-05, 0.618559, -0.0213876, 0.99923, 0.0272455, -0.618189, -0.0346362, 0.785088, 409.878, 273.799, -240.895)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p9-p14/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p14-p8" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_wrspf")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p14-p8"]
+transform = Transform3D(0.795442, -0.402172, -0.453035, -0.0406343, 0.710598, -0.702203, 0.604435, 0.577034, 0.548991, 835.402, 334.533, 850.775)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p14-p8/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p8-p10" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_7maa2")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p8-p10"]
+transform = Transform3D(-0.19609, -0.761153, 0.617965, -5.63185e-06, 0.630185, 0.77625, -0.980443, 0.152228, -0.123599, -983.81, -123.387, -412.127)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p8-p10/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p10-p4" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_egdk5")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p10-p4"]
+transform = Transform3D(0.805201, 0.577814, -0.132218, -0.277378, 0.17019, -0.945418, -0.523863, 0.798014, 0.297361, 437.495, 623.885, 23.0884)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p10-p4/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p14-p6" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_4e1c0")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p14-p6"]
+transform = Transform3D(0.0238884, 0.113347, -0.993127, 0.104025, 0.987705, 0.115237, 0.994147, -0.106074, 0.0118058, 847.858, 276.657, 750.471)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p14-p6/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p14-p3" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_6ecmb")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p14-p3"]
+transform = Transform3D(-0.793683, -0.5143, -0.324449, -0.0431343, 0.579723, -0.813487, 0.606569, -0.631725, -0.482383, 887.352, 260.148, 687.751)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p14-p3/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p3-a2" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_a4ibn")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p3-a2"]
+transform = Transform3D(-0.926687, -0.270806, -0.26006, -0.0337079, 0.749732, -0.660645, 0.373945, -0.603511, -0.704015, -1145.51, 246.218, 173.171)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p3-a2/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="a2-a24" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_y24gn")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a2-a24"]
+transform = Transform3D(0.865046, 0.472955, 0.16648, 0.104065, 0.155392, -0.982213, -0.490496, 0.867079, 0.0852178, -1160.64, 156.729, 26.6181)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a2-a24/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p8-a15" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_7y2bj")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p8-a15"]
+transform = Transform3D(0.869436, 0.211884, 0.445986, -0.333803, 0.91768, 0.21473, -0.363836, -0.335602, 0.868739, -1073.65, -194.152, -297.99)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p8-a15/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="a9-a12" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_k43an")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a9-a12"]
+transform = Transform3D(-0.958751, -0.0304158, -0.282119, -0.0306689, 0.999353, -0.00352373, 0.282092, 0.0052745, -0.959227, -533.754, 753.612, 321.87)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a9-a12/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p6-a11" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_slkpl")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p6-a11"]
+transform = Transform3D(-0.598286, -0.384107, 0.703013, 0.285942, 0.717217, 0.635237, -0.748339, 0.581138, -0.319323, -887.608, 707.778, 561.409)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p6-a11/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="a11-a10" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_txlmd")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a11-a10"]
+transform = Transform3D(0.77941, -0.0393243, 0.625055, 0.0980158, 0.99322, -0.05973, -0.618573, 0.107831, 0.778113, -790.156, 816.476, 196.361)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a11-a10/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="a10-a8" type="Path3D" parent="Pathways"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10693, 0, 278.696)
 curve = SubResource("Curve3D_fkui2")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a10-a8"]
+transform = Transform3D(-0.864076, 0.350933, 0.360461, -0.203689, 0.410995, -0.888428, -0.460004, -0.841183, -0.283698, -682.36, 727.314, 47.296)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a10-a8/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="a6-a5" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_awiov")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a6-a5"]
+transform = Transform3D(-0.415805, -0.637207, -0.648668, 0.478443, 0.453219, -0.751926, 0.773252, -0.623073, 0.116436, -313.549, 307.014, -149.646)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a6-a5/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="a12-a23" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_ihbv6")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a12-a23"]
+transform = Transform3D(0.174546, 0.982278, 0.0657692, -0.248183, 0.108537, -0.962468, -0.952712, 0.151689, 0.262774, -602.365, 760.742, -163.739)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a12-a23/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p10-a20" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_d8ce0")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p10-a20"]
+transform = Transform3D(0.0172325, -0.789571, -0.613159, -0.000833752, 0.61322, -0.789721, 0.999711, 0.0141216, 0.00991066, 310.253, 603.925, 4.41385)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p10-a20/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="a20-a4" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_k2d66")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a20-a4"]
+transform = Transform3D(0.993284, -0.00239984, -0.114462, 0.110536, 0.280452, 0.953333, 0.0298183, -0.959688, 0.278882, 307.282, 186.073, 439.357)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a20-a4/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="a4-a19" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_cis7h")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a4-a19"]
+transform = Transform3D(-0.327068, -0.750822, -0.573567, -0.0744707, 0.625537, -0.776437, 0.941913, -0.211257, -0.260552, 290.72, 351.001, 575.317)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a4-a19/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p9-a3" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_xsuwg")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p9-a3"]
+transform = Transform3D(0.235514, -0.50661, 0.829207, 0.800564, 0.584743, 0.129895, -0.550773, 0.63331, 0.543382, 408.412, 336.774, -383.007)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p9-a3/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="p5-a22" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_h1c26")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p5-a22"]
+transform = Transform3D(0.972761, 7.53023e-05, -0.231208, -0.00800846, 0.999241, -0.0333685, 0.231069, 0.0343149, 0.972188, 878.697, 764.435, 23.8696)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p5-a22/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="p15-a14" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_0pvc6")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p15-a14"]
+transform = Transform3D(0.128799, 0.402797, -0.906022, 0.313253, 0.850284, 0.422571, 0.940746, -0.338278, -0.016664, 1159.06, 189.087, -359.193)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p15-a14/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="a14-a1" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_fchsf")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a14-a1"]
+transform = Transform3D(0.10435, 0.993999, 0.0271728, -0.682245, 0.0914407, -0.72519, -0.723445, 0.057141, 0.687809, 1167.71, 402.987, -402.511)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a14-a1/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="a1-a18" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_5rnux")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a1-a18"]
+transform = Transform3D(-0.532295, 0.619276, -0.576937, -0.682927, 0.0883556, 0.72493, 0.499992, 0.779968, 0.375953, 1288.18, 30.5851, 67.5757)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a1-a18/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="a1-a13" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_rlq4w")
 
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a1-a13"]
+transform = Transform3D(-0.839452, 0, -0.543176, 0, 0.99983, 0, 0.543176, 0, -0.839453, 1215.26, -31.3833, 22.0978)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a1-a13/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="a18-a21" type="Path3D" parent="Pathways"]
 curve = SubResource("Curve3D_o8k5q")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a18-a21"]
+transform = Transform3D(0.34537, 0.706359, -0.61763, -0.199328, -0.587867, -0.783824, -0.916901, 0.393863, -0.0622448, 992.209, 66.7193, 540.588)
+progress = 126.317
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a18-a21/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, -5.96046e-08, -7.45058e-09, 1, 0.00725555, 0.00270462, -0.0162106)
+amount = 100
+lifetime = 5.0
+preprocess = 100.0
+visibility_aabb = AABB(-10, -10, -10, 1000, 1000, 1000)
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
 [node name="Routes" type="Node3D" parent="."]
 
@@ -858,6 +1476,7 @@ layout_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 1.115, 0, -209.86)
+near = 0.001
 script = ExtResource("8_dmf3d")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D"]
