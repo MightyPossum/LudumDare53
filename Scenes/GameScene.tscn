@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://dvo84ahbi5qh2"]
+[gd_scene load_steps=79 format=3 uid="uid://dvo84ahbi5qh2"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_qj5vb"]
 [ext_resource type="Script" path="res://Scripts/JumplaneParticles.gd" id="2_01lw1"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bm5xy6jporjim" path="res://Assets/Asteroids/AsteroidVar5.blend" id="23_evtx2"]
 [ext_resource type="PackedScene" uid="uid://drxg84j8ajica" path="res://Assets/Asteroids/AsteroidVar6.blend" id="24_78ciq"]
 [ext_resource type="PackedScene" uid="uid://bac4sy34bfy6v" path="res://Assets/Asteroids/AsteroidVar7.blend" id="25_qq6xu"]
+[ext_resource type="PackedScene" uid="uid://b57qop7uj5utp" path="res://Scenes/vessel_list.tscn" id="31_xnt3w"]
 
 [sub_resource type="Curve3D" id="Curve3D_7iwdx"]
 _data = {
@@ -498,7 +499,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_k0gsg")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p13-a16"]
-transform = Transform3D(-0.862972, -0.0721199, 0.4998, -3.72477e-09, 0.989582, 0.142802, -0.504977, 0.123248, -0.854125, -192.147, 505.551, 306.025)
+transform = Transform3D(-0.862972, -0.0721199, 0.499801, -3.72477e-09, 0.989582, 0.142802, -0.504977, 0.123248, -0.854125, -192.147, 505.551, 306.025)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p13-a16/JumplaneParticles"]
@@ -1593,6 +1594,8 @@ offset_bottom = 40.0
 
 [node name="MenuButton" parent="CanvasLayer/MenuButton" instance=ExtResource("7_ahyl4")]
 layout_mode = 1
+
+[node name="VesselList" parent="CanvasLayer" instance=ExtResource("31_xnt3w")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 1.115, 0, -209.86)
