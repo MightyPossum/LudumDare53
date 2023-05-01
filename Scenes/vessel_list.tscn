@@ -1,0 +1,124 @@
+[gd_scene load_steps=28 format=3 uid="uid://b57qop7uj5utp"]
+
+[ext_resource type="Script" path="res://Scripts/vessel_list.gd" id="1_1gco3"]
+[ext_resource type="Theme" uid="uid://gnqiyi4hgg6q" path="res://Assets/MainTheme.tres" id="1_3v7qm"]
+[ext_resource type="Texture2D" uid="uid://qnaw1lsogluc" path="res://Assets/MenuArt/ClipboardMenu1.png" id="2_4xlpv"]
+[ext_resource type="Texture2D" uid="uid://oqscp0o2n22j" path="res://Assets/MenuArt/ClipButtonDisabled.png" id="3_nm2hh"]
+[ext_resource type="Texture2D" uid="uid://ddpwm4u2by8wr" path="res://Assets/MenuArt/ClipButtonHoverl.png" id="4_tyhe0"]
+[ext_resource type="Texture2D" uid="uid://bhuw26hpuxcbr" path="res://Assets/MenuArt/ClipButtonNormal.png" id="5_xl76y"]
+[ext_resource type="Texture2D" uid="uid://cih0pgclnp6f1" path="res://Assets/MenuArt/ClipButtonClicked.png" id="6_or0g4"]
+[ext_resource type="Texture2D" uid="uid://345q30f6qn6n" path="res://Assets/MenuArt/ClipBackButton.png" id="7_m7kff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pebyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q166y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tjip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gr2m8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_coakg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2i37j"]
+
+[sub_resource type="Theme" id="Theme_t1tsy"]
+ItemList/colors/font_selected_color = Color(0.827451, 0.0941176, 0.0980392, 1)
+ItemList/styles/cursor = SubResource("StyleBoxEmpty_pebyj")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxEmpty_q166y")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_0tjip")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_gr2m8")
+ItemList/styles/selected = SubResource("StyleBoxEmpty_coakg")
+ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_2i37j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ei2n"]
+texture = ExtResource("3_nm2hh")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msq6x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r28nj"]
+texture = ExtResource("4_tyhe0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inmgf"]
+texture = ExtResource("5_xl76y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jh38"]
+texture = ExtResource("6_or0g4")
+
+[sub_resource type="Theme" id="Theme_sh2gv"]
+Button/styles/disabled = SubResource("StyleBoxTexture_0ei2n")
+Button/styles/focus = SubResource("StyleBoxEmpty_msq6x")
+Button/styles/hover = SubResource("StyleBoxTexture_r28nj")
+Button/styles/normal = SubResource("StyleBoxTexture_inmgf")
+Button/styles/pressed = SubResource("StyleBoxTexture_6jh38")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0d4wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgfqc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i38h0"]
+texture = ExtResource("7_m7kff")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7xtj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5yye"]
+texture = ExtResource("7_m7kff")
+
+[sub_resource type="Theme" id="Theme_12k4q"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_0d4wr")
+Button/styles/focus = SubResource("StyleBoxEmpty_bgfqc")
+Button/styles/hover = SubResource("StyleBoxTexture_i38h0")
+Button/styles/normal = SubResource("StyleBoxEmpty_w7xtj")
+Button/styles/pressed = SubResource("StyleBoxTexture_a5yye")
+
+[node name="VesselList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -9.0
+offset_right = -88.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gco3")
+
+[node name="Panel" type="TextureRect" parent="."]
+offset_right = 409.0
+offset_bottom = 481.0
+theme = ExtResource("1_3v7qm")
+texture = ExtResource("2_4xlpv")
+stretch_mode = 2
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 82.0
+offset_top = 78.0
+offset_right = 343.0
+offset_bottom = 429.0
+theme = SubResource("Theme_t1tsy")
+
+[node name="AddVessel" type="Button" parent="."]
+offset_left = 302.0
+offset_top = 450.0
+offset_right = 334.0
+offset_bottom = 482.0
+scale = Vector2(1, 0.96001)
+theme = SubResource("Theme_sh2gv")
+disabled = true
+
+[node name="RemoveVessel" type="Button" parent="."]
+visible = false
+offset_left = 346.0
+offset_top = 450.0
+offset_right = 378.0
+offset_bottom = 482.0
+scale = Vector2(1, 0.96001)
+theme = SubResource("Theme_sh2gv")
+disabled = true
+
+[node name="Close" type="Button" parent="."]
+offset_left = 22.0
+offset_top = 420.0
+offset_right = 107.1
+offset_bottom = 507.2
+theme = SubResource("Theme_12k4q")

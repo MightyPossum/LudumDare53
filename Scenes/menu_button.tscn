@@ -20,9 +20,11 @@ offset_right = 8.0
 offset_bottom = 8.0
 tooltip_text = "Route Creation Menu"
 text = "Menu"
-item_count = 1
+item_count = 2
 popup/item_0/text = "Routes"
 popup/item_0/id = 0
+popup/item_1/text = "Vessels"
+popup/item_1/id = 1
 script = ExtResource("1_1v23l")
 
 [node name="CashLabel" type="TextureRect" parent="."]
