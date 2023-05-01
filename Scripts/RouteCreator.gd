@@ -106,7 +106,6 @@ func _update_route_information():
 		if selectFrom.get_selected_id() == Autoscript.locationIdArray[i].locationId:
 			location_from = Autoscript.locationIdArray[i]
 		elif selectTo.get_selected_id() == Autoscript.locationIdArray[i].locationId:
-			Autoscript._log_debug('select to',Autoscript.locationIdArray[i].locationId,selectTo.get_selected_id())
 			location_to = Autoscript.locationIdArray[i]
 	
 	if location_from:

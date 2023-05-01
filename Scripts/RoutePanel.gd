@@ -21,7 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
-		visible = false
+		get_parent().visible = false
 
 
 func _on_add_route_pressed():

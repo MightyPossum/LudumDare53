@@ -21,8 +21,6 @@ func _add_materials_to_storage(amount):
 	materials_in_storage += amount
 	if materials_in_storage > vessel_storage_space:
 		left_over = materials_in_storage - vessel_storage_space
-		
-	Autoscript._log_debug('Adding to storage',amount, left_over,materials_in_storage,vessel_storage_space)
 	
 	return left_over
 	

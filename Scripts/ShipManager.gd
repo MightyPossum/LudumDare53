@@ -56,16 +56,13 @@ func _check_path_and_update():
 	else:
 		## On a planet we sell materials
 		if current_location.split('',false,2)[0] == 'p':
-			Autoscript._log_debug('Storage when selling',vessel.materials_in_storage)
 			if vessel.materials_in_storage > 0:
 				vessel._set_materials_in_storage(Autoscript.LocationArray[current_location]._sell_materials(vessel.materials_in_storage))
 		
 		## On an asteroid we buy materials
 		elif current_location.split('',false,2)[0] == 'a':
-			Autoscript._log_debug('Storage when buying',vessel.materials_in_storage)
 			if vessel.materials_in_storage < vessel.vessel_storage_space:
 				vessel._add_materials_to_storage(Autoscript.LocationArray[current_location]._buy_materials(vessel.vessel_storage_space-vessel.materials_in_storage))
-			Autoscript._log_debug('Storage after buying',vessel.materials_in_storage)
 		if my_assigned_route.repeating:
 			my_path = my_assigned_route.path.duplicate()
 			my_assigned_route.path.reverse()
