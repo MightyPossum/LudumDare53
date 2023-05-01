@@ -1722,6 +1722,7 @@ metadata/_edit_group_ = true
 [node name="RoutePlanetPicker" parent="CanvasLayer/RoutePlanner" instance=ExtResource("5_o2rfv")]
 
 [node name="RoutePanel" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 370.0
