@@ -11,7 +11,7 @@ func _ready():
 	
 	
 	if asteroid_model != null:
-		get_node('MVPAsteroid').queue_free()
+		get_node('AsteroidVar1').queue_free()
 		add_child(asteroid_model.instantiate())
 	else:
 		print('Fix Asteroid ' + str(self.name))

@@ -75,14 +75,14 @@ func _generateLocations():
 		var locationHasStation = false
 		var location : Location_Object = Location_Object.new()
 		
-
+		var locationId =(Autoscript.LocationArray.size() + 5)*2
 		Autoscript.LocationNames[(Autoscript.LocationArray.size() + 5)*2] = [i.get_node('LocationName').get_child(0).name,i.name]
 		Autoscript.LocationPrettyName[i.name] = i.get_node('LocationName').get_child(0).name
 		Autoscript.LocationArray[i.name] = location
 		if i.name == 'p1' or i.name == 'a7':
 			locationHasStation = true
 		
-		location._initialize(i.name,i.get_node('LocationName').get_child(0).name,(Autoscript.LocationArray.size() + 5)*2,i.demand,i.demand_rate,locationHasStation)
+		location._initialize(i.name,i.get_node('LocationName').get_child(0).name,locationId,i.demand,i.demand_rate,locationHasStation)
 		
 		
 		Autoscript.locationIdArray[(Autoscript.LocationArray.size() + 5)*2] = Autoscript.LocationArray[location.locationNodeName]

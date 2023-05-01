@@ -80,8 +80,6 @@ func _check_path_and_update():
 			Autoscript.PlayerRoutes.erase(my_assigned_route)
 			Autoscript.AvailableFleet[vessel.vessel_id] = destination
 			var location = Autoscript.LocationArray[destination]
-			location.locationHasStation = true
-			Autoscript.update_location_station(location)
 			get_tree().get_root().get_node("/root/GameScene/CanvasLayer/RoutePanel/RoutePanel")._populate_list()
 			queue_free()
 

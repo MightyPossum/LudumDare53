@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Asteroid.gd" id="1_l3b6f"]
 [ext_resource type="Script" path="res://Scripts/PlanetClicker.gd" id="2_wfn2p"]
-[ext_resource type="PackedScene" uid="uid://dudqaoe1t87fg" path="res://Assets/Ships/MVPAsteroid.blend" id="3_pyyx2"]
+[ext_resource type="PackedScene" uid="uid://cp25b3btalsne" path="res://Assets/Asteroids/AsteroidVar1.blend" id="3_mgwbr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c3tou"]
 
@@ -12,15 +12,15 @@ script = ExtResource("1_l3b6f")
 demand_rate = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(50.6899, -0.905153, -3.95655e-08, 0, -2.21608e-06, 50.698, -0.905153, -50.6899, -2.21573e-06, 0, 0.744911, 1.09373)
+transform = Transform3D(57.9908, -1.03552, -4.52641e-08, 0, -2.53526e-06, 58, -1.03552, -57.9908, -2.53486e-06, 1.63136, 11.1953, 3.75316)
 shape = SubResource("SphereShape3D_c3tou")
 script = ExtResource("2_wfn2p")
 
-[node name="MVPAsteroid" parent="." instance=ExtResource("3_pyyx2")]
-transform = Transform3D(0.989731, 0, -0.14294, 0, 1, 0, 0.14294, 0, 0.989731, 0, -14.1654, 0)
+[node name="AsteroidVar1" parent="." instance=ExtResource("3_mgwbr")]
 
 [node name="AsteroidLabel" type="Label3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -4.74167, -21.7962)
+visible = false
 pixel_size = 1.0
 billboard = 1
 text = "645654654"

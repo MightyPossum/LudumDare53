@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://vmfqg76auwn3"]
+[gd_scene load_steps=2 format=3 uid="uid://vmfqg76auwn3"]
+
+[ext_resource type="Script" path="res://Scripts/location_info.gd" id="1_wiqw1"]
 
 [node name="LocationInfo" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wiqw1")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -70,7 +73,7 @@ offset_right = 215.0
 offset_bottom = 27.0
 text = "5"
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="StationButton" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 54.0
 offset_top = 203.0
@@ -80,10 +83,12 @@ disabled = true
 text = "Build Station
 "
 
-[node name="ParkedVesselsLabel2" type="Label" parent="Panel/Button"]
+[node name="StationStatusLabel" type="Label" parent="Panel/StationButton"]
 layout_mode = 0
 offset_left = -16.0
 offset_top = -22.0
 offset_right = 204.0
 offset_bottom = 3.0
 text = "No Vessel In Orbit"
+
+[connection signal="pressed" from="Panel/StationButton" to="." method="_on_station_button_pressed"]

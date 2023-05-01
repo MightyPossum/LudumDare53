@@ -101,11 +101,12 @@ func _update_route_information():
 	
 	var vessel_name = ' '
 	
-	for i in Autoscript.LocationArray:
-		if selectFrom.get_selected_id() == Autoscript.LocationArray[i].locationId:
-			location_from = Autoscript.LocationArray[i]
-		elif selectTo.get_selected_id() == Autoscript.LocationArray[i].locationId:
-			location_to = Autoscript.LocationArray[i]
+	for i in Autoscript.locationIdArray:
+		if selectFrom.get_selected_id() == Autoscript.locationIdArray[i].locationId:
+			location_from = Autoscript.locationIdArray[i]
+		elif selectTo.get_selected_id() == Autoscript.locationIdArray[i].locationId:
+			Autoscript._log_debug('select to',Autoscript.locationIdArray[i].locationId,selectTo.get_selected_id())
+			location_to = Autoscript.locationIdArray[i]
 	
 	if location_from:
 		for i in Autoscript.AvailableFleet:
