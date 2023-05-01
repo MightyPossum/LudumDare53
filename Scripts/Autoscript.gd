@@ -20,3 +20,14 @@ var AvailableFleet : Dictionary
 var VesselList : Dictionary
 
 var routeIDTracker : int = 1
+
+func _log_debug(log_from, var1 = ' ', var2 = ' ', var3 = ' ', var4 = ' '):
+	
+	print(' ')
+	print('#### ' + str(log_from) + ' ####')
+	print('#### ' + str(var1) + ' - ' + str(var2) + ' - ' + str(var3) + ' - ' + str(var4) + ' ####')
+	print('#### Log End ####')
+	print(' ')
+
+func get_vessel(vessel_id):
+	return VesselList[vessel_id]

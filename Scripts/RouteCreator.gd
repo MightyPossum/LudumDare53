@@ -34,6 +34,9 @@ func _on_cancel_pressed():
 	routePanel.get_node('RoutePanel')._toggle_delete_button(true)
 
 func _on_apply_pressed():
+	_route_creation(false)
+	
+func _route_creation(repetetive):
 	## Menu navigation
 	routePlanner.visible = false
 	routePanel.visible = true
@@ -49,11 +52,9 @@ func _on_apply_pressed():
 		elif selectTo.get_selected_id() == Autoscript.LocationArray[i].locationId:
 			locationToNodeName = Autoscript.LocationArray[i].locationNodeName
 		
-	_create_route(locationFromNodeName, locationToNodeName)
-	
+	_create_route(locationFromNodeName, locationToNodeName, repetetive)
 
-
-func _create_route(location_from, location_to):
+func _create_route(location_from, location_to, repetetive):
 	var route : Route = Route.new()
 	get_tree().get_root().get_node('GameScene').get_node('Routes').add_child(route)
 	
@@ -69,6 +70,7 @@ func _create_route(location_from, location_to):
 	if route.vessel_id != null:
 		Autoscript.AvailableFleet.erase(route.locationFrom)
 		route.routeId = Autoscript.routeIDTracker
+		route.repeating = repetetive
 		Autoscript.routeIDTracker += 1
 		Autoscript.PlayerRoutes.append(route)
 		routePanel.get_node('RoutePanel')._populate_list()
@@ -87,7 +89,6 @@ func _update_route_information():
 	var location_from_name
 	var location_to_name
 	
-	print(Autoscript.LocationArray)
 	for i in Autoscript.LocationArray:
 		if selectFrom.get_selected_id() == Autoscript.LocationArray[i].locationId:
 			location_from = Autoscript.LocationArray[i]
@@ -112,8 +113,5 @@ func _update_route_information():
 	get_node('Control/RouteText').add_text('Route From: %d \n Route To: %d \n Assigned Vessel: %d' % [location_from_name, location_to_name, vessel.vessel_name])
 
 
-
-
-
-
-
+func _on_route_pressed():
+	_route_creation(true)

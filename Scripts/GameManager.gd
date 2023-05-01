@@ -20,13 +20,18 @@ func _ready():
 	Autoscript.VesselList[ship.vessel_id] = ship
 	Autoscript.AvailableFleet[ship.vessel_id] = 'p1'
 	
+	ship = Ship.new()
+	ship._init_ship('TNNS Tigergutt',3)
+	Autoscript.VesselList[ship.vessel_id] = ship
+	Autoscript.AvailableFleet[ship.vessel_id] = 'p1'
+	
 	_generateLocations()
 	_generatePathways()
-	print(Autoscript.LocationArray)
+	
 	_generateLocationArray()
 	_generateSelectLists()
 	
-	route_planner._create_route('p1', 'a7')
+	#route_planner._create_route('p1', 'a7', true)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

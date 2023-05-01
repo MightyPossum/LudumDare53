@@ -7,7 +7,7 @@ var vessel_id
 var path : Array
 var shipManager = load("res://Scenes/Ship.tscn")
 var cost = 0
-var repeating : bool = true
+var repeating : bool = false
 
 func _create_route():
 	
