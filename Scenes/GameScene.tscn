@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://bxh8q7wmhlqtk"]
+[gd_scene load_steps=81 format=3 uid="uid://dvo84ahbi5qh2"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_qj5vb"]
 [ext_resource type="Script" path="res://Scripts/JumplaneParticles.gd" id="2_01lw1"]
@@ -33,7 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://bac4sy34bfy6v" path="res://Assets/Asteroids/AsteroidVar7.blend" id="25_qq6xu"]
 [ext_resource type="PackedScene" uid="uid://c4wq3dscds70p" path="res://Scenes/planet_list.tscn" id="31_7l3oh"]
 [ext_resource type="PackedScene" uid="uid://b57qop7uj5utp" path="res://Scenes/vessel_list.tscn" id="31_xnt3w"]
-[ext_resource type="AudioStream" uid="uid://cj72lkvjb6vq7" path="res://Assets/Audio/LD53BG.wav" id="34_o5s8f"]
 
 [sub_resource type="Curve3D" id="Curve3D_7iwdx"]
 _data = {
@@ -334,6 +333,13 @@ _data = {
 }
 point_count = 10
 
+[sub_resource type="Curve3D" id="Curve3D_b2ido"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -634.57, 266.003, -51.254, 0, 0, 0, 0, 0, 0, -523.795, 343.006, -51.2543, 0, 0, 0, 0, 0, 0, -404.914, 394.341, -51.2545, 0, 0, 0, 0, 0, 0, -284.776, 433.232, -51.2549),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_buq38"]
 emission_shape = 3
 emission_box_extents = Vector3(2000, 2000, 10)
@@ -429,7 +435,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_07xw0")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p1-p12"]
-transform = Transform3D(-0.976469, -0.00866266, -0.21484, 1.39679e-09, 0.99902, -0.0402843, 0.215014, -0.0393407, -0.975676, -54.8336, 4.64973, 38.4809)
+transform = Transform3D(-0.976469, -0.00866265, -0.21484, 1.39679e-09, 0.999019, -0.0402843, 0.215014, -0.0393407, -0.975675, -54.8336, 4.64973, 38.4809)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p1-p12/JumplaneParticles"]
@@ -501,7 +507,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_k0gsg")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p13-a16"]
-transform = Transform3D(-0.862972, -0.0721199, 0.499801, -3.72477e-09, 0.989582, 0.142803, -0.504977, 0.123248, -0.854125, -192.147, 505.551, 306.025)
+transform = Transform3D(-0.862972, -0.0721199, 0.499801, -3.72477e-09, 0.989582, 0.142802, -0.504977, 0.123248, -0.854125, -192.147, 505.551, 306.025)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p13-a16/JumplaneParticles"]
@@ -609,7 +615,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_wedxc")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p4-p5"]
-transform = Transform3D(-0.205459, -0.919436, 0.334809, 2.97982e-08, 0.3421, 0.939512, -0.978524, 0.193052, -0.0702991, 558.883, -293.177, 372.252)
+transform = Transform3D(-0.205459, -0.919436, 0.334809, 2.97982e-08, 0.3421, 0.939512, -0.978525, 0.193052, -0.0702991, 558.883, -293.177, 372.252)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p4-p5/JumplaneParticles"]
@@ -627,7 +633,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_gw7wh")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p5-p12"]
-transform = Transform3D(0.00512835, -0.752332, -0.658528, -2.97982e-08, 0.658517, -0.752364, 0.999848, 0.00385883, 0.00337766, 967.233, 757.01, -62.2241)
+transform = Transform3D(0.00512835, -0.752332, -0.658528, -2.97982e-08, 0.658517, -0.752364, 0.999847, 0.00385883, 0.00337766, 967.233, 757.01, -62.2241)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p5-p12/JumplaneParticles"]
@@ -645,7 +651,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_nhe73")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p12-p15"]
-transform = Transform3D(-0.993304, -0.0298191, 0.110362, 0, 0.965218, 0.26081, -0.11432, 0.259092, -0.958916, 1084.68, -140.538, 0.00012207)
+transform = Transform3D(-0.993303, -0.0298191, 0.110362, 0, 0.965218, 0.26081, -0.11432, 0.259092, -0.958916, 1084.68, -140.538, 0.00012207)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p12-p15/JumplaneParticles"]
@@ -699,7 +705,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_wrspf")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p14-p8"]
-transform = Transform3D(0.846393, -0.0468589, -0.530232, 0, 0.99595, -0.0880214, 0.532299, 0.0745089, 0.843106, 899.65, 367.438, 754.694)
+transform = Transform3D(0.846393, -0.0468589, -0.530232, 0, 0.99595, -0.0880215, 0.532299, 0.0745089, 0.843106, 899.65, 367.438, 754.694)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p14-p8/JumplaneParticles"]
@@ -843,7 +849,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_k43an")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a9-a12"]
-transform = Transform3D(-0.664281, -0.0770639, -0.743313, -1.11743e-08, 0.994501, -0.103112, 0.747298, -0.068503, -0.660739, -488.255, 756.186, 436.673)
+transform = Transform3D(-0.664281, -0.0770639, -0.743313, -1.11743e-08, 0.994501, -0.103112, 0.747298, -0.0685029, -0.660739, -488.255, 756.186, 436.673)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a9-a12/JumplaneParticles"]
@@ -934,7 +940,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_ihbv6")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a12-a23"]
-transform = Transform3D(-0.0229889, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999597, -0.0178015, -0.0145456, -602.666, 845.697, -203.527)
+transform = Transform3D(-0.022989, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999598, -0.0178016, -0.0145457, -602.666, 845.697, -203.527)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a12-a23/JumplaneParticles"]
@@ -1006,7 +1012,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_xsuwg")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p9-a3"]
-transform = Transform3D(-0.914845, -0.301084, 0.268561, -1.48991e-08, 0.665528, 0.74617, -0.403462, 0.682704, -0.608957, 349.093, 266.922, -351.249)
+transform = Transform3D(-0.914845, -0.301084, 0.268561, -2.97982e-08, 0.665528, 0.74617, -0.403462, 0.682704, -0.608957, 349.093, 266.922, -351.249)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p9-a3/JumplaneParticles"]
@@ -1078,7 +1084,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_5rnux")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a1-a18"]
-transform = Transform3D(-0.060143, -0.542009, 0.838042, 0, 0.839538, 0.543008, -0.998051, 0.0326617, -0.0505008, 1303.71, -32.7317, 102.967)
+transform = Transform3D(-0.060143, -0.542009, 0.838042, 0, 0.839539, 0.543008, -0.998051, 0.0326617, -0.0505008, 1303.71, -32.7317, 102.967)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a1-a18/JumplaneParticles"]
@@ -1128,6 +1134,24 @@ trail_lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_a1k8a")
 draw_pass_1 = SubResource("SphereMesh_gdnkx")
 
+[node name="p11-a6" type="Path3D" parent="Pathways"]
+curve = SubResource("Curve3D_b2ido")
+
+[node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p11-a6"]
+transform = Transform3D(-2.09069e-06, -0.570675, 0.820995, 2.97982e-08, 0.820971, 0.570692, -0.999861, 1.21774e-06, -1.69968e-06, -634.57, 266.003, -51.254)
+script = ExtResource("2_01lw1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p11-a6/JumplaneParticles"]
+transform = Transform3D(1, -2.98023e-08, -1.49012e-08, 0, 1, 9.8953e-10, -4.47035e-08, -7.53789e-09, 1, 0.00727081, 0.00270465, -0.0162096)
+amount = 800
+lifetime = 5.0
+visibility_aabb = AABB(-5000, -5000, -5000, 10000, 10000, 10000)
+draw_order = 1
+transform_align = 3
+trail_lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_a1k8a")
+draw_pass_1 = SubResource("SphereMesh_gdnkx")
+
 [node name="Routes" type="Node3D" parent="."]
 
 [node name="Planets" type="Node3D" parent="."]
@@ -1142,6 +1166,7 @@ planet_model = ExtResource("3_ha4m2")
 
 [node name="Station" parent="Planets/p1" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.678803, 0.503666, -0.534366, -0.643071, 0.0564049, -0.763726, -0.354522, 0.862055, 0.362181, 49.4722, 39.4437, -16.7866)
+visible = false
 
 [node name="p2" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397.793, 39.1407, -358.574)
@@ -1153,6 +1178,7 @@ planet_model = ExtResource("4_2k01j")
 
 [node name="Station" parent="Planets/p2" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.32181, 0.7381, -0.592998, -0.849788, -0.501339, -0.162848, -0.417491, 0.451517, 0.788564, 34.1508, 11.7914, -43.5505)
+visible = false
 
 [node name="p3" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.02, 293.555, 288.54)
@@ -1164,6 +1190,7 @@ planet_model = ExtResource("5_1pbwk")
 
 [node name="Station" parent="Planets/p3" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.221832, 0.967976, -0.117527, -0.934918, 0.176906, -0.307626, -0.276983, 0.178119, 0.944221, 18.9271, 14.0695, -51.9496)
+visible = false
 
 [node name="p4" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 579.881, -285.168, 296.944)
@@ -1175,6 +1202,7 @@ planet_model = ExtResource("6_1d8wx")
 
 [node name="Station" parent="Planets/p4" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.928047, 0.371709, 0.0236871, -0.199488, 0.549752, -0.811158, -0.314537, 0.748068, 0.584347, 14.653, 52.5147, -23.1947)
+visible = false
 
 [node name="p5" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 978.545, 757.527, -0.0332184)
@@ -1186,6 +1214,7 @@ planet_model = ExtResource("7_xaoqq")
 
 [node name="Station" parent="Planets/p5" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.383156, 0.884957, 0.264653, -0.811627, 0.459343, -0.360923, -0.440968, -0.0765097, 0.894256, -14.8062, 13.0615, -51.1992)
+visible = false
 
 [node name="p6" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -863.892, 640.23, 621.102)
@@ -1197,6 +1226,7 @@ planet_model = ExtResource("8_01pea")
 
 [node name="Station" parent="Planets/p6" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.173804, 0.754096, -0.633349, -0.877629, -0.173134, -0.44698, -0.44672, 0.633533, 0.631726, 53.337, 20.1102, -16.7866)
+visible = false
 
 [node name="p7" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301.943, -254.415, 680.193)
@@ -1208,6 +1238,7 @@ planet_model = ExtResource("9_82fvr")
 
 [node name="Station" parent="Planets/p7" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.897486, 0.411263, -0.159315, 0.404023, -0.621781, 0.670935, 0.176872, -0.666522, -0.7242, -40.7019, 39.4437, -27.0962)
+visible = false
 
 [node name="p8" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1005.69, -181.725, -350.17)
@@ -1219,6 +1250,7 @@ planet_model = ExtResource("10_8mqb4")
 
 [node name="Station" parent="Planets/p8" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.474, -0.692281, -0.544124, 0.691244, 0.0902352, -0.716965, 0.54544, -0.715964, 0.435764, 49.4722, 39.4437, -16.7866)
+visible = false
 
 [node name="p9" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 406.197, 271.189, -341.766)
@@ -1230,6 +1262,7 @@ planet_model = ExtResource("11_mekoe")
 
 [node name="Station" parent="Planets/p9" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.170029, 0.982909, -0.0705748, -0.864654, 0.11445, -0.489157, -0.472719, 0.144194, 0.869335, 1.82755, 17.1013, -53.1656)
+visible = false
 
 [node name="p10" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 352.266, 749.265, 0)
@@ -1241,6 +1274,7 @@ planet_model = ExtResource("12_lbvdc")
 
 [node name="Station" parent="Planets/p10" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.761267, 0.597103, 0.252865, -0.610705, 0.791291, -0.0299465, -0.217971, -0.131629, 0.967038, -25.0418, 11.4313, -51.6367)
+visible = false
 
 [node name="p11" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -641.511, 232.049, 0)
@@ -1252,6 +1286,7 @@ planet_model = ExtResource("13_u201g")
 
 [node name="Station" parent="Planets/p11" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.429014, 0.893954, 0.129585, -0.733394, 0.428466, -0.527778, -0.527332, 0.131388, 0.839439, 11.9401, 39.4437, -47.0023)
+visible = false
 
 [node name="p12" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1034.43, -148.176, 0)
@@ -1263,6 +1298,7 @@ planet_model = ExtResource("14_end1e")
 
 [node name="Station" parent="Planets/p12" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.0465536, 0.935417, 0.350467, -0.958192, 0.0573401, -0.280324, -0.282316, -0.348864, 0.89364, -11.3479, 14.9038, -53.7888)
+visible = false
 
 [node name="p13" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -193.294, 506.034, 361.375)
@@ -1274,6 +1310,7 @@ planet_model = ExtResource("15_c5sig")
 
 [node name="Station" parent="Planets/p13" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.108472, 0.853247, -0.510102, -0.926749, -0.272454, -0.258662, -0.359682, 0.444678, 0.820299, 49.4722, 39.4437, -16.7866)
+visible = false
 
 [node name="p14" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(0.999975, -0.00702893, 0.00110094, 0.00703019, 0.999975, -0.00113899, -0.00109292, 0.00114668, 0.999999, 849.913, 352.267, 744.272)
@@ -1285,6 +1322,7 @@ planet_model = ExtResource("16_f04cb")
 
 [node name="Station" parent="Planets/p14" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.469267, 0.702272, -0.535352, -0.737426, -0.0218617, -0.675074, -0.485789, 0.711572, 0.507615, 54.2853, 19.0273, -21.0928)
+visible = false
 
 [node name="p15" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1161.18, 71.6332, -408.473)
@@ -1296,6 +1334,7 @@ planet_model = ExtResource("17_ledh8")
 
 [node name="Station" parent="Planets/p15" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.378379, 0.637913, -0.670743, -0.901736, -0.41767, 0.111461, -0.209047, 0.647008, 0.733267, 58.1394, -9.36322, -15.287)
+visible = false
 
 [node name="a1" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1302.07, 0.277159, 97.6717)
@@ -1307,6 +1346,7 @@ asteroid_model = ExtResource("19_xrxph")
 
 [node name="Station" parent="Planets/a1" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.671423, 0.521163, -0.526859, -0.643071, 0.0564049, -0.763726, -0.368308, 0.851591, 0.373016, 31.243, 27.9377, -16.7866)
+visible = false
 
 [node name="a2" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0.000144414, 6.86094e-05, -0.000144414, 1, -6.99925e-05, -6.86094e-05, 6.99925e-05, 1, -1210.75, 142.861, 33.3691)
@@ -1318,6 +1358,7 @@ asteroid_model = ExtResource("20_s1t8o")
 
 [node name="Station" parent="Planets/a2" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.10861, 0.980479, 0.163905, -0.643213, 0.0564003, -0.763607, -0.757945, -0.188362, 0.624531, 17.17, 44.013, -16.7891)
+visible = false
 
 [node name="a3" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.624, 45.0095, -428.687)
@@ -1329,6 +1370,7 @@ asteroid_model = ExtResource("21_akps7")
 
 [node name="Station" parent="Planets/a3" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.118941, 0.992538, -0.0268467, -0.643071, 0.0564049, -0.763726, -0.756513, 0.108103, 0.644982, -14.6018, 27.7849, -29.216)
+visible = false
 
 [node name="a4" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.698, 442.008, 557.223)
@@ -1340,6 +1382,7 @@ asteroid_model = ExtResource("22_vy4b3")
 
 [node name="Station" parent="Planets/a4" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.131452, 0.901717, -0.411857, -0.725286, -0.195738, -0.660036, -0.675781, 0.385477, 0.628273, 29.2284, 24.2009, -24.113)
+visible = false
 
 [node name="a5" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.039, 86.9459, 243.538)
@@ -1351,6 +1394,7 @@ asteroid_model = ExtResource("23_evtx2")
 
 [node name="Station" parent="Planets/a5" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.678803, 0.503666, -0.534366, -0.643071, 0.0564049, -0.763726, -0.354522, 0.862055, 0.362181, 31.5986, 39.6131, 4.8727)
+visible = false
 
 [node name="a6" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -266.77, 397.276, -111.972)
@@ -1362,6 +1406,7 @@ asteroid_model = ExtResource("24_78ciq")
 
 [node name="Station" parent="Planets/a6" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.654919, -0.463634, 0.596762, 0.750268, 0.493424, -0.440035, -0.0904413, 0.735919, 0.671002, -20.3332, 39.4437, -16.7866)
+visible = false
 
 [node name="a7" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.846, -61.2293, -73.0936)
@@ -1373,6 +1418,7 @@ asteroid_model = ExtResource("25_qq6xu")
 
 [node name="Station" parent="Planets/a7" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.351475, 0.875851, 0.330682, -0.680301, 0.00371675, -0.732923, -0.643161, -0.482567, 0.594536, -6.63222, 41.3988, -25.7439)
+visible = false
 
 [node name="a8" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -618.903, 693.627, 271.73)
@@ -1384,6 +1430,7 @@ asteroid_model = ExtResource("19_xrxph")
 
 [node name="Station" parent="Planets/a8" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.794976, 0.551337, 0.253064, -0.14573, 0.578503, -0.802556, -0.588877, 0.601134, 0.540242, 6.84558, 47.0945, -16.7866)
+visible = false
 
 [node name="a9" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.87, 729.972, 431.318)
@@ -1395,6 +1442,7 @@ asteroid_model = ExtResource("20_s1t8o")
 
 [node name="Station" parent="Planets/a9" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.915118, 0.399502, -0.0543912, 0.173447, -0.511859, -0.841378, -0.363972, 0.760526, -0.537703, 8.30621, 50.555, 16.6557)
+visible = false
 
 [node name="a10" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -733.591, 819.437, 377.388)
@@ -1406,6 +1454,7 @@ asteroid_model = ExtResource("21_akps7")
 
 [node name="Station" parent="Planets/a10" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.370686, 0.895592, -0.245981, -0.643071, 0.056405, -0.763726, -0.670113, 0.441286, 0.596838, 22.9749, 39.6648, -16.7866)
+visible = false
 
 [node name="a11" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, -7.77915e-05, -3.2546e-05, 7.77915e-05, 1, 2.24649e-05, 3.2546e-05, -2.24649e-05, 1, -792.318, 816.641, 145.334)
@@ -1417,6 +1466,7 @@ asteroid_model = ExtResource("22_vy4b3")
 
 [node name="Station" parent="Planets/a11" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.742592, 0.0241979, 0.669307, 0.568234, 0.506193, -0.648752, -0.354497, 0.862081, 0.362144, -22.1104, 39.4489, -6.63161)
+visible = false
 
 [node name="a12" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -601.904, 816.641, -162.335)
@@ -1428,6 +1478,7 @@ asteroid_model = ExtResource("23_evtx2")
 
 [node name="Station" parent="Planets/a12" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.143388, 0.913603, -0.380485, -0.930854, -0.25506, -0.26164, -0.336082, 0.316659, 0.887004, 29.7867, 18.8643, -24.6614)
+visible = false
 
 [node name="a13" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 692.535, -61.2297, -240.996)
@@ -1439,6 +1490,7 @@ asteroid_model = ExtResource("24_78ciq")
 
 [node name="Station" parent="Planets/a13" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.489481, 0.79725, -0.353271, -0.643071, 0.0564049, -0.763726, -0.588954, 0.601009, 0.540298, 11.439, 36.8899, -16.7866)
+visible = false
 
 [node name="a14" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1142.96, 461.579, -438.237)
@@ -1450,6 +1502,7 @@ asteroid_model = ExtResource("25_qq6xu")
 
 [node name="Station" parent="Planets/a14" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.31654, 0.888525, 0.332154, -0.643071, 0.0564049, -0.763726, -0.697325, -0.455349, 0.55353, -25.6971, 39.2922, -21.4177)
+visible = false
 
 [node name="a15" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -940.729, -223.384, -123.194)
@@ -1461,6 +1514,7 @@ asteroid_model = ExtResource("19_xrxph")
 
 [node name="Station" parent="Planets/a15" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.0944727, 0.904675, -0.415497, -0.854033, -0.14082, -0.500796, -0.511568, 0.40216, 0.759319, 19.269, 31.9217, -16.7866)
+visible = false
 
 [node name="a16" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.035, 581.796, -120.398)
@@ -1472,6 +1526,7 @@ asteroid_model = ExtResource("20_s1t8o")
 
 [node name="Station" parent="Planets/a16" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.678803, 0.503666, -0.534366, -0.643071, 0.0564049, -0.763726, -0.354522, 0.862055, 0.362181, 25.0341, 31.1205, -16.7866)
+visible = false
 
 [node name="a17" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 440.603, 539.86, 955.821)
@@ -1483,6 +1538,7 @@ asteroid_model = ExtResource("21_akps7")
 
 [node name="Station" parent="Planets/a17" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.733013, -0.470935, 0.490828, 0.680204, 0.503542, -0.532699, 0.00371447, 0.724338, 0.689435, -16.7031, 39.4437, -16.7866)
+visible = false
 
 [node name="a18" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(0.982317, -0.187227, 0, 0.187227, 0.982317, 0, 0, 0, 1, 989.054, 106.516, 526.168)
@@ -1494,6 +1550,7 @@ asteroid_model = ExtResource("22_vy4b3")
 
 [node name="Station" parent="Planets/a18" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.662629, 0.553408, -0.504641, -0.727931, 0.317384, -0.60777, -0.176179, 0.77007, 0.61315, 27.0249, 36.106, -16.7866)
+visible = false
 
 [node name="a19" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.3916, -136.715, 378.26)
@@ -1505,6 +1562,7 @@ asteroid_model = ExtResource("23_evtx2")
 
 [node name="Station" parent="Planets/a19" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.349431, 0.909026, -0.227091, -0.719044, 0.104771, -0.687022, -0.600728, 0.403355, 0.690239, 17.6303, 30.9353, -21.9602)
+visible = false
 
 [node name="a20" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.741, 78.5586, 394.655)
@@ -1516,6 +1574,7 @@ asteroid_model = ExtResource("24_78ciq")
 
 [node name="Station" parent="Planets/a20" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.860097, 0.123218, -0.495026, -0.468946, 0.572955, -0.672169, 0.200804, 0.810271, 0.550579, 11.6543, 45.8256, -16.7866)
+visible = false
 
 [node name="a21" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 773.612, -64.0254, 874.894)
@@ -1527,6 +1586,7 @@ asteroid_model = ExtResource("25_qq6xu")
 
 [node name="Station" parent="Planets/a21" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.481502, 0.805275, -0.34596, -0.643071, 0.0564049, -0.763726, -0.595496, 0.590212, 0.545008, 41.3621, 24.8816, -24.1036)
+visible = false
 
 [node name="a22" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 0.999998, 0.00191986, 0, -0.00191986, 0.999998, 731.676, 702.014, 831.398)
@@ -1538,6 +1598,7 @@ asteroid_model = ExtResource("19_xrxph")
 
 [node name="Station" parent="Planets/a22" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.137221, 0.989714, -0.0404613, -0.797136, 0.086088, -0.597632, -0.588001, 0.11426, 0.800749, 7.62439, 39.4442, -16.7861)
+visible = false
 
 [node name="a23" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -596.313, -329.623, -33.7292)
@@ -1549,6 +1610,7 @@ asteroid_model = ExtResource("20_s1t8o")
 
 [node name="Station" parent="Planets/a23" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.578117, 0.599527, 0.553487, -0.313208, 0.789418, -0.527939, -0.753446, 0.131854, 0.644153, -9.91949, 39.4437, -16.7866)
+visible = false
 
 [node name="a24" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1289.19, 0.277159, -311.131)
@@ -1560,6 +1622,7 @@ asteroid_model = ExtResource("21_akps7")
 
 [node name="Station" parent="Planets/a24" instance=ExtResource("5_nqg17")]
 transform = Transform3D(0.81338, -0.468106, 0.345383, 0.569467, 0.519432, -0.637101, 0.118828, 0.714889, 0.689067, -23.4921, 35.3223, -15.9362)
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1615,10 +1678,6 @@ offset_bottom = -540.0
 transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 1.115, 0, -209.86)
 near = 0.001
 script = ExtResource("8_dmf3d")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera3D"]
-stream = ExtResource("34_o5s8f")
-autoplay = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.7677, 0, -1609.65)
