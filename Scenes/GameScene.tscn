@@ -1596,6 +1596,7 @@ offset_bottom = 40.0
 layout_mode = 1
 
 [node name="VesselList" parent="CanvasLayer" instance=ExtResource("31_xnt3w")]
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998835, 0, -0.0482571, 0, 1, 0, 0.0482571, 0, -0.998835, 1.115, 0, -209.86)
