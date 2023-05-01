@@ -5,30 +5,32 @@ var vesselCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-		if selectedLocation:
-			get_node("Panel").get_node('SupplyOrDemand').get_node('SupplyOrDemandLabel').text = str(selectedLocation.supplyAndDemand)
-			vesselCount = 0
-			for i in Autoscript.AvailableFleet:
-				
-				if Autoscript.AvailableFleet[i] == selectedLocation.locationNodeName:
-					vesselCount += 1
-			get_node("Panel").get_node('ParkedVessels').get_node('ParkedVesselsLabel').text = str(vesselCount)
-			if vesselCount > 0 and not selectedLocation.locationHasStation:
-				get_node("Panel").get_node('StationButton').disabled = false
-				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'Vessel in Orbit'
-			elif selectedLocation.locationHasStation:
-				get_node("Panel").get_node('StationButton').disabled = true
-				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'Station On Location'
-			else:
-				get_node("Panel").get_node('StationButton').disabled = true
-				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'No vessel in Orbit'
-				
-
+	if Input.is_action_pressed("ui_cancel") and selectedLocation:
+		_toggle_info_panel(selectedLocation)
+	if selectedLocation:
+			
+		get_node("Panel").get_node('SupplyOrDemand').get_node('SupplyOrDemandLabel').text = str(selectedLocation.supplyAndDemand)
+		vesselCount = 0
+		for i in Autoscript.AvailableFleet:
+			
+			if Autoscript.AvailableFleet[i] == selectedLocation.locationNodeName:
+				vesselCount += 1
+		get_node("Panel").get_node('ParkedVessels').get_node('ParkedVesselsLabel').text = str(vesselCount)
+		if vesselCount > 0 and not selectedLocation.locationHasStation:
+			get_node("Panel").get_node('StationButton').disabled = false
+			get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'Buy station (' + str(Autoscript.StationCost) + ')'
+		elif selectedLocation.locationHasStation:
+			get_node("Panel").get_node('StationButton').disabled = true
+			get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'Station On Location'
+		else:
+			get_node("Panel").get_node('StationButton').disabled = true
+			get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'No vessel in Orbit'
+			
 func _toggle_info_panel(location):
 		
 		if selectedLocation == location:

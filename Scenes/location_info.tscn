@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://vmfqg76auwn3"]
+[gd_scene load_steps=6 format=3 uid="uid://vmfqg76auwn3"]
 
 [ext_resource type="Script" path="res://Scripts/location_info.gd" id="1_wiqw1"]
 [ext_resource type="Texture2D" uid="uid://cqxgqro1p5lac" path="res://Assets/MenuArt/InfoPanel.png" id="2_fxwbj"]
 [ext_resource type="Texture2D" uid="uid://btf7xyctt3dc6" path="res://Assets/MenuArt/InfoTape.png" id="3_0dl17"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_vmhk2"]
+
+[sub_resource type="Shortcut" id="Shortcut_d2ejv"]
+events = [SubResource("InputEventKey_vmhk2")]
 
 [node name="LocationInfo" type="Control"]
 layout_mode = 3
@@ -146,5 +151,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Serenity
 "
 horizontal_alignment = 1
+
+[node name="ExitButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+shortcut = SubResource("Shortcut_d2ejv")
 
 [connection signal="pressed" from="Panel/StationButton" to="." method="_on_station_button_pressed"]

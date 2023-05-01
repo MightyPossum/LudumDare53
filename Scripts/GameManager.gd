@@ -35,6 +35,8 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	
 	if Autoscript.Cash <= 0:
 		Autoscript.lose = true
 		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

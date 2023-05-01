@@ -10,6 +10,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	cur_pos += (progress_speed * delta)
-	set_progress_ratio(cur_pos)
-	pass
+	if get_parent().get_child_count() >= 2:
+		visible = true
+		cur_pos += (progress_speed * delta)
+		set_progress_ratio(cur_pos)
+	else:
+		visible = false
