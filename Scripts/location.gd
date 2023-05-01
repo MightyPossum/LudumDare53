@@ -28,7 +28,7 @@ func _tick_demand():
 		else:
 			supplyTick = Autoscript.globalSupplyTick
 			
-		supplyAndDemand += Autoscript.globalSupplyTick * supplyAndDemandRate
+		supplyAndDemand += supplyTick * supplyAndDemandRate
 		
 		if supplyAndDemand > Autoscript.supplyAndDemandLimit:
 			supplyAndDemand = Autoscript.supplyAndDemandLimit
