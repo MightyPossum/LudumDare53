@@ -135,6 +135,7 @@ offset_bottom = 507.2
 theme = SubResource("Theme_12k4q")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 81.0
 offset_top = 453.0
 offset_right = 245.0
@@ -143,6 +144,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "New Ship Cost:"
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 249.0
 offset_top = 449.0
 offset_right = 281.0
@@ -150,6 +152,7 @@ offset_bottom = 481.0
 texture = ExtResource("9_5qup2")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 282.0
 offset_top = 452.0
 offset_right = 337.0

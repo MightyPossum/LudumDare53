@@ -23,9 +23,11 @@ func _process(delta):
 				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').visible = false
 			elif selectedLocation.locationHasStation:
 				get_node("Panel").get_node('StationButton').disabled = true
+				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').visible = true
 				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'Station On Location'
 			else:
 				get_node("Panel").get_node('StationButton').disabled = true
+				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').visible = true
 				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'No vessel in Orbit'
 				
 
@@ -57,4 +59,4 @@ func _convert_supply_rate(supplyAndDemandRate):
 
 
 func _on_station_button_pressed():
-	pass # Replace with function body.
+	Autoscript.update_location_station(selectedLocation)

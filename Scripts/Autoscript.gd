@@ -40,6 +40,7 @@ func get_vessel(vessel_id):
 	
 func update_location_station(location):
 	get_tree().get_root().get_node("GameScene").get_node('Planets').get_node(str(location.locationNodeName)).get_node('Station').visible = true
+	location.locationHasStation = true
 	if not (location.locationNodeName == 'a7' or location.locationNodeName == 'p1'):
 		Cash -= StationCost
 	
