@@ -20,14 +20,12 @@ func _process(delta):
 			get_node("Panel").get_node('ParkedVessels').get_node('ParkedVesselsLabel').text = str(vesselCount)
 			if vesselCount > 0 and not selectedLocation.locationHasStation:
 				get_node("Panel").get_node('StationButton').disabled = false
-				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').visible = false
+				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'Vessel in Orbit'
 			elif selectedLocation.locationHasStation:
 				get_node("Panel").get_node('StationButton').disabled = true
-				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').visible = true
 				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'Station On Location'
 			else:
 				get_node("Panel").get_node('StationButton').disabled = true
-				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').visible = true
 				get_node("Panel").get_node('StationButton').get_node('StationStatusLabel').text = 'No vessel in Orbit'
 				
 
