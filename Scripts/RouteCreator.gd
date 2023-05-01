@@ -89,6 +89,9 @@ func _update_route_information():
 	var location_from_name
 	var location_to_name
 	
+	var cost : int = 0
+	var repeating_cost : int = 0
+	
 	for i in Autoscript.LocationArray:
 		if selectFrom.get_selected_id() == Autoscript.LocationArray[i].locationId:
 			location_from = Autoscript.LocationArray[i]
@@ -109,8 +112,14 @@ func _update_route_information():
 	else:
 		location_to_name = location_to.locationName
 	
+	if location_from and location_to:
+		var dijkstra_result = Autoscript.dijkstra(location_from.locationNodeName, location_to.locationNodeName)
+		cost = dijkstra_result['cost'][location_to.locationNodeName]
+		repeating_cost = dijkstra_result['path'].size()-1
+		repeating_cost = repeating_cost * vessel.travel_cost * 10
+	
 	get_node('Control/RouteText').clear()
-	get_node('Control/RouteText').add_text('Route From: %d \n Route To: %d \n Assigned Vessel: %d' % [location_from_name, location_to_name, vessel.vessel_name])
+	get_node('Control/RouteText').append_text('[b]Route From[/b]\n' + location_from_name + '\n[b]Route To[/b]\n' + location_to_name + '\n[b]Assigned Vessel[/b]\n' + vessel.vessel_name + '\n[b]inital Cost[/b]\n' + str(cost) + '\n[b]Repeating Cost[/b]\n' + str(repeating_cost))
 
 
 func _on_route_pressed():

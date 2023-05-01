@@ -27,6 +27,9 @@ func _on_add_route_pressed():
 	## Menu navigation
 	routePanel.visible = false
 	routePlanner.visible = true
+	var route_text = routePlanner.get_node("RoutePlanetPicker").get_node('Control').get_node('RouteText')
+	route_text.clear()
+	route_text.append_text('[b]Route From[/b]\nN/A\n[b]Route To[/b]\nN/A\n[b]Assigned Vessel[/b]\nN/A\n[b]inital Cost[/b]\nN/A\n[b]Repeating Cost[/b]\nN/A')
 	get_tree().get_root().get_node('GameScene')._generateSelectLists()
 	
 func _on_close_pressed():
@@ -59,9 +62,6 @@ func _on_delete_route_pressed():
 	for i in Autoscript.PlayerRoutes:
 		if i.routeId == routeId:
 			i.repeating = false
-			## Add vessel to planet and remove route
-			#Autoscript.PlayerRoutes.erase(i)
-			#Autoscript.AvailableFleet[i.vessel_id] = i.locationTo
 	_populate_list()
 	
 func _toggle_add_route_option():
@@ -71,9 +71,6 @@ func _toggle_add_route_option():
 		routePanel.get_node("RoutePanel").get_node("RoutePanelRoot").get_node('AddRoute').disabled = false
 	
 	_toggle_delete_button(true)
-	
-	selectFrom.selected = 0
-	selectTo.selected = 0
 	
 func _toggle_delete_button(boolean):
 	routePanelDeleteButton.disabled = boolean

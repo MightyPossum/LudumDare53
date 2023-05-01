@@ -67,15 +67,14 @@ func _check_path_and_update():
 			my_path = my_assigned_route.path.duplicate()
 			my_assigned_route.path.reverse()
 			my_path.reverse()
-			Autoscript._log_debug('now repeating', 'current location: ' + current_location, 'destination: ' + destination, 'origin: ' + origin, 'destination: ' + destination)
+			
 			current_location = destination
 			var temp_origin = origin
 			origin = destination
 			destination = temp_origin
-			Autoscript._log_debug('variables updated', 'current location: ' + current_location, 'destination: ' + destination, 'origin: ' + origin, 'destination: ' + destination)
 			
-			if Autoscript.Cash >= 100:
-				Autoscript.Cash = Autoscript.Cash + 0
+			if Autoscript.Cash >= my_assigned_route.repeating_cost:
+				Autoscript.Cash -= my_assigned_route.repeating_cost
 			_check_path_and_update()
 		else:
 			Autoscript.PlayerRoutes.erase(my_assigned_route)
@@ -84,8 +83,6 @@ func _check_path_and_update():
 			queue_free()
 
 func _start_traveling():
-	Autoscript._log_debug('start_traveling', current_location, current_path, current_path.split('-',false,2)[0], current_path.split('-',false,2)[1])
-	Autoscript._log_debug('directions', 'first if: ' + str(current_location == current_path.split('-',false,2)[0]), 'Second if: ' + str(current_location == current_path.split('-',false,2)[1]))
 	
 	if current_location == current_path.split('-',false,2)[0]:
 		next_destination = current_path.split('-',false,2)[1]
@@ -98,7 +95,6 @@ func _start_traveling():
 		get_child(0).rotation_degrees.y = -90
 		current_position = .99
 	
-	Autoscript._log_debug('Set Starting Location', 'Current Posisiton: ' + str(current_position), 'Current Location: ' + str(current_location), 'Next Destination: ' + str(next_destination), 'Current Path: ' + str(current_path))
 	set_progress_ratio(current_position)
 	_set_speed(init_speed)
 	
@@ -113,9 +109,4 @@ func _initalize(locationFrom, locationTo, route, routeVesselId):
 	vessel = Autoscript.get_vessel(routeVesselId)
 	
 	current_path = my_path.pop_front()
-	
-	Autoscript._log_debug('line 106 ShipManager', origin, destination, current_position, current_location)
-	
 	_start_traveling()
-	
-	#set_progress_ratio(current_position)

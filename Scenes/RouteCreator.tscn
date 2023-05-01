@@ -89,9 +89,18 @@ offset_right = 374.0
 offset_bottom = 380.0
 theme = ExtResource("4_q7pil")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
-text = "Hello
-Mi Amigo"
+text = "[b]Route From[/b] 
+N/A
+[b]Route To[/b]
+N/A
+[b]Assigned Vessel[/b] 
+N/A
+[b]Initial Cost[/b]
+N/A
+[b]Repeating Cost[/b] 
+N/A"
 fit_content = true
 
 [connection signal="pressed" from="Control/Cancel" to="." method="_on_cancel_pressed"]

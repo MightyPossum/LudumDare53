@@ -49,8 +49,8 @@ func _generateSelectLists():
 	lovFrom.clear()
 	lovTo.clear()
 	
-	lovFrom.add_separator('Select a Location')
-	lovTo.add_separator('Select a Location')
+	lovFrom.add_separator('Origin')
+	lovTo.add_separator('Destination')
 	
 	for i in Autoscript.LocationNames:
 		var vessel_present = false
