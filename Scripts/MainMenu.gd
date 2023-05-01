@@ -18,4 +18,16 @@ func _process(delta):
 func _on_button_pressed():
 	Autoscript.win = false
 	Autoscript.lose = false
+	Autoscript.PlayerRoutes.clear()
+	Autoscript.PlanetArray.clear()
+	Autoscript.PathwayArray.clear()
+	Autoscript.LocationArray.clear()
+	Autoscript.LocationDistances.clear()
+	Autoscript.DistanceCosts.clear()
+	Autoscript.VesselNames.clear()
+	Autoscript.locationIdArray.clear()
+	Autoscript.LocationNames.clear()
+	Autoscript.LocationPrettyName.clear()
+	Autoscript.AvailableFleet.clear()
+	Autoscript.VesselList.clear()
 	get_tree().change_scene_to_file("res://Scenes/GameScene.tscn")

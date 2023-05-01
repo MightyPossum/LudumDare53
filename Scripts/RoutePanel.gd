@@ -10,7 +10,7 @@ var selectTo
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	itemList = get_node('RoutePanelRoot/VBoxContainer/ItemList')
+	itemList = get_node('RoutePanelRoot/ItemList')
 	routePanel = get_parent().get_parent().get_node('RoutePanel')
 	routePlanner = get_parent().get_parent().get_node('RoutePlanner')
 	routePanelDeleteButton = routePanel.get_node("RoutePanel").get_node("RoutePanelRoot").get_node('DeleteRoute')
@@ -44,7 +44,13 @@ func _populate_list():
 		var route = i
 		var locationFromPretty = Autoscript.LocationPrettyName[route.locationFrom]
 		var locationToPretty = Autoscript.LocationPrettyName[route.locationTo]
-		var itemIndex = itemList.add_item(locationFromPretty + " - " + locationToPretty + " (" + Autoscript.VesselList[route.vessel_id].vessel_name + ")")
+		var item_name
+		if route.repeating:
+			item_name = locationFromPretty + " <-> " + locationToPretty + " (" + Autoscript.VesselList[route.vessel_id].vessel_name + ")"
+		else:
+			item_name = locationFromPretty + " -> " + locationToPretty + " (" + Autoscript.VesselList[route.vessel_id].vessel_name + ")"
+		
+		var itemIndex = itemList.add_item(item_name)
 		
 		itemList.set_item_metadata(itemIndex, route.routeId)
 		

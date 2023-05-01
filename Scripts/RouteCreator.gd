@@ -3,6 +3,7 @@ extends Control
 var selectFrom
 var selectTo
 var applyButton
+var routeButton
 var routePlanner
 var routePanel
 var locationFrom
@@ -14,17 +15,23 @@ func _ready():
 	selectFrom = get_node("Control/HBoxContainer/VBoxContainer/SelectFrom")
 	selectTo = get_node("Control/HBoxContainer/VBoxContainer2/SelectTo")
 	applyButton = get_node("Control/Apply")
+	routeButton = get_node("Control/Route")
 	routePlanner = get_parent().get_parent().get_node('RoutePlanner')
 	routePanel = get_parent().get_parent().get_node('RoutePanel')
-	routePanelItemList = routePanel.get_node("RoutePanel").get_node("RoutePanelRoot").get_node('VBoxContainer').get_node('ItemList')
+	routePanelItemList = routePanel.get_node("RoutePanel").get_node("RoutePanelRoot").get_node('ItemList')
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
 	if (selectFrom.selected == 0 or selectTo.selected == 0) or (selectFrom.get_selected_id() == selectTo.get_selected_id()):
 		applyButton.disabled = true
+		routeButton.disabled = true
+	elif Autoscript.locationIdArray[selectTo.get_selected_id()].locationHasStation == false:
+		applyButton.disabled = false
+		routeButton.disabled = true
 	else:
 		applyButton.disabled = false
+		routeButton.disabled = false
 
 func _on_cancel_pressed():
 	## Menu Navigation

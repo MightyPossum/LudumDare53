@@ -42,11 +42,11 @@ func _update_path(path):
 func _check_path_and_update():
 	
 	var path_existst = false
+	current_location = next_destination
 	
 	if not my_path.size() <= 0:
 		
 		current_path = my_path.pop_front()
-		current_location = next_destination
 		
 		_start_traveling()
 		
@@ -79,6 +79,9 @@ func _check_path_and_update():
 		else:
 			Autoscript.PlayerRoutes.erase(my_assigned_route)
 			Autoscript.AvailableFleet[vessel.vessel_id] = destination
+			var location = Autoscript.LocationArray[destination]
+			location.locationHasStation = true
+			Autoscript.update_location_station(location)
 			get_tree().get_root().get_node("/root/GameScene/CanvasLayer/RoutePanel/RoutePanel")._populate_list()
 			queue_free()
 

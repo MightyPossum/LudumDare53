@@ -6,22 +6,21 @@ var lovTo
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	Autoscript.create_vessel_names_list()
 	Autoscript.Cash = 5000
 	Autoscript.Materials = 0
 	Autoscript.PlayerRoutes.clear()
 	
 	var ship : Ship = Ship.new()
-	ship._init_ship('TNNS Lucy',1)
+	Autoscript.VesselNames.shuffle()
+	ship._init_ship(Autoscript.VesselNames.pop_front(),Autoscript.VesselList.size()+1)
 	Autoscript.VesselList[ship.vessel_id] = ship
 	Autoscript.AvailableFleet[ship.vessel_id] = 'p1'
 	
 	ship = Ship.new()
-	ship._init_ship('TNNS Diana',2)
-	Autoscript.VesselList[ship.vessel_id] = ship
-	Autoscript.AvailableFleet[ship.vessel_id] = 'p1'
-	
-	ship = Ship.new()
-	ship._init_ship('TNNS Tigergutt',3)
+	Autoscript.VesselNames.shuffle()
+	ship._init_ship(Autoscript.VesselNames.pop_front(),Autoscript.VesselList.size()+1)
 	Autoscript.VesselList[ship.vessel_id] = ship
 	Autoscript.AvailableFleet[ship.vessel_id] = 'p1'
 	
@@ -31,7 +30,8 @@ func _ready():
 	_generateLocationArray()
 	_generateSelectLists()
 	
-	#route_planner._create_route('p1', 'a7', true)
+	
+	route_planner._create_route('p1', 'a7', true)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -80,6 +80,11 @@ func _generateLocations():
 		Autoscript.LocationNames[location.locationId] = [location.locationName,location.locationNodeName]
 		Autoscript.LocationPrettyName[location.locationNodeName] = location.locationName
 		Autoscript.LocationArray[location.locationNodeName] = location
+		if location.locationNodeName == 'p1' or location.locationNodeName == 'a7':
+			location.locationHasStation = true
+			Autoscript.update_location_station(location)
+		
+		Autoscript.locationIdArray[location.locationId] = Autoscript.LocationArray[location.locationNodeName]
 	
 	
 func _generatePathways():

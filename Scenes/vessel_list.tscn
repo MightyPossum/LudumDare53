@@ -90,11 +90,20 @@ stretch_mode = 2
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 0
-offset_left = 82.0
+offset_left = 40.0
 offset_top = 78.0
-offset_right = 343.0
+offset_right = 388.0
 offset_bottom = 429.0
 theme = SubResource("Theme_t1tsy")
+theme_override_font_sizes/font_size = 11
+max_text_lines = 3
+text_overrun_behavior = 4
+item_count = 4
+max_columns = 0
+item_0/text = "TNNS Thunderbolt - Serenity"
+item_1/text = "TNNS Mighty - Serenity <-> DR-14"
+item_2/text = "TNNS Ranzor - Serenity -> DR-14"
+item_3/text = "TNNS Ranzor - Serenity <- DR-14"
 
 [node name="AddVessel" type="Button" parent="."]
 layout_mode = 0
@@ -104,7 +113,6 @@ offset_right = 334.0
 offset_bottom = 482.0
 scale = Vector2(1, 0.96001)
 theme = SubResource("Theme_sh2gv")
-disabled = true
 
 [node name="RemoveVessel" type="Button" parent="."]
 visible = false
@@ -124,3 +132,6 @@ offset_top = 420.0
 offset_right = 107.1
 offset_bottom = 507.2
 theme = SubResource("Theme_12k4q")
+
+[connection signal="pressed" from="AddVessel" to="." method="_on_add_vessel_pressed"]
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
