@@ -437,7 +437,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_07xw0")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p1-p12"]
-transform = Transform3D(-0.976469, -0.00866265, -0.21484, 1.39679e-09, 0.999018, -0.0402843, 0.215014, -0.0393406, -0.975675, -54.8336, 4.64973, 38.4809)
+transform = Transform3D(-0.976469, -0.00866264, -0.21484, 1.39679e-09, 0.999018, -0.0402843, 0.215014, -0.0393406, -0.975675, -54.8336, 4.64973, 38.4809)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p1-p12/JumplaneParticles"]
@@ -635,7 +635,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_gw7wh")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p5-p12"]
-transform = Transform3D(0.00512835, -0.752332, -0.658528, -2.97981e-08, 0.658517, -0.752364, 0.999846, 0.00385883, 0.00337766, 967.233, 757.01, -62.2241)
+transform = Transform3D(0.00512834, -0.752332, -0.658528, -2.97981e-08, 0.658517, -0.752364, 0.999846, 0.00385883, 0.00337766, 967.233, 757.01, -62.2241)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p5-p12/JumplaneParticles"]
@@ -851,7 +851,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_k43an")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a9-a12"]
-transform = Transform3D(-0.664281, -0.0770639, -0.743313, -1.11743e-08, 0.994501, -0.103112, 0.747298, -0.0685029, -0.660739, -488.255, 756.186, 436.673)
+transform = Transform3D(-0.664281, -0.0770639, -0.743313, -1.11743e-08, 0.994501, -0.103112, 0.747298, -0.068503, -0.660739, -488.255, 756.186, 436.673)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a9-a12/JumplaneParticles"]
@@ -942,7 +942,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_ihbv6")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a12-a23"]
-transform = Transform3D(-0.022989, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999599, -0.0178016, -0.0145457, -602.666, 845.697, -203.527)
+transform = Transform3D(-0.0229889, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999599, -0.0178015, -0.0145456, -602.666, 845.697, -203.527)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a12-a23/JumplaneParticles"]
@@ -1014,7 +1014,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_xsuwg")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p9-a3"]
-transform = Transform3D(-0.914845, -0.301084, 0.268561, -2.97982e-08, 0.665528, 0.74617, -0.403462, 0.682704, -0.608957, 349.093, 266.922, -351.249)
+transform = Transform3D(-0.914845, -0.301084, 0.268561, -1.48991e-08, 0.665528, 0.74617, -0.403462, 0.682704, -0.608957, 349.093, 266.922, -351.249)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p9-a3/JumplaneParticles"]
@@ -1161,6 +1161,8 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 [node name="p1" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 planet_model = ExtResource("3_ha4m2")
+demand = 500
+demand_rate = 0.5
 
 [node name="PlanetLabel" parent="Planets/p1" index="1"]
 text = "Serenity"
@@ -1176,6 +1178,8 @@ visible = false
 [node name="p2" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -397.793, 39.1407, -358.574)
 planet_model = ExtResource("4_2k01j")
+demand = 500
+demand_rate = 0.25
 
 [node name="LocationName" type="Node3D" parent="Planets/p2"]
 
@@ -1188,6 +1192,8 @@ visible = false
 [node name="p3" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.02, 293.555, 288.54)
 planet_model = ExtResource("5_1pbwk")
+demand = 500
+demand_rate = 0.25
 
 [node name="LocationName" type="Node3D" parent="Planets/p3"]
 
@@ -1200,6 +1206,8 @@ visible = false
 [node name="p4" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 579.881, -285.168, 296.944)
 planet_model = ExtResource("6_1d8wx")
+demand = 500
+demand_rate = 1
 
 [node name="LocationName" type="Node3D" parent="Planets/p4"]
 
@@ -1212,6 +1220,8 @@ visible = false
 [node name="p5" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 978.545, 757.527, -0.0332184)
 planet_model = ExtResource("7_xaoqq")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/p5"]
 
@@ -1224,6 +1234,8 @@ visible = false
 [node name="p6" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -863.892, 640.23, 621.102)
 planet_model = ExtResource("8_01pea")
+demand = 500
+demand_rate = 0.25
 
 [node name="LocationName" type="Node3D" parent="Planets/p6"]
 
@@ -1236,6 +1248,8 @@ visible = false
 [node name="p7" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301.943, -254.415, 680.193)
 planet_model = ExtResource("9_82fvr")
+demand = 500
+demand_rate = 0.25
 
 [node name="LocationName" type="Node3D" parent="Planets/p7"]
 
@@ -1248,10 +1262,12 @@ visible = false
 [node name="p8" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1005.69, -181.725, -350.17)
 planet_model = ExtResource("10_8mqb4")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/p8"]
 
-[node name="Jötunheimr" type="Node3D" parent="Planets/p8/LocationName"]
+[node name="Jotunheimr" type="Node3D" parent="Planets/p8/LocationName"]
 
 [node name="Station" parent="Planets/p8" instance=ExtResource("5_nqg17")]
 transform = Transform3D(-0.474, -0.692281, -0.544124, 0.691244, 0.0902352, -0.716965, 0.54544, -0.715964, 0.435764, 49.4722, 39.4437, -16.7866)
@@ -1260,6 +1276,8 @@ visible = false
 [node name="p9" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 406.197, 271.189, -341.766)
 planet_model = ExtResource("11_mekoe")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/p9"]
 
@@ -1272,6 +1290,8 @@ visible = false
 [node name="p10" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 352.266, 749.265, 0)
 planet_model = ExtResource("12_lbvdc")
+demand = 500
+demand_rate = 0.25
 
 [node name="LocationName" type="Node3D" parent="Planets/p10"]
 
@@ -1284,6 +1304,8 @@ visible = false
 [node name="p11" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -641.511, 232.049, 0)
 planet_model = ExtResource("13_u201g")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/p11"]
 
@@ -1296,6 +1318,8 @@ visible = false
 [node name="p12" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1034.43, -148.176, 0)
 planet_model = ExtResource("14_end1e")
+demand = 500
+demand_rate = 1.0
 
 [node name="LocationName" type="Node3D" parent="Planets/p12"]
 
@@ -1308,6 +1332,8 @@ visible = false
 [node name="p13" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -193.294, 506.034, 361.375)
 planet_model = ExtResource("15_c5sig")
+demand = 500
+demand_rate = 0.25
 
 [node name="LocationName" type="Node3D" parent="Planets/p13"]
 
@@ -1320,6 +1346,8 @@ visible = false
 [node name="p14" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(0.999975, -0.00702893, 0.00110094, 0.00703019, 0.999975, -0.00113899, -0.00109292, 0.00114668, 0.999999, 849.913, 352.267, 744.272)
 planet_model = ExtResource("16_f04cb")
+demand = 500
+demand_rate = 1.0
 
 [node name="LocationName" type="Node3D" parent="Planets/p14"]
 
@@ -1332,6 +1360,8 @@ visible = false
 [node name="p15" parent="Planets" instance=ExtResource("2_dgd1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1161.18, 71.6332, -408.473)
 planet_model = ExtResource("17_ledh8")
+demand = 500
+demand_rate = 1.0
 
 [node name="LocationName" type="Node3D" parent="Planets/p15"]
 
@@ -1344,6 +1374,8 @@ visible = false
 [node name="a1" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1302.07, 0.277159, 97.6717)
 asteroid_model = ExtResource("19_xrxph")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a1"]
 
@@ -1356,6 +1388,8 @@ visible = false
 [node name="a2" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0.000144414, 6.86094e-05, -0.000144414, 1, -6.99925e-05, -6.86094e-05, 6.99925e-05, 1, -1210.75, 142.861, 33.3691)
 asteroid_model = ExtResource("20_s1t8o")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a2"]
 
@@ -1368,6 +1402,8 @@ visible = false
 [node name="a3" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.624, 45.0095, -428.687)
 asteroid_model = ExtResource("21_akps7")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a3"]
 
@@ -1380,6 +1416,8 @@ visible = false
 [node name="a4" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.698, 442.008, 557.223)
 asteroid_model = ExtResource("22_vy4b3")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a4"]
 
@@ -1392,6 +1430,8 @@ visible = false
 [node name="a5" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.039, 86.9459, 243.538)
 asteroid_model = ExtResource("23_evtx2")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a5"]
 
@@ -1404,6 +1444,8 @@ visible = false
 [node name="a6" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -266.77, 397.276, -111.972)
 asteroid_model = ExtResource("24_78ciq")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a6"]
 
@@ -1416,6 +1458,8 @@ visible = false
 [node name="a7" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.846, -61.2293, -73.0936)
 asteroid_model = ExtResource("25_qq6xu")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a7"]
 
@@ -1428,6 +1472,8 @@ visible = false
 [node name="a8" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -618.903, 693.627, 271.73)
 asteroid_model = ExtResource("19_xrxph")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a8"]
 
@@ -1440,6 +1486,8 @@ visible = false
 [node name="a9" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.87, 729.972, 431.318)
 asteroid_model = ExtResource("20_s1t8o")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a9"]
 
@@ -1452,6 +1500,8 @@ visible = false
 [node name="a10" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -733.591, 819.437, 377.388)
 asteroid_model = ExtResource("21_akps7")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a10"]
 
@@ -1464,6 +1514,8 @@ visible = false
 [node name="a11" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, -7.77915e-05, -3.2546e-05, 7.77915e-05, 1, 2.24649e-05, 3.2546e-05, -2.24649e-05, 1, -792.318, 816.641, 145.334)
 asteroid_model = ExtResource("22_vy4b3")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a11"]
 
@@ -1476,6 +1528,8 @@ visible = false
 [node name="a12" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -601.904, 816.641, -162.335)
 asteroid_model = ExtResource("23_evtx2")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a12"]
 
@@ -1488,6 +1542,8 @@ visible = false
 [node name="a13" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 692.535, -61.2297, -240.996)
 asteroid_model = ExtResource("24_78ciq")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a13"]
 
@@ -1500,6 +1556,8 @@ visible = false
 [node name="a14" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1142.96, 461.579, -438.237)
 asteroid_model = ExtResource("25_qq6xu")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a14"]
 
@@ -1512,6 +1570,8 @@ visible = false
 [node name="a15" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -940.729, -223.384, -123.194)
 asteroid_model = ExtResource("19_xrxph")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a15"]
 
@@ -1524,6 +1584,8 @@ visible = false
 [node name="a16" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.035, 581.796, -120.398)
 asteroid_model = ExtResource("20_s1t8o")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a16"]
 
@@ -1536,6 +1598,8 @@ visible = false
 [node name="a17" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 440.603, 539.86, 955.821)
 asteroid_model = ExtResource("21_akps7")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a17"]
 
@@ -1548,6 +1612,8 @@ visible = false
 [node name="a18" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(0.982317, -0.187227, 0, 0.187227, 0.982317, 0, 0, 0, 1, 989.054, 106.516, 526.168)
 asteroid_model = ExtResource("22_vy4b3")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a18"]
 
@@ -1560,6 +1626,8 @@ visible = false
 [node name="a19" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.3916, -136.715, 378.26)
 asteroid_model = ExtResource("23_evtx2")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a19"]
 
@@ -1572,6 +1640,8 @@ visible = false
 [node name="a20" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.741, 78.5586, 394.655)
 asteroid_model = ExtResource("24_78ciq")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a20"]
 
@@ -1584,6 +1654,8 @@ visible = false
 [node name="a21" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 773.612, -64.0254, 874.894)
 asteroid_model = ExtResource("25_qq6xu")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a21"]
 
@@ -1596,6 +1668,8 @@ visible = false
 [node name="a22" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 0.999998, 0.00191986, 0, -0.00191986, 0.999998, 731.676, 702.014, 831.398)
 asteroid_model = ExtResource("19_xrxph")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a22"]
 
@@ -1608,6 +1682,8 @@ visible = false
 [node name="a23" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -596.313, -329.623, -33.7292)
 asteroid_model = ExtResource("20_s1t8o")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a23"]
 
@@ -1620,6 +1696,8 @@ visible = false
 [node name="a24" parent="Planets" instance=ExtResource("4_0idxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1289.19, 0.277159, -311.131)
 asteroid_model = ExtResource("21_akps7")
+demand = 500
+demand_rate = 0.5
 
 [node name="LocationName" type="Node3D" parent="Planets/a24"]
 
