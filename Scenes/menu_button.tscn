@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ulwy4tsglpjy"]
+[gd_scene load_steps=4 format=3 uid="uid://ulwy4tsglpjy"]
 
 [ext_resource type="Script" path="res://Scripts/menu_button.gd" id="1_1v23l"]
 [ext_resource type="Script" path="res://Scripts/ResourceTracker.gd" id="1_m3shm"]
 [ext_resource type="Texture2D" uid="uid://344ldsayuuqb" path="res://Assets/MenuArt/Coin.png" id="3_lq4ri"]
-[ext_resource type="Texture2D" uid="uid://j1nqw4ibl1q2" path="res://Assets/MenuArt/Mats.png" id="4_riicn"]
 
 [node name="MenuButton" type="Control"]
 layout_mode = 3
@@ -29,35 +28,18 @@ script = ExtResource("1_1v23l")
 
 [node name="CashLabel" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 930.0
-offset_top = 1.0
-offset_right = 962.0
-offset_bottom = 35.0
+offset_left = 1042.0
+offset_top = 4.0
+offset_right = 1074.0
+offset_bottom = 38.0
 tooltip_text = "Money"
 texture = ExtResource("3_lq4ri")
 stretch_mode = 2
 
 [node name="Cash" type="Label" parent="."]
 layout_mode = 0
-offset_left = 961.0
-offset_top = 3.0
-offset_right = 1016.0
-offset_bottom = 29.0
-text = "50000"
-
-[node name="MaterialLabel" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1030.0
-offset_right = 1070.0
+offset_left = 1073.0
+offset_top = 6.0
+offset_right = 1141.0
 offset_bottom = 32.0
-tooltip_text = "Resources"
-texture = ExtResource("4_riicn")
-stretch_mode = 2
-
-[node name="Material" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1066.0
-offset_top = 4.0
-offset_right = 1149.0
-offset_bottom = 30.0
-text = "5000"
+text = "50000"

@@ -437,7 +437,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_07xw0")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p1-p12"]
-transform = Transform3D(-0.976469, -0.00866264, -0.21484, 1.39679e-09, 0.999018, -0.0402843, 0.215014, -0.0393406, -0.975675, -54.8336, 4.64973, 38.4809)
+transform = Transform3D(-0.976469, -0.00866264, -0.21484, 1.39679e-09, 0.999017, -0.0402843, 0.215014, -0.0393406, -0.975675, -54.8336, 4.64973, 38.4809)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p1-p12/JumplaneParticles"]
@@ -635,7 +635,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_gw7wh")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/p5-p12"]
-transform = Transform3D(0.00512834, -0.752332, -0.658528, -2.97981e-08, 0.658517, -0.752364, 0.999846, 0.00385883, 0.00337766, 967.233, 757.01, -62.2241)
+transform = Transform3D(0.00512834, -0.752332, -0.658528, -2.97981e-08, 0.658517, -0.752364, 0.999845, 0.00385883, 0.00337766, 967.233, 757.01, -62.2241)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/p5-p12/JumplaneParticles"]
@@ -942,7 +942,7 @@ draw_pass_1 = SubResource("SphereMesh_gdnkx")
 curve = SubResource("Curve3D_ihbv6")
 
 [node name="JumplaneParticles" type="PathFollow3D" parent="Pathways/a12-a23"]
-transform = Transform3D(-0.022989, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.999599, -0.0178016, -0.0145457, -602.666, 845.697, -203.527)
+transform = Transform3D(-0.022989, 0.774042, 0.63247, 0, 0.632618, -0.774269, -0.9996, -0.0178016, -0.0145457, -602.666, 845.697, -203.527)
 script = ExtResource("2_01lw1")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pathways/a12-a23/JumplaneParticles"]
@@ -1757,24 +1757,6 @@ offset_top = 56.0
 offset_right = -712.0
 offset_bottom = -538.0
 
-[node name="Label" parent="CanvasLayer/VesselList" index="5"]
-offset_left = 84.0
-offset_top = 454.0
-offset_right = 248.0
-offset_bottom = 479.0
-
-[node name="TextureRect" parent="CanvasLayer/VesselList" index="6"]
-offset_left = 254.0
-offset_top = 448.0
-offset_right = 286.0
-offset_bottom = 480.0
-
-[node name="Label2" parent="CanvasLayer/VesselList" index="7"]
-offset_left = 289.0
-offset_top = 454.0
-offset_right = 344.0
-offset_bottom = 479.0
-
 [node name="LocationInfo" parent="CanvasLayer" instance=ExtResource("33_nkbxm")]
 visible = false
 offset_left = 868.0
@@ -1807,4 +1789,3 @@ autostart = true
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Planets/p1"]
-[editable path="CanvasLayer/VesselList"]

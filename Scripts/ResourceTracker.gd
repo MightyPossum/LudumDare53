@@ -11,4 +11,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	cash_label.text = str(Autoscript.Cash)
-	material_label.text = str(Autoscript.Materials)
