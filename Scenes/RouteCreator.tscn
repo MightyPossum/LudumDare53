@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b37rkflg54uor"]
+[gd_scene load_steps=6 format=3 uid="uid://b37rkflg54uor"]
 
 [ext_resource type="Script" path="res://Scripts/RouteCreator.gd" id="1_opjec"]
 [ext_resource type="Theme" uid="uid://gnqiyi4hgg6q" path="res://Assets/MainTheme.tres" id="1_v5lgh"]
 [ext_resource type="Texture2D" uid="uid://qnaw1lsogluc" path="res://Assets/MenuArt/ClipboardMenu1.png" id="3_8mray"]
 [ext_resource type="Theme" uid="uid://mc1lnrlxflv1" path="res://Assets/MenuArt/ClipButtonTheme.tres" id="4_q7pil"]
+
+[sub_resource type="Theme" id="Theme_41n0r"]
 
 [node name="RoutePlanetPicker" type="Control"]
 layout_mode = 3
@@ -27,6 +29,7 @@ offset_left = 19.0
 offset_top = 446.0
 offset_right = 109.0
 offset_bottom = 495.0
+tooltip_text = "Back"
 text = "Cancel"
 
 [node name="Apply" type="Button" parent="Control"]
@@ -35,6 +38,7 @@ offset_left = 183.0
 offset_top = 406.0
 offset_right = 246.0
 offset_bottom = 436.0
+tooltip_text = "Set ship on a one way trip"
 text = "Send Vessel Once
 "
 
@@ -44,6 +48,7 @@ offset_left = 182.0
 offset_top = 445.0
 offset_right = 258.0
 offset_bottom = 475.0
+tooltip_text = "Create a 2-Way Trade Route"
 text = "Create Route"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
@@ -59,6 +64,8 @@ layout_mode = 2
 
 [node name="SelectFrom" type="OptionButton" parent="Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+tooltip_text = "Set Origin Station"
+theme = SubResource("Theme_41n0r")
 item_count = 1
 selected = 0
 popup/item_0/text = "LLocation"
@@ -71,6 +78,7 @@ layout_mode = 2
 
 [node name="SelectTo" type="OptionButton" parent="Control/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+tooltip_text = "Set Destination"
 item_count = 1
 selected = 0
 popup/item_0/text = "Location"
@@ -91,22 +99,22 @@ theme = ExtResource("4_q7pil")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
-text = "[b]Route From[/b] 
+text = "[b]From[/b] 
 N/A
-[b]Route To[/b]
+[b]To[/b]
 N/A
 [b]Assigned Vessel[/b] 
 N/A
-[b]Initial Cost[/b]
+[b]Initial Fee[/b]
 N/A
-[b]Repeating Cost[/b] 
+[b]Route Fee[/b] 
 N/A"
 fit_content = true
 
 [connection signal="pressed" from="Control/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="Control/Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="Control/Route" to="." method="_on_route_pressed"]
-[connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer/SelectFrom" to="." method="_on_select_item_selected"]
 [connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer/SelectFrom" to="." method="_on_select_from_item_selected"]
-[connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer2/SelectTo" to="." method="_on_select_item_selected"]
+[connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer/SelectFrom" to="." method="_on_select_item_selected"]
 [connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer2/SelectTo" to="." method="_on_select_to_item_selected"]
+[connection signal="item_selected" from="Control/HBoxContainer/VBoxContainer2/SelectTo" to="." method="_on_select_item_selected"]

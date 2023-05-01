@@ -126,6 +126,7 @@ offset_bottom = 481.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.36, 1)
+tooltip_text = "Create New Route"
 theme = ExtResource("4_u52xv")
 icon_alignment = 1
 
@@ -136,6 +137,7 @@ offset_top = 450.0
 offset_right = 334.0
 offset_bottom = 482.0
 scale = Vector2(1, 0.96001)
+tooltip_text = "Delete Route"
 theme = SubResource("Theme_f6g2i")
 disabled = true
 
@@ -145,6 +147,7 @@ offset_left = 22.0
 offset_top = 420.0
 offset_right = 107.1
 offset_bottom = 507.2
+tooltip_text = "Back"
 theme = SubResource("Theme_002md")
 
 [node name="RouteSymbol" type="TextureRect" parent="RoutePanelRoot"]
